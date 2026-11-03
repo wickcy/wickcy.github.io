@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"code":"820000","name":"澳门","regionCode":"820000","label":[113.5614,22.1715],"sourceId":"CN082010"},"geometry":{"type":"MultiPolygon","coordinates":[[[[113.6221,22.2045],[113.5747,22.2274],[113.4971,22.19],[113.5625,22.0913],[113.6221,22.2045]]]]}}],"properties":{"detailLevel":"region"}}

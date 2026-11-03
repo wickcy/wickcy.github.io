@@ -1,4 +1,5 @@
 export const WORLD_VIEW = Object.freeze({ x: 0, y: 0, width: 1080, height: 540 });
+export const MIN_VIEW_WIDTH = 3;
 
 export function project([lng, lat]) {
   return [(lng + 180) * 3, (90 - lat) * 3];
@@ -9,7 +10,7 @@ export function geometryToPath(geometry) {
   return polygons.flatMap((polygon) => polygon.map((ring) =>
     ring.map((coordinate, index) => {
       const [x, y] = project(coordinate);
-      return (index ? 'L' : 'M') + x.toFixed(2) + ',' + y.toFixed(2);
+      return (index ? 'L' : 'M') + x.toFixed(3) + ',' + y.toFixed(3);
     }).join('') + 'Z'
   )).join('');
 }
@@ -32,33 +33,34 @@ function ringArea(ring) {
   }, 0));
 }
 
-export function clampView(view) {
-  const width = Math.max(60, Math.min(WORLD_VIEW.width, view.width));
-  const height = width / 2;
+export function clampView(view, aspect = 2) {
+  const width = Math.max(MIN_VIEW_WIDTH, Math.min(WORLD_VIEW.width, view.width));
+  const height = width / aspect;
   return {
     x: Math.max(0, Math.min(WORLD_VIEW.width - width, view.x)),
-    y: Math.max(0, Math.min(WORLD_VIEW.height - height, view.y)),
+    y: height > WORLD_VIEW.height ? (WORLD_VIEW.height - height) / 2
+      : Math.max(0, Math.min(WORLD_VIEW.height - height, view.y)),
     width,
     height
   };
 }
 
-export function zoomView(view, factor, anchor = [0.5, 0.5]) {
-  const width = Math.max(60, Math.min(WORLD_VIEW.width, view.width / factor));
-  const height = width / 2;
+export function zoomView(view, factor, anchor = [0.5, 0.5], aspect = 2) {
+  const width = Math.max(MIN_VIEW_WIDTH, Math.min(WORLD_VIEW.width, view.width / factor));
+  const height = width / aspect;
   return clampView({
     x: view.x + (view.width - width) * anchor[0],
     y: view.y + (view.height - height) * anchor[1],
     width,
     height
-  });
+  }, aspect);
 }
 
-export function fitBounds([left, top, right, bottom]) {
-  const width = Math.max(70, (right - left) * 1.3, (bottom - top) * 2.6);
+export function fitBounds([left, top, right, bottom], aspect = 2) {
+  const width = Math.max(4, (right - left) * 1.3, (bottom - top) * aspect * 1.3);
   return clampView({
     x: (left + right - width) / 2,
-    y: (top + bottom - width / 2) / 2,
+    y: (top + bottom - width / aspect) / 2,
     width
-  });
+  }, aspect);
 }

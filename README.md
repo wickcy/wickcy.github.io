@@ -31,7 +31,7 @@ content/trips/<旅行ID>/index.md             旅行元信息与正文，自动�
 content/trips/<旅行ID>/plans.json           可选：路线、景点、交通、预算与来源
 content/trips/<旅行ID>/photos.json          可选：照片、顺序、精选和票根地址
 public/images/trips/<旅行ID>/               允许公开的照片与票根
-src/features/atlas/                        本地矢量世界足迹地图
+src/features/atlas/                        本地矢量世界地图与中国省市足迹
 src/features/trips/                        旅行计划工具
 src/features/gallery/                      照片、精选票根与大图浏览
 src/components/                            全站共享组件
@@ -104,6 +104,6 @@ updatedAt: '2026-11-03'
 
 - Codex 约定：[AGENTS.md](AGENTS.md)。
 - 页面与模块方案：[docs/project-plan.md](docs/project-plan.md)。
-- 世界地图使用 Natural Earth 公共领域数据，来源见 [public/maps/LICENSE.md](public/maps/LICENSE.md)。
+- 世界地图使用 Natural Earth 公共领域数据，中国省市使用 geoBoundaries / OCHA 开放边界数据，按省加载市界；来源、历史年份和许可见 [public/maps/LICENSE.md](public/maps/LICENSE.md)。国家列表与统计将台湾、香港、澳门统一归入中国。城市以 `regionCode` / `cityCode` 关联省市边界，到访仍只由旅行中的 `visitedCityIds` 决定。
 - 单次旅行地图沿用 Leaflet 与 OpenStreetMap，保留相应署名及许可证。
 - 迁移前原始页面与资源已备份到本机 `.local/legacy/2026-11-03/`（不提交、不发布）；它们不是网站构建输入。

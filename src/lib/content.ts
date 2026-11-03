@@ -2,6 +2,7 @@ import { getCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import cityData from '../../content/places/cities.json';
 import { publishedTrips, visitedCities, publicAsset } from './travel-policy.js';
+import { normalizeCityCountry } from './geography.mjs';
 
 const asset = z.string().refine(publicAsset, '图片地址须为站内绝对路径或 HTTPS');
 const photoSchema = z.object({
@@ -16,8 +17,9 @@ const recommendationFiles = import.meta.glob('../../content/trips/*/recommendati
 export const cities = z.array(z.object({
   id:z.string().regex(/^[a-z0-9-]+$/), name:z.string(), countryCode:z.string().length(3),
   countryName:z.string(), region:z.string().optional(), lat:z.number().min(-90).max(90),
+  regionCode:z.string().regex(/^\d{6}$/).optional(), cityCode:z.string().regex(/^\d{6}$/).optional(),
   lng:z.number().min(-180).max(180), coordinateSystem:z.literal('WGS84'), description:z.string().optional(),
-})).parse(cityData);
+})).parse(cityData).map(normalizeCityCountry);
 if(new Set(cities.map(c=>c.id)).size!==cities.length) throw new Error('城市 ID 重复');
 
 export async function siteContent() {

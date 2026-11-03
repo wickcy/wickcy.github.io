@@ -1,34 +1,34 @@
 ---
 import world from '../../../public/maps/world-110m.json';
-import { geometryBounds, geometryToPath, project } from './geometry.mjs';
-
+import china from '../../../public/maps/china-provinces.json';
+import { WORLD_VIEW, fitBounds, geometryBounds, geometryToPath, project } from './geometry.mjs';
 interface City {
-  id: string;
-  name: string;
-  countryCode: string;
-  countryName: string;
-  lat: number;
-  lng: number;
+  id: string; name: string; countryCode: string; countryName: string;
+  region?: string; regionCode?: string; cityCode?: string; lat: number; lng: number;
 }
-interface Props {
-  cities: City[];
-  visitedCityIds: string[];
-}
+interface Props { cities: City[]; visitedCityIds: string[]; }
 const { cities = [], visitedCityIds = [] } = Astro.props;
-const visited = cities.filter((city: City) =>
-  visitedCityIds.includes(city.id) && Number.isFinite(city.lat) && Number.isFinite(city.lng)
-);
-const visitedCountries = new Set(visited.map((city: City) => city.countryCode));
-const countryNames = new Map(world.features.map((feature) => [feature.properties.code, feature.properties.name]));
+const visited = cities.filter(city => visitedCityIds.includes(city.id) && Number.isFinite(city.lat) && Number.isFinite(city.lng));
+const visitedCountries = new Set(visited.map(city => city.countryCode));
+const visitedRegions = new Set(visited.filter(city => city.countryCode === 'CHN').map(city => city.regionCode));
+const countryNames = new Map(world.features.map(feature => [feature.properties.code, feature.properties.name]));
 for (const city of visited) countryNames.set(city.countryCode, city.countryName);
 const countries = [...countryNames.entries()].sort((a, b) => a[1].localeCompare(b[1], 'zh-CN'));
+const cityFiles = import.meta.glob('../../../public/maps/china-cities/*.json');
+const availableRegions = Object.keys(cityFiles).map(file => file.match(/(\d{6})\.json$/)?.[1]).filter(Boolean);
+const startInChina = visited.length > 0 && visited.every(city => city.countryCode === 'CHN');
+const provinceBounds = china.features.map(feature => geometryBounds(feature.geometry));
+const initialView = startInChina ? fitBounds([
+  Math.min(...provinceBounds.map(b => b[0])), Math.min(...provinceBounds.map(b => b[1])),
+  Math.max(...provinceBounds.map(b => b[2])), Math.max(...provinceBounds.map(b => b[3])),
+]) : WORLD_VIEW;
+const initialUnits = initialView.width / 1080;
 ---
-
-<world-atlas class="world-atlas">
+<world-atlas class="world-atlas" data-initial-country={startInChina ? 'CHN' : ''} data-city-regions={availableRegions.join(',')}>
   <div class="atlas-toolbar">
-    <div class="atlas-legend" aria-label="足迹地图图例">
-      <span><i class="country-key"></i>已到访国家 / 地区</span>
-      <span><i class="city-key"></i>已到访城市</span>
+    <div class="atlas-scope" aria-label="地图范围">
+      <button type="button" data-scope="world" aria-pressed={!startInChina}>世界</button>
+      <button type="button" data-scope="china" aria-pressed={startInChina}>中国 · 省市</button>
     </div>
     <div class="atlas-buttons" aria-label="地图视图控制">
       <button type="button" data-zoom="in" aria-label="放大地图">＋</button>
@@ -36,160 +36,56 @@ const countries = [...countryNames.entries()].sort((a, b) => a[1].localeCompare(
       <button type="button" data-reset>返回全球</button>
     </div>
   </div>
-
+  <div class="atlas-legend" aria-label="足迹地图图例">
+    <span><i class="country-key"></i>国家足迹</span><span><i class="province-key"></i>省内有足迹</span><span><i class="city-key"></i>已到访城市</span>
+  </div>
   <div class="atlas-canvas">
-    <svg class="atlas-map" viewBox="0 0 1080 540" role="img" tabindex="0"
-      aria-label="世界足迹地图，可拖动缩放。城市记录也可从下方列表进入。"
-      aria-describedby="atlas-instructions">
-      <defs>
-        <pattern id="atlas-grid" width="90" height="90" patternUnits="userSpaceOnUse">
-          <path d="M 90 0 L 0 0 0 90" fill="none" stroke="#dfe3d8" stroke-width="0.55" />
-        </pattern>
-      </defs>
-      <rect class="atlas-water" x="0" y="0" width="1080" height="540" />
-      <rect x="0" y="0" width="1080" height="540" fill="url(#atlas-grid)" />
-      <g class="atlas-countries">
-        {world.features.map((feature) => (
-          <path
-            d={geometryToPath(feature.geometry)}
-            class:list={['atlas-country', { 'is-visited': visitedCountries.has(feature.properties.code) }]}
-            data-country={feature.properties.code}
-            data-name={feature.properties.name}
-            data-bounds={geometryBounds(feature.geometry).join(',')}
-            fill-rule="evenodd"
-            vector-effect="non-scaling-stroke"
-          >
-            <title>{feature.properties.name}{visitedCountries.has(feature.properties.code) ? ' · 已到访' : ''}</title>
-          </path>
-        ))}
-      </g>
-      <g class="atlas-region-labels" aria-hidden="true">
-        <text x="210" y="168">北美洲</text>
-        <text x="370" y="335">南美洲</text>
-        <text x="574" y="137">欧洲</text>
-        <text x="592" y="284">非洲</text>
-        <text x="810" y="173">亚洲</text>
-        <text x="953" y="370">大洋洲</text>
-      </g>
-      <g class="atlas-cities">
-        {visited.map((city: City) => {
-          const [x, y] = project([city.lng, city.lat]);
-          return (
-            <a href={'/cities/' + city.id + '/'} data-city={city.id} data-country-code={city.countryCode}
-              aria-label={'查看' + city.name + '的旅行记录'} class="atlas-city">
-              <title>{city.name} · {city.countryName} · 查看旅行记录</title>
-              <circle cx={x} cy={y} r="4.5" vector-effect="non-scaling-stroke" />
-              <text x={x} y={y} dx="10" dy="4" class="atlas-city-label">{city.name}</text>
-            </a>
-          );
-        })}
-      </g>
+    <svg class="atlas-map" viewBox={[initialView.x, initialView.y, initialView.width, initialView.height].join(' ')} data-china={String(startInChina)} data-zoomed={String(initialView.width < 480)} role="group" tabindex="0" aria-label="旅行足迹地图，可探索中国省份与城市。城市记录也可从下方列表进入。" aria-describedby="atlas-instructions">
+      <defs><pattern id="atlas-grid" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M 90 0 L 0 0 0 90" fill="none" stroke="#dfe3d8" stroke-width="0.4" vector-effect="non-scaling-stroke" /></pattern></defs>
+      <rect class="atlas-water" x="-1080" y="-1080" width="3240" height="2700" /><rect class="atlas-grid" x="0" y="0" width="1080" height="540" fill="url(#atlas-grid)" />
+      <g class="atlas-countries">{world.features.map(feature => <path d={geometryToPath(feature.geometry)} class:list={['atlas-country', { 'is-visited': visitedCountries.has(feature.properties.code) }]} data-country={feature.properties.code} data-name={feature.properties.name} data-bounds={geometryBounds(feature.geometry).join(',')} fill-rule="evenodd" vector-effect="non-scaling-stroke"><title>{feature.properties.name}{visitedCountries.has(feature.properties.code) ? ' · 已到访' : ''}</title></path>)}</g>
+      <g class="atlas-region-labels" aria-hidden="true"><text x="210" y="168">北美洲</text><text x="370" y="335">南美洲</text><text x="574" y="137">欧洲</text><text x="592" y="284">非洲</text><text x="810" y="173">亚洲</text><text x="953" y="370">大洋洲</text></g>
+      <g class="atlas-provinces">{china.features.map(feature => <path d={geometryToPath(feature.geometry)} class:list={['atlas-province', { 'has-visit': visitedRegions.has(feature.properties.code) }]} data-province={feature.properties.code} data-name={feature.properties.name} data-bounds={geometryBounds(feature.geometry).join(',')} fill-rule="evenodd" vector-effect="non-scaling-stroke"><title>{feature.properties.name}{visitedRegions.has(feature.properties.code) ? ' · 省内有足迹' : ''}</title></path>)}</g>
+      <g class="atlas-city-areas" data-city-areas></g>
+      <g class="atlas-province-labels" aria-hidden="true">{china.features.map(feature => { const [x,y] = project(feature.properties.label); return <text x={x} y={y} data-region-label={feature.properties.code} style={`font-size:${12 * initialUnits}px;stroke-width:${3 * initialUnits}px`}>{feature.properties.name}</text>; })}</g>
+      <g class="atlas-local-labels" data-local-labels aria-hidden="true"></g>
+      <g class="atlas-cities">{visited.map(city => { const [x,y] = project([city.lng,city.lat]); return <a href={'/cities/' + city.id + '/'} data-city={city.id} data-city-code={city.cityCode} data-region-code={city.regionCode} data-country-code={city.countryCode} aria-label={'查看' + city.name + '的旅行记录'} class="atlas-city"><title>{city.name} · {city.countryName} · 查看旅行记录</title><circle class="atlas-city-halo" cx={x} cy={y} r={11 * initialUnits} /><circle class="atlas-city-dot" cx={x} cy={y} r={5.5 * initialUnits} vector-effect="non-scaling-stroke" /><text x={x} y={y} dx={13 * initialUnits} dy={5 * initialUnits} class="atlas-city-label" style={`font-size:${14 * initialUnits}px;stroke-width:${4 * initialUnits}px`}>{city.name}</text></a>; })}</g>
     </svg>
-    <div class="atlas-view-label" data-view-label aria-live="polite">全球视图</div>
-    {visited.length === 0 && (
-      <div class="atlas-empty-label"><span class="empty-line"></span>第一枚足迹，留给真实的抵达。</div>
-    )}
+    <div class="atlas-view-label" data-view-label aria-live="polite">{startInChina ? '中国 · 省市足迹' : '全球视图'}</div><div class="atlas-map-note" data-map-note>点击省份，展开城市</div>
+    {visited.length === 0 && <div class="atlas-empty-label">第一枚足迹，留给真实的抵达。</div>}
   </div>
-
-  <div class="atlas-caption">
-    <p id="atlas-instructions">拖动探索，使用 ＋ / − 缩放。键盘聚焦地图后，可用方向键移动，Home 返回全球。</p>
-    <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">地图数据 · Natural Earth</a>
-  </div>
-
+  <div class="atlas-caption"><p id="atlas-instructions">点击省份查看城市边界，点击橙色城市名翻阅记忆。滚轮、双指或 ＋ / − 缩放；键盘方向键移动，Home 返回全球。</p><a href="/maps/LICENSE.md" target="_blank" rel="noopener">地图来源与许可</a></div>
   <div class="atlas-city-browser">
-    <div class="atlas-browser-heading">
-      <h2>足迹里的城市<span>{visited.length}</span></h2>
-      <label class="atlas-country-filter">查看国家 / 地区
-        <select data-country-select aria-label="筛选国家或地区">
-          <option value="">全部国家 / 地区</option>
-          {countries.map(([code, name]) => <option value={code}>{name}</option>)}
-        </select>
-      </label>
-    </div>
-    {visited.length > 0 ? (
-      <ul class="atlas-city-list">
-        {visited.map((city: City) => (
-          <li data-city-item data-country-code={city.countryCode}>
-            <a href={'/cities/' + city.id + '/'}>
-              <span>{city.name}</span><small>{city.countryName}</small><span aria-hidden="true">↗</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p class="atlas-list-empty">还没有录入已到访城市。正在规划的目的地会保留在旅行计划里，不计入足迹。</p>
-    )}
+    <div class="atlas-browser-heading"><h2>足迹里的城市<span>{visited.length}</span></h2><div class="atlas-filters">
+      <label class="atlas-filter">国家 / 地区<select data-country-select aria-label="筛选国家或地区"><option value="">全部国家 / 地区</option>{countries.map(([code,name]) => <option value={code} selected={startInChina && code === 'CHN'}>{name}</option>)}</select></label>
+      <label class="atlas-filter" data-region-filter hidden={!startInChina}>省份<select data-province-select aria-label="查看中国省份及城市"><option value="">全部省份</option>{china.features.map(feature => <option value={feature.properties.code}>{feature.properties.name}</option>)}</select></label>
+    </div></div>
+    {visited.length > 0 ? <ul class="atlas-city-list">{visited.map(city => <li data-city-item data-country-code={city.countryCode} data-region-code={city.regionCode}>
+      <button type="button" data-locate-city={city.id} aria-label={'在地图中查看' + city.name}><span class="city-list-pin" aria-hidden="true"></span><span>{city.name}<small>{city.countryName}{city.region && city.region !== city.name ? ' · ' + city.region : ''}</small></span><span class="city-locate-label">定位</span></button>
+      <a href={'/cities/' + city.id + '/'} aria-label={'翻阅' + city.name + '的旅行记录'}>旅行记录 <span aria-hidden="true">↗</span></a>
+    </li>)}</ul> : <p class="atlas-list-empty">还没有录入已到访城市。正在规划的目的地会保留在旅行计划里，不计入足迹。</p>}
     <p class="atlas-filter-empty" data-filter-empty hidden>这里还没有已公开的到访记录，下一次抵达后再点亮。</p>
   </div>
 </world-atlas>
-
-<script>
-  import './atlas-client.js';
-</script>
-
+<script>import './atlas-client.js';</script>
 <style>
-  .world-atlas{display:block;border-top:1px solid var(--line,#dfdfd3)}
-  .atlas-toolbar,.atlas-buttons,.atlas-legend,.atlas-caption,.atlas-browser-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}
-  .atlas-toolbar{padding:17px 0}
-  .atlas-legend{justify-content:flex-start;gap:24px;font-size:12px;color:var(--muted,#70766d)}
-  .atlas-legend>span{display:inline-flex;align-items:center;gap:8px}
-  .atlas-legend i{display:inline-block;width:14px;height:10px;border:1px solid #aabca2;border-radius:1px;background:#dce5d1}
-  .atlas-legend .city-key{width:8px;height:8px;border-radius:50%;background:var(--orange,#c7643e);border:0}
-  .atlas-buttons{gap:7px}
-  .atlas-buttons button{display:grid;place-items:center;min-width:38px;height:38px;border:1px solid var(--line,#dfdfd3);background:var(--white,#fffefa);color:var(--green,#244b3e);border-radius:3px;font:19px/1 var(--sans,sans-serif);cursor:pointer}
-  .atlas-buttons [data-reset]{font-size:12px;padding:0 13px}
-  .atlas-buttons button:hover{background:var(--light,#efefe5)}
-  .atlas-canvas{position:relative;overflow:hidden;border:1px solid #dfe3d8;border-radius:4px;background:#f0f2eb}
-  .atlas-map{display:block;width:100%;height:auto;aspect-ratio:2;cursor:grab;touch-action:none;overflow:hidden}
-  .atlas-map.is-dragging{cursor:grabbing}
-  .atlas-map:focus-visible{outline-offset:-4px}
-  .atlas-water{fill:#f0f2eb}
-  .atlas-country{fill:#dddeda;stroke:#f8f7f2;stroke-width:.75;cursor:pointer;transition:fill .16s}
-  .atlas-country:hover{fill:#cad1c3}
-  .atlas-country.is-visited{fill:#bdcfae;stroke:#f8f7f2}
-  .atlas-country.is-selected{fill:#a8bda0;stroke:#718c6e;stroke-width:1}
-  .atlas-region-labels{fill:#687360;font:13px var(--serif,serif);letter-spacing:3px;pointer-events:none}
-  .atlas-region-labels text{paint-order:stroke;stroke:#f0f2eb;stroke-width:3px}
-  .atlas-map[data-zoomed="true"] .atlas-region-labels{display:none}
-  .atlas-city circle{fill:var(--orange,#c7643e);stroke:var(--white,#fffefa);stroke-width:1.5}
-  .atlas-city:hover circle,.atlas-city:focus circle{fill:var(--green,#244b3e)}
-  .atlas-city-label{display:none;font:12px var(--sans,sans-serif);fill:var(--green,#244b3e);paint-order:stroke;stroke:#fffefa;stroke-width:3px;stroke-linejoin:round;pointer-events:none}
-  .atlas-map[data-zoomed="true"] .atlas-city-label,.atlas-city:hover .atlas-city-label,.atlas-city:focus .atlas-city-label{display:block}
-  .atlas-view-label{position:absolute;top:16px;left:18px;background:#f8f7f2e8;border:1px solid #d6ddcf;color:#53644d;padding:4px 10px;font-size:12px;border-radius:2px;pointer-events:none}
-  .atlas-empty-label{position:absolute;left:24px;bottom:20px;display:flex;align-items:center;gap:10px;color:#697363;font:14px var(--serif,serif);pointer-events:none}
-  .empty-line{display:block;width:20px;height:1px;background:#a2ad97}
-  .atlas-caption{align-items:flex-start;padding:12px 0 25px;font-size:12px;color:var(--muted,#70766d);line-height:1.8}
-  .atlas-caption p{margin:0;max-width:690px}
-  .atlas-caption a{white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
-  .atlas-city-browser{padding:27px 0 16px;border-top:1px solid var(--line,#dfdfd3)}
-  .atlas-browser-heading{align-items:baseline;flex-wrap:wrap}
-  .atlas-browser-heading h2{margin:0;font:500 23px/1.6 var(--serif,serif)}
-  .atlas-browser-heading h2 span{font:15px Georgia,serif;color:var(--muted,#70766d);margin-left:15px}
-  .atlas-country-filter{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--muted,#70766d)}
-  .atlas-country-filter select{max-width:210px;border:1px solid var(--line,#dfdfd3);background:var(--white,#fffefa);border-radius:3px;padding:8px 28px 8px 10px;color:var(--ink,#263d34);font:12px var(--sans,sans-serif)}
-  .atlas-list-empty,.atlas-filter-empty{font-size:14px;color:var(--muted,#70766d);line-height:1.9;padding:19px 0 7px;margin:0}
-  .atlas-city-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;gap:12px;margin:22px 0 0;padding:0}
-  .atlas-city-list li[hidden],.atlas-filter-empty[hidden]{display:none}
-  .atlas-city-list a{display:flex;align-items:center;gap:12px;border:1px solid var(--line,#dfdfd3);border-radius:3px;padding:13px 16px;font-size:15px;background:var(--white,#fffefa);text-decoration:none;color:var(--ink,#263d34)}
-  .atlas-city-list small{font-size:12px;color:var(--muted,#70766d)}
-  .atlas-city-list a>span:last-child{margin-left:auto;color:var(--orange,#c7643e)}
-  @media(max-width:760px){
-    .atlas-toolbar{gap:12px;align-items:flex-start}
-    .atlas-legend{gap:9px;flex-direction:column;align-items:flex-start}
-    .atlas-buttons{gap:5px}
-    .atlas-buttons button{min-width:36px;height:36px}
-    .atlas-buttons [data-reset]{padding:0 9px}
-    .atlas-map{aspect-ratio:1.55}
-    .atlas-empty-label{font-size:12px;bottom:12px;left:14px}
-    .atlas-view-label{top:10px;left:10px;font-size:12px}
-    .atlas-caption{display:block;padding-bottom:20px}
-    .atlas-caption a{display:inline-block;margin-top:7px}
-    .atlas-browser-heading{gap:13px}
-    .atlas-browser-heading h2{font-size:21px}
-    .atlas-country-filter{width:100%;justify-content:space-between}
-    .atlas-city-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    .atlas-city-list a{padding:12px;gap:7px;flex-wrap:wrap}
-    .atlas-city-list small{width:100%;order:3}
-  }
-  @media(prefers-reduced-motion:reduce){.atlas-country{transition:none}}
+  .world-atlas{display:block;border-top:1px solid var(--line)}
+  .atlas-toolbar,.atlas-buttons,.atlas-scope,.atlas-legend,.atlas-caption,.atlas-browser-heading,.atlas-filters{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .atlas-toolbar{padding:17px 0 12px}.atlas-scope{gap:0;border:1px solid var(--line);border-radius:3px;overflow:hidden}.atlas-scope button{border:0;background:var(--white);color:var(--muted);padding:10px 18px;font:14px var(--sans);cursor:pointer}.atlas-scope button[aria-pressed="true"]{background:var(--green);color:var(--white)}
+  .atlas-buttons{gap:7px}.atlas-buttons button{display:grid;place-items:center;min-width:38px;height:38px;border:1px solid var(--line);background:var(--white);color:var(--green);border-radius:3px;font:19px/1 var(--sans);cursor:pointer}.atlas-buttons [data-reset]{font-size:12px;padding:0 13px}.atlas-buttons button:hover{background:var(--light)}
+  .atlas-legend{justify-content:flex-start;gap:23px;font-size:12px;color:var(--muted);padding-bottom:14px;flex-wrap:wrap}.atlas-legend>span{display:inline-flex;align-items:center;gap:7px}.atlas-legend i{width:15px;height:11px;border:1px solid #b2c4a5;border-radius:1px;background:#dce5d1}.atlas-legend .province-key{background:#b3c7a4;border-color:#7f9b73}.atlas-legend .city-key{width:9px;height:9px;border-radius:50%;background:var(--orange);border:2px solid var(--white);outline:1px solid var(--orange)}
+  .atlas-canvas{position:relative;overflow:hidden;border:1px solid #dfe3d8;border-radius:4px;background:#edf0e9}.atlas-map{display:block;width:100%;height:540px;max-height:65vh;min-height:350px;cursor:grab;touch-action:none;overflow:hidden}.atlas-map.is-dragging{cursor:grabbing}.atlas-map:focus-visible{outline-offset:-4px}.atlas-water{fill:#edf0e9}
+  .atlas-country{fill:#dddeda;stroke:var(--paper);stroke-width:.75;cursor:pointer}.atlas-country:hover{fill:#cad1c3}.atlas-country.is-visited{fill:#dce5d1}.atlas-country.is-selected{fill:#c5d6b8;stroke:#718c6e}.atlas-region-labels{fill:#687360;font:13px var(--serif);letter-spacing:3px;pointer-events:none}.atlas-region-labels text{paint-order:stroke;stroke:#edf0e9;stroke-width:3px}.atlas-map[data-zoomed="true"] .atlas-region-labels{display:none}
+  .atlas-provinces,.atlas-province-labels,.atlas-local-labels{display:none}.atlas-map[data-china="true"] .atlas-provinces,.atlas-map[data-china="true"] .atlas-province-labels,.atlas-map[data-china="true"] .atlas-local-labels{display:block}.atlas-map[data-china="true"] [data-country="CHN"]{visibility:hidden}
+  .atlas-map[data-china="true"] .atlas-grid{display:none}
+  .atlas-province{fill:#e5e7dc;stroke:#abb5a1;stroke-width:.75;cursor:pointer;transition:fill .16s}.atlas-province.has-visit{fill:#b3c7a4}.atlas-province:hover,.atlas-province.is-selected{fill:#ced9c1;stroke:#526f4c;stroke-width:1.2}.atlas-province-labels text,.atlas-local-labels :global(text){fill:#596850;text-anchor:middle;dominant-baseline:central;font-family:var(--sans);paint-order:stroke;stroke:#f8f7f2;pointer-events:none}.atlas-map[data-province] .atlas-province-labels{display:none}
+  .atlas-city-areas :global(path){fill:transparent;stroke:#a7b59c;stroke-width:.65;vector-effect:non-scaling-stroke;cursor:pointer}.atlas-city-areas :global(path.is-visited){fill:#d89c77;fill-opacity:.8;stroke:var(--orange);stroke-width:1.3}.atlas-city-areas :global(path:hover){fill:#d6dfcc}.atlas-city-areas :global(a:hover path){fill:#ce855e}
+  .atlas-city-halo{fill:var(--orange);fill-opacity:.15;stroke:none}.atlas-city-dot{fill:var(--orange);stroke:var(--white);stroke-width:2}.atlas-city:hover .atlas-city-dot,.atlas-city:focus .atlas-city-dot{fill:var(--green)}.atlas-city-label{display:none;font-family:var(--sans);font-weight:600;fill:var(--orange);paint-order:stroke;stroke:var(--white);stroke-linejoin:round;pointer-events:none}.atlas-map[data-zoomed="true"] .atlas-city-label,.atlas-city:hover .atlas-city-label,.atlas-city:focus .atlas-city-label{display:block}.atlas-city:focus-visible{outline:0}.atlas-city:focus-visible .atlas-city-halo{fill-opacity:.35;stroke:var(--green);stroke-width:1.5;vector-effect:non-scaling-stroke}
+  .atlas-view-label,.atlas-map-note,.atlas-empty-label{position:absolute;background:#f8f7f2ec;color:#53644d;font-size:12px;pointer-events:none}.atlas-view-label{top:16px;left:18px;border:1px solid #d6ddcf;padding:5px 11px;border-radius:2px}.atlas-map-note{bottom:14px;right:16px;padding:4px 9px;border-radius:2px}.atlas-empty-label{left:18px;bottom:16px;padding:5px 10px;font-family:var(--serif)}
+  .atlas-caption{align-items:flex-start;padding:12px 0 25px;font-size:12px;color:var(--muted);line-height:1.8}.atlas-caption p{margin:0;max-width:760px}.atlas-caption a{white-space:nowrap;text-decoration:underline;text-underline-offset:3px}.atlas-city-browser{padding:27px 0 16px;border-top:1px solid var(--line)}.atlas-browser-heading{align-items:baseline;flex-wrap:wrap}.atlas-browser-heading h2{margin:0;font:500 23px/1.6 var(--serif)}.atlas-browser-heading h2 span{font:15px Georgia,serif;color:var(--muted);margin-left:15px}
+  .atlas-filters{gap:18px;flex-wrap:wrap}.atlas-filter{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--muted)}.atlas-filter[hidden]{display:none}.atlas-filter select{max-width:190px;border:1px solid var(--line);background:var(--white);border-radius:3px;padding:8px;color:var(--ink);font:12px var(--sans)}.atlas-list-empty,.atlas-filter-empty{font-size:14px;color:var(--muted);line-height:1.9;padding:19px 0 7px;margin:0}
+  .atlas-city-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;gap:12px;margin:22px 0 0;padding:0}.atlas-city-list li{border:1px solid var(--line);border-radius:3px;background:var(--white);overflow:hidden}.atlas-city-list li[hidden],.atlas-filter-empty[hidden]{display:none}.atlas-city-list button{display:flex;align-items:center;gap:12px;border:0;background:none;width:100%;text-align:left;padding:15px;color:var(--ink);font:16px var(--sans);cursor:pointer}.atlas-city-list button:hover{background:var(--light)}.city-list-pin{width:10px;height:10px;flex:none;background:var(--orange);border-radius:50%;box-shadow:0 0 0 4px #c7643e18}.atlas-city-list small{display:block;font-size:12px;color:var(--muted);margin-top:7px}.city-locate-label{margin-left:auto;color:var(--muted);font-size:12px}.atlas-city-list a{display:block;border-top:1px solid var(--line);padding:8px 15px;font-size:12px;color:var(--green);text-decoration:none}.atlas-city-list a span{float:right}
+  @media(max-width:1000px){.atlas-city-list{grid-template-columns:repeat(3,minmax(0,1fr))}.atlas-map{height:470px}}
+  @media(max-width:760px){.atlas-toolbar{gap:8px}.atlas-scope button{padding:10px 12px;font-size:12px}.atlas-buttons{gap:5px}.atlas-buttons button{min-width:34px;height:36px}.atlas-buttons [data-reset]{padding:0 8px}.atlas-legend{gap:15px}.atlas-map{height:420px;min-height:350px;max-height:65vh}.atlas-view-label{top:10px;left:10px}.atlas-map-note{bottom:10px;right:10px}.atlas-caption{display:block;padding-bottom:20px}.atlas-caption a{display:inline-block;margin-top:7px}.atlas-browser-heading{gap:13px}.atlas-browser-heading h2{font-size:21px}.atlas-filters{width:100%;gap:12px}.atlas-filter{flex:1;justify-content:space-between}.atlas-filter select{max-width:145px}.atlas-city-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.atlas-city-list button{padding:13px;gap:9px}.atlas-city-list a{padding:8px 13px}}
+  @media(prefers-reduced-motion:reduce){.atlas-province{transition:none}}
 </style>
