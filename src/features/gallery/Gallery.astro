@@ -3,11 +3,14 @@ interface Photo {
   id: string;
   src: string;
   thumbnail?: string;
+  preview?: string;
   alt: string;
   caption?: string;
   cityId?: string;
   featured?: boolean;
   ticketSrc?: string;
+  ticketWidth?: number;
+  ticketHeight?: number;
   width?: number;
   height?: number;
 }
@@ -42,13 +45,13 @@ const featured = photos.filter((photo) => photo.featured).slice(0, 3);
     <>
       {featured.length > 0 && (
         <div class="featured-section">
-          <div class="gallery-subheading"><h3>精选收藏</h3><span>点击查看完整原照片</span></div>
+          <div class="gallery-subheading"><h3>精选收藏</h3><span>点击查看照片</span></div>
           <div class="featured-grid" data-count={featured.length}>
             {featured.map((photo) => (
               <figure class="featured-photo">
-                <a href={photo.src} data-gallery-index={photos.indexOf(photo)} aria-label={`查看原照片：${photo.alt}`}>
+                <a href={photo.src} data-gallery-index={photos.indexOf(photo)} aria-label={`查看照片：${photo.alt}`}>
                   <span class="featured-frame" data-photo-frame>
-                    <img src={photo.ticketSrc || photo.src} alt={photo.ticketSrc ? `${photo.alt}，旅行票根` : photo.alt} loading="lazy" decoding="async" />
+                    <img src={photo.ticketSrc || photo.thumbnail || photo.src} alt={photo.ticketSrc ? `${photo.alt}，旅行票根` : photo.alt} width={photo.ticketSrc ? photo.ticketWidth : photo.width} height={photo.ticketSrc ? photo.ticketHeight : photo.height} loading="lazy" decoding="async" />
                     <span class="image-error" hidden>图片暂时无法加载</span>
                   </span>
                 </a>
@@ -67,7 +70,8 @@ const featured = photos.filter((photo) => photo.featured).slice(0, 3);
               href={photo.src}
               data-gallery-photo
               data-gallery-index={index}
-              data-photo-src={photo.src}
+              data-photo-src={photo.preview || photo.src}
+              data-photo-original={photo.src}
               data-photo-alt={photo.alt}
               data-photo-caption={photo.caption || photo.alt}
               aria-label={`查看照片 ${index + 1}：${photo.alt}`}
@@ -97,7 +101,7 @@ const featured = photos.filter((photo) => photo.featured).slice(0, 3);
           <p data-viewer-status aria-live="polite" aria-atomic="true"></p>
           <button type="button" data-viewer-next aria-label="下一张照片">下一张 <span aria-hidden="true">→</span></button>
         </footer>
-        <p class="viewer-hint">可使用键盘左右方向键切换，Esc 关闭。</p>
+        <p class="viewer-hint"><a data-viewer-original target="_blank" rel="noopener">打开完整尺寸 ↗</a><br />可使用键盘左右方向键切换，Esc 关闭。</p>
       </dialog>
     </>
   )}

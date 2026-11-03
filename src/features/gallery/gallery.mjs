@@ -24,6 +24,7 @@ function initializeGallery(root) {
   const status = dialog.querySelector('[data-viewer-status]');
   const loading = dialog.querySelector('[data-viewer-loading]');
   const error = dialog.querySelector('[data-viewer-error]');
+  const original = dialog.querySelector('[data-viewer-original]');
   const previous = dialog.querySelector('[data-viewer-previous]');
   const next = dialog.querySelector('[data-viewer-next]');
   let current = 0;
@@ -39,6 +40,7 @@ function initializeGallery(root) {
     image.hidden = true;
     image.alt = photo.photoAlt;
     image.src = photo.photoSrc;
+    original.href = photo.photoOriginal;
     previous.disabled = next.disabled = items.length < 2;
   }
 

@@ -1,0 +1,78 @@
+---
+interface Place {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  alt: string;
+  width: number;
+  height: number;
+  visitStatus: 'visited' | 'suggestion';
+  sourceUrl: string;
+  sourceLabel: string;
+  checkedAt: string;
+  imageSourceUrl: string;
+  imageAuthor: string;
+  imageLicense: string;
+  imageLicenseUrl: string;
+}
+interface Props { places: Place[]; tripId: string }
+const { places, tripId } = Astro.props;
+const headingId = `recommendations-${tripId}`;
+---
+<section class="wrap recommendations" aria-labelledby={headingId}>
+  <div class="section-head"><div><p class="eyebrow">去过的地方，也值得再走一遍。</p><h2 id={headingId}>景点手记与下次的灵感</h2></div></div>
+  <p class="recommendation-note">这里收录游览建议，带有「下次可去」的地点尚未确认到访。配图均为目的地参考图，个人旅行照片收在相册里。</p>
+  <div class="recommendation-grid">
+    {places.map(place => <article class="recommendation-card">
+      <div class="reference-frame" data-reference-frame>
+        <img src={place.image} alt={place.alt} width={place.width} height={place.height} loading="lazy" decoding="async" />
+        <span class="reference-label">目的地参考图</span>
+        <p class="reference-error" hidden>参考图片暂时无法加载</p>
+      </div>
+      <div class="recommendation-copy">
+        <span class:list={['place-status', { 'place-suggestion': place.visitStatus === 'suggestion' }]}>{place.visitStatus === 'visited' ? '✓ 这次去过' : '＋ 下次可去 · 推荐'}</span>
+        <h3>{place.name}</h3>
+        <p class="place-description">{place.description}</p>
+        <details class="place-sources">
+          <summary>资料与图片来源</summary>
+          <p>游览资料：<a href={place.sourceUrl} target="_blank" rel="noopener noreferrer">{place.sourceLabel} ↗</a><br />核查于 {place.checkedAt.replaceAll('-', '.')}，出行前请再确认预约与开放安排。</p>
+          <p>参考图：<a href={place.imageSourceUrl} target="_blank" rel="noopener noreferrer">{place.imageAuthor} ↗</a> · <a href={place.imageLicenseUrl} target="_blank" rel="noopener noreferrer">{place.imageLicense}</a>。本站制作了压缩展示副本。</p>
+        </details>
+      </div>
+    </article>)}
+  </div>
+</section>
+<script>
+  document.querySelectorAll<HTMLImageElement>('[data-reference-frame] img').forEach(image => {
+    const showError = () => {
+      image.hidden = true;
+      image.closest('[data-reference-frame]')?.querySelector('.reference-error')?.removeAttribute('hidden');
+    };
+    image.addEventListener('error', showError);
+    if (image.complete && !image.naturalWidth) showError();
+  });
+</script>
+<style>
+  .recommendations { padding-block: 16px 48px; }
+  .recommendation-note { max-width: 760px; margin: -8px 0 28px; font-size: 14px; line-height: 1.9; color: var(--muted); }
+  .recommendation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+  .recommendation-card { overflow: hidden; background: var(--white); border: 1px solid var(--line); border-radius: 4px; }
+  .reference-frame { position: relative; display: grid; place-items: center; aspect-ratio: 3/2; background: var(--light); overflow: hidden; }
+  .reference-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  .recommendation-card:hover img { transform: scale(1.025); }
+  .reference-label { position: absolute; left: 18px; bottom: 16px; padding: 3px 9px; border-radius: 2px; background: #263d34d9; color: var(--white); font-size: 12px; }
+  .reference-error { padding: 24px; color: var(--muted); font-size: 14px; }
+  .recommendation-copy { padding: 24px; }
+  .place-status { display: inline-block; margin-bottom: 10px; font-size: 12px; color: var(--green); }
+  .place-suggestion { color: var(--orange); }
+  .recommendation-copy h3 { margin-bottom: 12px; }
+  .place-description { font-size: 14px; line-height: 1.9; color: var(--muted); }
+  .place-sources { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+  .place-sources summary { width: fit-content; cursor: pointer; color: var(--green); }
+  .place-sources p { margin-top: 12px; line-height: 1.85; overflow-wrap: anywhere; }
+  .place-sources a { text-decoration: underline; text-underline-offset: 3px; }
+  [hidden] { display: none !important; }
+  @media (max-width: 760px) { .recommendations { padding-block: 8px 32px; }.recommendation-grid { grid-template-columns: 1fr; gap: 22px; }.recommendation-copy { padding: 20px; } }
+  @media (prefers-reduced-motion: reduce) { .reference-frame img { transition: none; } }
+</style>

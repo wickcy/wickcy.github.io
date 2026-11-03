@@ -30,4 +30,4 @@ for(const route of ['index.html','plans/index.html','trips/index.html','photos/i
   try{await stat(path.join(root,route));}catch{failures.push(`缺少页面：${route}`);}
 }
 if(failures.length)throw new Error([...new Set(failures)].join('\n'));
-console.log(`发布检查通过：${pages} 个页面，本地链接与资源完整，未检测到具体出行日期或酒店字段。`);
+console.log(`发布检查通过：${pages} 个页面，本地链接与资源完整，未检测到受限制的日期或酒店字段。`);

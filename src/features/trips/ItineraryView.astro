@@ -1,25 +1,26 @@
 ---
 import { safeURL } from './plan-model.mjs';
 interface Stop { time?: string; name: string; note?: string; url?: string }
-interface Day { title: string; summary?: string; stops: Stop[] }
-interface Props { plan: { type: 'itinerary'; days: Day[]; budgetNote?: string }; tripId?: string }
-const { plan, tripId = 'trip' } = Astro.props;
+interface Day { title: string; label?: string; summary?: string; stops: Stop[] }
+interface Props { plan: { type: 'itinerary'; days: Day[]; budgetNote?: string }; tripId?: string; completed?: boolean }
+const { plan, tripId = 'trip', completed = false } = Astro.props;
 const headingId = `itinerary-heading-${tripId}`;
 ---
 <section class="wrap simple-itinerary" aria-labelledby={headingId}>
-  <div class="section-head"><div><p class="eyebrow">把期待，连成一条路线。</p><h2 id={headingId}>一路，慢慢走。</h2></div></div>
+  <div class="section-head"><div><p class="eyebrow">{completed ? '把走过的日子，按顺序收好。' : '把期待，连成一条路线。'}</p><h2 id={headingId}>{completed ? '这一路的记忆' : '一路，慢慢走。'}</h2></div></div>
   {plan.days.length > 0 ? <ol class="itinerary-days">{plan.days.map((day, index) => <li class="itinerary-day">
-    <div class="day-number"><b>D{index + 1}</b><span>第 {index + 1} 天</span></div>
+    <div class:list={['day-number', { 'day-labelled': Boolean(day.label) }]}><b>{day.label || `D${index + 1}`}</b><span>{day.label ? (completed ? '旅行记录' : '行程安排') : `第 ${index + 1} 天`}</span></div>
     <article class="itinerary-card"><h3>{day.title}</h3>{day.summary && <p class="day-summary">{day.summary}</p>}
       <ol class="itinerary-stops">{day.stops.map(stop => {
         const href = stop.url ? safeURL(stop.url) : '#';
-        return <li><span class="stop-time">{stop.time || '随心安排'}</span><div><h4>{href !== '#' ? <a href={href} target={href.startsWith('https:') ? '_blank' : undefined} rel={href.startsWith('https:') ? 'noopener' : undefined}>{stop.name}<span class="stop-link" aria-hidden="true"> ↗</span></a> : stop.name}</h4>{stop.note && <p>{stop.note}</p>}</div></li>;
+        return <li><span class="stop-time">{stop.time || (completed ? '沿途' : '随心安排')}</span><div><h4>{href !== '#' ? <a href={href} target={href.startsWith('https:') ? '_blank' : undefined} rel={href.startsWith('https:') ? 'noopener' : undefined}>{stop.name}<span class="stop-link" aria-hidden="true"> ↗</span></a> : stop.name}</h4>{stop.note && <p>{stop.note}</p>}</div></li>;
       })}</ol>
     </article>
-  </li>)}</ol> : <p class="itinerary-empty">路线还在慢慢补充，先把想去的地方记下来。</p>}
-  {plan.budgetNote && <aside class="itinerary-budget"><h3>出发前的小算盘</h3><p>{plan.budgetNote}</p></aside>}
+  </li>)}</ol> : <p class="itinerary-empty">{completed ? '旅途的细节，留待慢慢补记。' : '路线还在慢慢补充，先把想去的地方记下来。'}</p>}
+  {plan.budgetNote && <aside class="itinerary-budget"><h3>{completed ? '旅行花费备注' : '出发前的小算盘'}</h3><p>{plan.budgetNote}</p></aside>}
 </section>
 <style>
+  .day-number.day-labelled b{font-size:24px}
   .simple-itinerary{padding-block:40px 64px}.itinerary-days,.itinerary-stops{list-style:none;margin:0;padding:0}.itinerary-day{display:grid;grid-template-columns:76px minmax(0,1fr);gap:24px;padding-bottom:28px}.day-number{position:relative;text-align:center;padding-top:20px}.day-number b{display:block;font:30px/1.4 Georgia,serif;color:var(--green)}.day-number span{font-size:12px;color:var(--muted)}.day-number:after{content:"";position:absolute;width:1px;background:var(--line);left:50%;top:90px;bottom:-10px}.itinerary-day:last-child .day-number:after{display:none}.itinerary-card{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:24px 28px}.itinerary-card>h3{font:500 24px/1.5 var(--serif);margin:0 0 10px}.day-summary{font-size:14px;color:var(--muted);margin:0 0 18px}.itinerary-stops li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:18px;padding:14px 0;border-top:1px solid var(--line)}.stop-time{font-size:12px;color:var(--orange);padding-top:2px}.itinerary-stops h4{font-size:15px;font-weight:600;margin:0 0 5px}.itinerary-stops a{text-decoration:underline;text-underline-offset:4px}.itinerary-stops p{font-size:14px;color:var(--muted);margin:0;line-height:1.85}.stop-link{font-size:12px;color:var(--orange)}.itinerary-budget{background:var(--light);border:1px solid var(--line);border-radius:4px;margin-left:100px;padding:24px 28px}.itinerary-budget h3{font:500 21px/1.5 var(--serif);margin:0 0 8px}.itinerary-budget p,.itinerary-empty{font-size:14px;line-height:1.85;margin:0}.itinerary-empty{padding:28px;border:1px dashed var(--line);color:var(--muted)}
   @media(max-width:760px){.simple-itinerary{padding-block:28px 40px}.itinerary-day{grid-template-columns:1fr;gap:12px;padding-bottom:24px}.day-number{text-align:left;padding:0;display:flex;align-items:baseline;gap:12px}.day-number b{font-size:24px}.day-number:after{display:none}.itinerary-card{padding:20px}.itinerary-card>h3{font-size:22px}.itinerary-stops li{grid-template-columns:58px minmax(0,1fr);gap:12px}.itinerary-budget{margin-left:0;padding:20px}}
 </style>
