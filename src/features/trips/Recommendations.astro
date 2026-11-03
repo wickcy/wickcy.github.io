@@ -22,7 +22,6 @@ const headingId = `recommendations-${tripId}`;
 ---
 <section class="wrap recommendations" aria-labelledby={headingId}>
   <div class="section-head"><div><p class="eyebrow">去过的地方，也值得再走一遍。</p><h2 id={headingId}>景点手记与下次的灵感</h2></div></div>
-  <p class="recommendation-note">这里收录游览建议，带有「下次可去」的地点尚未确认到访。配图均为目的地参考图，个人旅行照片收在相册里。</p>
   <div class="recommendation-grid">
     {places.map(place => <article class="recommendation-card">
       <div class="reference-frame" data-reference-frame>
@@ -36,8 +35,8 @@ const headingId = `recommendations-${tripId}`;
         <p class="place-description">{place.description}</p>
         <details class="place-sources">
           <summary>资料与图片来源</summary>
-          <p>游览资料：<a href={place.sourceUrl} target="_blank" rel="noopener noreferrer">{place.sourceLabel} ↗</a><br />核查于 {place.checkedAt.replaceAll('-', '.')}，出行前请再确认预约与开放安排。</p>
-          <p>参考图：<a href={place.imageSourceUrl} target="_blank" rel="noopener noreferrer">{place.imageAuthor} ↗</a> · <a href={place.imageLicenseUrl} target="_blank" rel="noopener noreferrer">{place.imageLicense}</a>。本站制作了压缩展示副本。</p>
+          <p>游览资料：<a href={place.sourceUrl} target="_blank" rel="noopener noreferrer">{place.sourceLabel} ↗</a><br />资料核查：{place.checkedAt.replaceAll('-', '.')}</p>
+          <p>参考图：<a href={place.imageSourceUrl} target="_blank" rel="noopener noreferrer">{place.imageAuthor} ↗</a> · <a href={place.imageLicenseUrl} target="_blank" rel="noopener noreferrer">{place.imageLicense}</a>。图片已缩放并转换为 WebP。</p>
         </details>
       </div>
     </article>)}
@@ -55,7 +54,6 @@ const headingId = `recommendations-${tripId}`;
 </script>
 <style>
   .recommendations { padding-block: 16px 48px; }
-  .recommendation-note { max-width: 760px; margin: -8px 0 28px; font-size: 14px; line-height: 1.9; color: var(--muted); }
   .recommendation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
   .recommendation-card { overflow: hidden; background: var(--white); border: 1px solid var(--line); border-radius: 4px; }
   .reference-frame { position: relative; display: grid; place-items: center; aspect-ratio: 3/2; background: var(--light); overflow: hidden; }
