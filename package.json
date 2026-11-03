@@ -1,0 +1,15 @@
+{
+  "name": "travel-memories",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.23.4" },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "test": "node --test --test-isolation=none",
+    "check:site": "node scripts/check-site.mjs"
+  },
+  "dependencies": { "astro": "7.4.5" }
+}

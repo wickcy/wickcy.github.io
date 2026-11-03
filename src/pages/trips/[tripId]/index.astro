@@ -1,0 +1,21 @@
+---
+import { render } from 'astro:content';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import PlanView from '../../../features/trips/PlanView.astro';
+import ItineraryView from '../../../features/trips/ItineraryView.astro';
+import { siteContent, tripPlan, tripPhotos, cities } from '../../../lib/content';
+import { displayCityIds } from '../../../lib/travel-policy';
+export async function getStaticPaths(){const {trips}=await siteContent();return trips.map(trip=>({params:{tripId:trip.id},props:{trip}}));}
+const {trip}=Astro.props;
+const {Content}=await render(trip);
+const plan=tripPlan(trip.id);
+const photos=tripPhotos(trip.id);
+const status={planning:'规划中',completed:'已完成',cancelled:'已取消'}[trip.data.status];
+---
+<SiteLayout title={trip.data.title} description={trip.data.summary} active={trip.data.status==='planning'?'plans':'trips'}>
+  <div class="wrap"><div class="breadcrumb"><a href="/">足迹</a><span aria-hidden="true">/</span><a href={trip.data.status==='planning'?'/plans/':'/trips/'}>{trip.data.status==='planning'?'旅行计划':'旅行记录'}</a><span aria-hidden="true">/</span><span>{trip.data.title}</span></div><header class="page-head trip-head"><div><div class="meta-row"><span class={`pill ${trip.data.status==='planning'?'pill-planning':''}`}>{status}</span><span>{trip.data.season}</span><span>最后更新 {trip.data.updatedAt.replaceAll('-','.')}</span></div><h1>{trip.data.title}</h1><p>{trip.data.summary}</p></div><a class="btn btn-line" href={`/trips/${trip.id}/photos/`}>旅行相册{photos.length?` · ${photos.length} 张`:''}</a></header><div class="trip-cities"><span>关联城市</span><div class="city-links">{displayCityIds(trip).map(id=>{const city=cities.find(c=>c.id===id);return city&&<a href={`/cities/${city.id}/`}>{city.name}</a>;})}</div></div>{trip.data.status==='planning'&&<p class="public-note">这是一份仍在更新的公开计划，具体出发日期与住宿细节暂不展示。</p>}<div class="prose trip-prose"><Content/></div></div>
+  {plan?.type==='comparison'&&<PlanView plan={plan} tripId={trip.id}/>}
+  {plan?.type==='itinerary'&&<ItineraryView plan={plan} tripId={trip.id}/>}
+  {!plan&&<div class="wrap content-section"><a class="btn btn-primary" href={`/trips/${trip.id}/photos/`}>翻开这次旅行的照片</a></div>}
+</SiteLayout>
+<style>.trip-head{align-items:center}.trip-head h1{margin-top:16px}.trip-head>div>p{margin-top:17px;max-width:720px}.trip-head .btn{flex-shrink:0}.trip-cities{display:flex;align-items:center;gap:20px;border-block:1px solid var(--line);padding-block:16px}.trip-cities>span{font-size:12px;color:var(--muted)}.trip-cities .city-links a{padding:5px 14px}.public-note{font-size:12px;color:var(--muted);margin-top:14px}.trip-prose{margin-top:24px;margin-bottom:32px}@media(max-width:760px){.trip-head .btn{margin-top:22px}.trip-head .meta-row{gap:12px}.trip-cities{gap:15px}}</style>

@@ -1,0 +1,20 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import WorldAtlas from '../features/atlas/WorldAtlas.astro';
+import TripCard from '../components/TripCard.astro';
+import EmptyState from '../components/EmptyState.astro';
+import { siteContent } from '../lib/content';
+const {trips,cities,visited,countryCount}=await siteContent();
+const completed=trips.filter(t=>t.data.status==='completed');
+const plans=trips.filter(t=>t.data.status==='planning');
+---
+<SiteLayout>
+  <section class="wrap home-intro"><div><p class="eyebrow"><span class="intro-dot"></span>我的旅行地图</p><h1>世界很大，<br/>我们<span class="accent">慢慢走。</span></h1></div><div class="intro-aside"><p>去山野，去水乡，去想去的地方。<br/>把期待写成计划，把走过的路留成记忆。</p><div class="stats"><div><strong>{countryCount}</strong><span>个国家</span></div><div><strong>{visited.length}</strong><span>座城市</span></div><div><strong>{completed.length}</strong><span>段旅程</span></div></div><span class="stats-caption">已记录的足迹</span></div></section>
+  <section class="wrap" aria-label="世界足迹地图"><WorldAtlas cities={cities} visitedCityIds={visited.map(c=>c.id)}/></section>
+  <div class="wrap below-map"><p>每一枚亮起的坐标，都留着一段自己的故事。</p><a href="/trips/">翻阅旅行记录 <span aria-hidden="true">↗</span></a></div>
+  <section class="wrap content-section"><div class="section-head"><div><p class="eyebrow">下一次出发</p><h2>先把期待，写进计划。</h2></div><a class="section-link" href="/plans/">全部计划</a></div>{plans.length?<div class="trip-grid">{plans.slice(0,2).map(trip=><TripCard trip={trip}/>)}</div>:<EmptyState title="下一站，还在酝酿。" description="想去的地方，慢慢收集。下一份旅行计划会从这里开始。"/>}</section>
+  <section class="wrap content-section"><div class="section-head"><div><p class="eyebrow">路上的故事</p><h2>走过以后，留下什么。</h2></div><a class="section-link" href="/trips/">旅行记录</a></div>{completed.length?<div class="trip-grid">{completed.slice(0,2).map(trip=><TripCard trip={trip}/>)}</div>:<EmptyState title="记忆正在慢慢整理。" description="已完成的旅程会在这里留下路线、照片和故事。现在，先从一份期待中的计划开始。" href="/plans/" label="看看下一次旅行"/>}</section>
+</SiteLayout>
+<style>
+.home-intro{padding-top:42px;padding-bottom:34px;display:flex;align-items:end;justify-content:space-between;gap:35px}.home-intro .eyebrow{margin-bottom:15px}.intro-dot{width:6px;height:6px;background:var(--orange);display:inline-block;border-radius:50%;margin-right:9px}.home-intro h1{font-size:54px;line-height:1.35}.intro-aside{max-width:375px;padding-bottom:5px}.intro-aside>p{color:var(--muted);line-height:1.95;font-size:14px;margin-bottom:22px}.stats-caption{font-size:12px;color:var(--muted);display:block;margin-top:7px}.below-map{display:flex;justify-content:space-between;gap:20px;padding-top:17px;font-size:12px;color:var(--muted)}.below-map a{color:var(--green);white-space:nowrap}.below-map a span{margin-left:12px}@media(min-width:1450px){.home-intro h1{font-size:62px}}@media(max-width:760px){.home-intro{padding-top:30px;display:block;padding-bottom:26px}.home-intro h1{font-size:39px}.intro-aside{max-width:none;margin-top:22px}.intro-aside>p{margin-bottom:17px}.stats{justify-content:flex-start}.below-map{font-size:12px;display:block}.below-map a{display:inline-block;margin-top:8px}}
+</style>

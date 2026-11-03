@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import Gallery from '../../../features/gallery/Gallery.astro';
+import { siteContent, tripPhotos } from '../../../lib/content';
+export async function getStaticPaths(){const {trips}=await siteContent();return trips.map(trip=>({params:{tripId:trip.id},props:{trip}}));}
+const {trip}=Astro.props;
+const photos=tripPhotos(trip.id);
+---
+<SiteLayout title={`${trip.data.title}的相册`} active="photos"><div class="wrap"><div class="breadcrumb"><a href="/photos/">相册</a><span aria-hidden="true">/</span><a href={`/trips/${trip.id}/`}>{trip.data.title}</a></div><header class="page-head"><div><p class="eyebrow">旅途里的光，与当时的心情。</p><h1>{trip.data.title}<span class="accent"> · 相册</span></h1></div><a class="section-link" href={`/trips/${trip.id}/`}>回到旅行{trip.data.status==='planning'?'计划':'记录'}</a></header><Gallery photos={photos} title="留住，喜欢的瞬间。"/></div></SiteLayout>

@@ -1,0 +1,4 @@
+[
+  { "id": "taian", "name": "泰安", "countryCode": "CHN", "countryName": "中国", "region": "山东", "lat": 36.2, "lng": 117.1, "coordinateSystem": "WGS84", "description": "山岳、古建与老城。泰山与岱庙，是这次秋游的候选目的地。" },
+  { "id": "shaoxing", "name": "绍兴", "countryCode": "CHN", "countryName": "中国", "region": "浙江", "lat": 30.0, "lng": 120.58, "coordinateSystem": "WGS84", "description": "沿河老街、台门院落与江南烟火，是这次秋游的另一种可能。" }
+]

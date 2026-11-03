@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import TripCard from '../../components/TripCard.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { siteContent } from '../../lib/content';
+import { tripsForCity } from '../../lib/travel-policy';
+export async function getStaticPaths(){const {trips,cities}=await siteContent();return cities.filter(city=>tripsForCity(trips,city.id).length).map(city=>({params:{cityId:city.id},props:{city}}));}
+const {city}=Astro.props;
+const {trips}=await siteContent();
+const related=tripsForCity(trips,city.id);
+const visited=related.filter(t=>t.data.visitedCityIds.includes(city.id));
+const plans=related.filter(t=>t.data.status==='planning');
+---
+<SiteLayout title={city.name} active="atlas"><div class="wrap"><div class="breadcrumb"><a href="/">世界足迹</a><span aria-hidden="true">/</span><span>{city.name}</span></div><header class="page-head"><div><p class="eyebrow">{city.countryName}{city.region?` · ${city.region}`:''}</p><h1>{city.name}<span class="accent">，{visited.length?'留下过记忆。':'还在期待里。'}</span></h1></div><p>{city.description}</p></header><p class="status-note">{visited.length?`已记录 ${visited.length} 次到访`:'尚未记录实际到访 · 不计入点亮足迹'}</p><section class="content-section"><div class="section-head"><h2>在这里的旅行</h2></div>{visited.length?<div class="trip-grid">{visited.map(trip=><TripCard trip={trip}/>)}</div>:<EmptyState title="先把这座城，放进期待。" description="真正走过之后，这里会留下属于这座城市的路线、照片和故事。"/>}</section>{plans.length>0&&<section class="content-section"><div class="section-head"><h2>与这里有关的计划</h2></div><div class="trip-grid">{plans.map(trip=><TripCard trip={trip}/>)}</div></section>}</div></SiteLayout>

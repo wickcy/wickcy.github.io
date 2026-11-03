@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Gallery from '../../features/gallery/Gallery.astro';
+import { siteContent, tripPhotos } from '../../lib/content';
+const {trips}=await siteContent();
+const albums=trips.map(trip=>({trip,photos:tripPhotos(trip.id)})).filter(a=>a.photos.length);
+---
+<SiteLayout title="旅行相册" active="photos"><div class="wrap"><header class="page-head"><div><p class="eyebrow">有些瞬间，想多看一眼。</p><h1>让照片，<span class="accent">慢慢讲。</span></h1></div><p>几张最喜欢的照片，做成旅行票根。其余的光影与小事，也好好留在相册里。</p></header>{albums.length?albums.map(({trip,photos})=><section class="album-section"><div class="section-head"><h2>{trip.data.title}</h2><a class="section-link" href={`/trips/${trip.id}/photos/`}>打开这本相册</a></div><Gallery photos={photos} title="这段旅途的瞬间"/></section>):<Gallery photos={[]} title="旅行相册"/>}</div></SiteLayout>
+<style>.album-section{margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}</style>

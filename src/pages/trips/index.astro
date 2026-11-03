@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import TripCard from '../../components/TripCard.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { siteContent } from '../../lib/content';
+const {trips,cities}=await siteContent();
+const completed=trips.filter(t=>t.data.status==='completed');
+const usedCities=cities.filter(c=>completed.some(t=>t.data.visitedCityIds.includes(c.id)));
+---
+<SiteLayout title="旅行记录" active="trips"><div class="wrap"><header class="page-head"><div><p class="eyebrow">一段路，一段故事。</p><h1>把走过的路，<span class="accent">留在这里。</span></h1></div><p>出发时的路线，路上的小插曲，还有想要再看一眼的风景。每段旅行，都有自己的记忆。</p></header><p class="status-note">已记录 {completed.length} 段旅程</p><section class="content-section" aria-label="旅行记录列表">{completed.length?<><div class="filter-bar"><label for="trip-city">按城市浏览</label><select id="trip-city"><option value="all">全部城市</option>{usedCities.map(c=><option value={c.id}>{c.name}</option>)}</select><p id="trip-filter-result" class="muted" aria-live="polite"></p></div><div class="trip-grid" id="trip-list">{completed.map(trip=><div data-cities={JSON.stringify(trip.data.visitedCityIds)}><TripCard trip={trip}/></div>)}</div></>:<EmptyState title="记忆正在慢慢整理。" description="第一段整理好的旅行，会把这里填满。在那之前，先看看期待中的下一次出发。" href="/plans/" label="看看旅行计划"/>}</section></div></SiteLayout>
+<script>
+const select=document.querySelector<HTMLSelectElement>('#trip-city');
+select?.addEventListener('change',()=>{let count=0;document.querySelectorAll<HTMLElement>('#trip-list>[data-cities]').forEach(card=>{card.hidden=select.value!=='all'&&!JSON.parse(card.dataset.cities!).includes(select.value);if(!card.hidden)count++;});document.querySelector('#trip-filter-result')!.textContent=`${count} 段旅程`;});
+</script>

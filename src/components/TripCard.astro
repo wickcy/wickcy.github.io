@@ -1,0 +1,18 @@
+---
+import { cities } from '../lib/content';
+import { displayCityIds } from '../lib/travel-policy';
+const {trip}=Astro.props;
+const names=displayCityIds(trip).map(id=>cities.find(c=>c.id===id)?.name).filter(Boolean);
+const status={planning:'规划中',completed:'已完成',cancelled:'已取消'}[trip.data.status];
+---
+<article class="trip-card">
+  <a class="trip-image" href={`/trips/${trip.id}/`} tabindex="-1" aria-hidden="true">
+    {trip.data.cover?<img src={trip.data.cover} alt="" loading="lazy" width="720" height="480"/>:<div class="cover-blank"><svg viewBox="0 0 220 120" aria-hidden="true"><path d="M15 96 65 36l34 40 35-56 72 76Z" fill="none" stroke="currentColor"/><circle cx="179" cy="30" r="12" fill="none" stroke="currentColor"/></svg></div>}
+    {trip.data.coverIsReference&&<span class="image-label">目的地参考图</span>}
+    <span class={`pill image-status ${trip.data.status==='planning'?'pill-planning':''}`}>{status}</span>
+  </a>
+  <div class="trip-copy"><div class="card-meta"><span>{names.join(' / ')||'目的地待定'}</span><span>{trip.data.season}</span></div><h3><a href={`/trips/${trip.id}/`}>{trip.data.title}</a></h3><p>{trip.data.summary}</p><div class="card-foot"><span>更新于 {trip.data.updatedAt.replaceAll('-','.')} </span><a href={`/trips/${trip.id}/`}>{trip.data.status==='planning'?'看看这份计划':'打开旅行记忆'} <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<style>
+.trip-card{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--white)}.trip-image{display:block;position:relative;aspect-ratio:16/9;overflow:hidden;background:#e8ebdf}.trip-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.trip-card:hover .trip-image img{transform:scale(1.025)}.image-label{position:absolute;bottom:14px;left:18px;color:white;font-size:12px;background:#263d34c9;padding:3px 9px;border-radius:2px}.image-status{position:absolute;top:18px;right:18px;background:var(--white)}.trip-copy{padding:23px 25px}.card-meta{display:flex;gap:20px;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:10px}.trip-copy h3{font-size:27px}.trip-copy h3 a:hover{color:var(--orange)}.trip-copy>p{color:var(--muted);margin-top:12px;font-size:14px;line-height:1.9}.card-foot{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:23px;padding-top:16px;border-top:1px solid var(--line);font-size:12px}.card-foot>span{color:var(--muted)}.card-foot a span{margin-left:9px}.cover-blank{height:100%;display:grid;place-items:center;color:#829378}.cover-blank svg{width:50%;max-width:220px}@media(max-width:760px){.trip-copy{padding:21px}.trip-copy h3{font-size:25px}.card-foot{flex-wrap:wrap}}
+</style>

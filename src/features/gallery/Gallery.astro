@@ -1,0 +1,175 @@
+---
+interface Photo {
+  id: string;
+  src: string;
+  thumbnail?: string;
+  alt: string;
+  caption?: string;
+  cityId?: string;
+  featured?: boolean;
+  ticketSrc?: string;
+  width?: number;
+  height?: number;
+}
+
+interface Props {
+  photos: Photo[];
+  title?: string;
+  description?: string;
+}
+
+const {
+  photos,
+  title = '留在照片里的时光',
+  description = '几张值得收藏的瞬间，和这一路的更多记忆。',
+} = Astro.props;
+const featured = photos.filter((photo) => photo.featured).slice(0, 3);
+---
+
+<section class="travel-gallery" data-travel-gallery>
+  <header class="gallery-heading">
+    <h2>{title}</h2>
+    <p>{photos.length ? description : '照片会在旅途中慢慢积攒，回来后再把记忆放进这里。'}</p>
+  </header>
+
+  {photos.length === 0 ? (
+    <div class="gallery-empty">
+      <span class="empty-frame" aria-hidden="true"><span></span></span>
+      <h3>这一页，留给未来的照片。</h3>
+      <p>目前还没有公开的旅行照片。</p>
+    </div>
+  ) : (
+    <>
+      {featured.length > 0 && (
+        <div class="featured-section">
+          <div class="gallery-subheading"><h3>精选收藏</h3><span>点击查看完整原照片</span></div>
+          <div class="featured-grid" data-count={featured.length}>
+            {featured.map((photo) => (
+              <figure class="featured-photo">
+                <a href={photo.src} data-gallery-index={photos.indexOf(photo)} aria-label={`查看原照片：${photo.alt}`}>
+                  <span class="featured-frame" data-photo-frame>
+                    <img src={photo.ticketSrc || photo.src} alt={photo.ticketSrc ? `${photo.alt}，旅行票根` : photo.alt} loading="lazy" decoding="async" />
+                    <span class="image-error" hidden>图片暂时无法加载</span>
+                  </span>
+                </a>
+                <figcaption>{photo.caption || photo.alt}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div class="gallery-subheading all-photos-heading"><h3>沿途的每一张</h3><span>{photos.length} 张公开照片</span></div>
+      <div class="photo-grid">
+        {photos.map((photo, index) => (
+          <figure class="photo-card">
+            <a
+              href={photo.src}
+              data-gallery-photo
+              data-gallery-index={index}
+              data-photo-src={photo.src}
+              data-photo-alt={photo.alt}
+              data-photo-caption={photo.caption || photo.alt}
+              aria-label={`查看照片 ${index + 1}：${photo.alt}`}
+            >
+              <span class="photo-frame" data-photo-frame>
+                <img src={photo.thumbnail || photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" />
+                <span class="image-error" hidden>照片暂时无法加载</span>
+              </span>
+            </a>
+            <figcaption>{photo.caption || photo.alt}</figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <dialog class="photo-viewer" aria-label="旅行照片查看器" data-gallery-viewer>
+        <header class="viewer-heading">
+          <h3 data-viewer-heading>旅行照片</h3>
+          <button type="button" class="viewer-close" data-viewer-close aria-label="关闭照片查看器" autofocus>关闭 <span aria-hidden="true">×</span></button>
+        </header>
+        <div class="viewer-stage">
+          <p class="viewer-message" data-viewer-loading>正在加载照片…</p>
+          <img data-viewer-image alt="" hidden />
+          <p class="viewer-message" data-viewer-error hidden>这张照片暂时无法加载，可以继续浏览其他照片。</p>
+        </div>
+        <footer class="viewer-controls">
+          <button type="button" data-viewer-previous aria-label="上一张照片"><span aria-hidden="true">←</span> 上一张</button>
+          <p data-viewer-status aria-live="polite" aria-atomic="true"></p>
+          <button type="button" data-viewer-next aria-label="下一张照片">下一张 <span aria-hidden="true">→</span></button>
+        </footer>
+        <p class="viewer-hint">可使用键盘左右方向键切换，Esc 关闭。</p>
+      </dialog>
+    </>
+  )}
+</section>
+
+<script>
+  import './gallery.mjs';
+</script>
+
+<style>
+  .travel-gallery { padding-block: 12px 48px; }
+  .gallery-heading { margin-bottom: 30px; }
+  .gallery-heading h2 { margin: 0 0 12px; font: 500 clamp(27px, 3vw, 35px)/1.5 var(--serif); }
+  .gallery-heading p { margin: 0; max-width: 660px; color: var(--muted); font-size: 14px; line-height: 1.9; }
+  .gallery-subheading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 20px; }
+  .gallery-subheading h3 { margin: 0; font: 500 21px/1.6 var(--serif); }
+  .gallery-subheading > span { color: var(--muted); font-size: 12px; }
+  .featured-section { padding: 26px 0 34px; border-top: 1px solid var(--line); }
+  .featured-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+  .featured-grid[data-count="1"] { grid-template-columns: minmax(0, 420px); }
+  .featured-grid[data-count="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; }
+  figure { margin: 0; min-width: 0; }
+  .featured-photo a, .photo-card a { display: block; border-radius: 3px; }
+  .featured-frame, .photo-frame { position: relative; display: grid; place-items: center; overflow: hidden; background: var(--light); border: 1px solid var(--line); border-radius: 3px; }
+  .featured-frame { aspect-ratio: 3/4; padding: 12px; }
+  .featured-frame img { width: 100%; height: 100%; object-fit: contain; }
+  figcaption { margin-top: 11px; font-size: 12px; line-height: 1.8; color: var(--muted); overflow-wrap: anywhere; }
+  .all-photos-heading { padding-top: 26px; border-top: 1px solid var(--line); }
+  .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 22px; }
+  .photo-frame { aspect-ratio: 3/2; }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  .photo-card a:hover img { transform: scale(1.025); }
+  .image-error { padding: 24px; font-size: 14px; line-height: 1.8; color: var(--muted); text-align: center; }
+  [hidden] { display: none !important; }
+  .gallery-empty { display: grid; justify-items: center; padding: 56px 24px; border: 1px dashed var(--line); border-radius: 4px; text-align: center; }
+  .gallery-empty h3 { margin: 22px 0 8px; font: 500 23px/1.7 var(--serif); }
+  .gallery-empty p { margin: 0; font-size: 14px; color: var(--muted); }
+  .empty-frame { width: 62px; height: 49px; display: grid; place-items: center; padding: 8px; border: 1px solid #9aa79a; transform: rotate(-4deg); }
+  .empty-frame > span { width: 100%; height: 100%; border: 1px solid var(--line); }
+  .photo-viewer { width: min(1100px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); padding: 24px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); color: var(--ink); }
+  .photo-viewer[open] { display: grid; gap: 18px; }
+  .photo-viewer::backdrop { background: #14251dd9; }
+  .viewer-heading { display: flex; align-items: start; justify-content: space-between; gap: 24px; }
+  .viewer-heading h3 { margin: 0; font: 500 19px/1.7 var(--serif); overflow-wrap: anywhere; }
+  .viewer-close, .viewer-controls button { flex-shrink: 0; min-height: 44px; padding: 8px 14px; background: transparent; border: 1px solid var(--line); border-radius: 3px; color: var(--green); font: inherit; font-size: 14px; cursor: pointer; }
+  .viewer-close { margin-top: -5px; }
+  .viewer-close > span { margin-left: 10px; font-size: 20px; line-height: 1; }
+  .viewer-stage { display: grid; place-items: center; min-height: 150px; background: var(--light); }
+  .viewer-stage img { display: block; max-width: 100%; max-height: 62dvh; width: auto; height: auto; object-fit: contain; }
+  .viewer-message { margin: 0; padding: 40px 24px; color: var(--muted); font-size: 14px; text-align: center; }
+  .viewer-controls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px; }
+  .viewer-controls button:first-child { justify-self: start; }
+  .viewer-controls button:last-child { justify-self: end; }
+  .viewer-controls button:disabled { opacity: .45; cursor: default; }
+  .viewer-controls p { margin: 0; color: var(--muted); font: 16px/1.6 Georgia, serif; }
+  .viewer-hint { margin: -6px 0 0; text-align: center; color: var(--muted); font-size: 12px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+  @media (max-width: 760px) {
+    .gallery-heading { margin-bottom: 24px; }
+    .gallery-subheading { align-items: start; flex-direction: column; gap: 5px; }
+    .featured-grid, .featured-grid[data-count="2"] { grid-template-columns: minmax(0, 440px); gap: 26px; }
+    .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; }
+    .featured-frame { padding: 8px; }
+    .photo-viewer { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); padding: 16px; }
+    .photo-viewer[open] { gap: 14px; }
+    .viewer-heading { gap: 12px; }
+    .viewer-heading h3 { font-size: 17px; }
+    .viewer-close { padding: 8px 10px; }
+    .viewer-stage img { max-height: 55dvh; }
+    .viewer-controls { gap: 8px; }
+    .viewer-controls button { padding: 8px 10px; font-size: 13px; }
+    .viewer-hint { font-size: 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .photo-frame img { transition: none; } }
+</style>

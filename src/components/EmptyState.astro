@@ -1,0 +1,4 @@
+---
+const {title,description,href,label}=Astro.props;
+---
+<div class="empty-panel"><svg viewBox="0 0 50 50" fill="none" aria-hidden="true"><path d="M8 15h34v28H8zM16 15v-4a9 9 0 0 1 18 0v4M18 15v28m14-28v28" stroke="currentColor" stroke-width="1.2"/><path d="M5 22h40" stroke="currentColor" stroke-dasharray="2 3"/></svg><h2>{title}</h2><p>{description}</p>{href&&<a class="btn btn-line" href={href}>{label}</a>}</div>

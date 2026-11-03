@@ -1,0 +1,4118 @@
+{
+  "type": "comparison",
+  "id": "autumn-meet-2026",
+  "title": "秋日碰头",
+  "checkedAt": "2026-11-02",
+  "initial": {
+    "dest": "taian",
+    "days": 3,
+    "arrival": "sleeper",
+    "direction": "outbound",
+    "city": "all"
+  },
+  "markup": "<nav class=\"plan-local-nav\" aria-label=\"本次旅行目录\"><a href=\"#compare\">目的地比较</a><a href=\"#sights\">游玩地点</a><a href=\"#planner\">路线方案</a><a href=\"#map\">行程地图</a><a href=\"#budget\">预算</a><a href=\"#trains\">交通</a><a href=\"#prepare\">准备清单</a></nav><section id=\"compare\" class=\"compare wrap\">\r\n    <div class=\"section-head\"><div><div class=\"eyebrow\">01 / PICK YOUR AUTUMN</div><h2>一座山，或一座水乡。</h2></div><p>先挑喜欢的风景，再把路上的时间算清楚。</p></div>\r\n    <div class=\"destination-grid\">\r\n      <button class=\"destination taian\" data-pick=\"taian\" aria-label=\"选择泰安并查看行程\"><img src=\"/images/trips/autumn-meet-2026/reference/taishan.jpg\" alt=\"泰山石阶沿山势通向南天门\" fetchpriority=\"high\"><span class=\"image-shade\"></span><span class=\"photo-top\"><span>SHANDONG · 山东</span><span class=\"photo-pill\">山野与古建</span></span><span class=\"photo-bottom\"><span><span class=\"location-en\">TAI’AN</span><strong>泰安<span>去山里，见天地</span></strong><span class=\"photo-tags\">泰山云海 / 岱庙银杏 / 鲁菜</span></span><span class=\"round-arrow\">↗</span></span></button>\r\n      <button class=\"destination shaoxing\" data-pick=\"shaoxing\" aria-label=\"选择绍兴并查看行程\"><img src=\"/images/trips/autumn-meet-2026/reference/shaoxing.jpg\" alt=\"绍兴安昌古镇河道、乌篷船与临水老屋\" fetchpriority=\"high\"><span class=\"image-shade\"></span><span class=\"photo-top\"><span>ZHEJIANG · 浙江</span><span class=\"photo-pill\">水乡与烟火</span></span><span class=\"photo-bottom\"><span><span class=\"location-en\">SHAOXING</span><strong>绍兴<span>沿着河，慢慢走</span></strong><span class=\"photo-tags\">乌篷船 / 安昌古镇 / 黄酒小食</span></span><span class=\"round-arrow\">↗</span></span></button>\r\n    </div>\r\n    <div class=\"table-scroll\"><table class=\"compare-table\"><caption class=\"sr-only\">泰安与绍兴目的地对比</caption><thead><tr><th>这次，更在意什么？</th><th>泰安 · 泰山 + 岱庙</th><th>绍兴 · 安昌 + 老城</th></tr></thead><tbody><tr><th>北京出发</th><td>直达高铁约 2–2.5 小时</td><td>近期直达约 6.5 小时；杭州东中转另查</td></tr><tr><th>上海出发</th><td>直达高铁约 3–4 小时</td><td>高铁约 1 小时 15 分–1 小时 35 分</td></tr><tr><th>秋日看点</th><td>岱庙古银杏、层叠山峦、古建</td><td>水乡秋色、沿河老街、酱晒风物</td></tr><tr><th>体力与节奏</th><td><span class=\"mini-dot amber\"></span>中等至偏高 · 索道可减负</td><td><span class=\"mini-dot\"></span>较低 · 散步与吃逛</td></tr><tr><th>早出发，尽量午前到</th><td>上海 11:18 / 北京 11:20，同站差 2 分钟</td><td>未核到北京 12:00 前到的组合，优先前晚到</td></tr><tr><th>前一天出发，一起到</th><td>双卧铺次晨到泰山站，差 29 分钟</td><td>北京经杭州东，接上海同趟车，22:06 同到</td></tr><tr><th>适合我们吗</th><td>想登高看远，且愿意为山景多走一些路</td><td>偏爱古镇美食，接受北京一方更长的旅途</td></tr></tbody></table></div>\r\n    <div class=\"editor-note\"><span>我们的建议</span><p><strong>泰安可选午前高铁或双卧铺，绍兴优先前晚同到。</strong>已按上海前一晚最早 19:40 出发、北京时间灵活重新配对；不再安排一人先住、一人次日才到。</p><span class=\"note-leaf\">✳</span></div>\r\n  </section>\r\n  <section id=\"sights\" class=\"sights-section wrap\"><div class=\"section-head\"><div><div class=\"eyebrow\">02 / THE PLACES WORTH YOUR TIME</div><h2>每一站，都值得慢一点。</h2></div><p>不只是一张路线表，先看看想一起停留的地方。</p></div><div class=\"sight-toolbar\"><div class=\"segmented\" aria-label=\"浏览目的地景点\"><button data-dest=\"taian\" aria-pressed=\"true\">泰安 · 3 处</button><button data-dest=\"shaoxing\" aria-pressed=\"false\">绍兴 · 5 处</button></div><span>建议时长为行程预留量 · 图片非实时秋色</span></div><div class=\"sight-grid\" data-guide=\"taian\"><article class=\"sight-card\"><figure><img src=\"/images/trips/autumn-meet-2026/reference/taishan.jpg\" alt=\"泰山山势、石阶与南天门实景\" loading=\"lazy\" width=\"720\" height=\"480\"><figcaption>山野 / 世界遗产</figcaption></figure><div class=\"sight-copy\"><div class=\"sight-meta\"><span>整天约 6–8 小时</span><a href=\"https://www.ly.com/scenery/BookSceneryTicket_7969.html\" target=\"_blank\" rel=\"noopener\">图源 ↗</a></div><h3>泰山</h3><p class=\"sight-subtitle\">把山岳与千年古迹，一起收入眼底。</p><p class=\"sight-intro\">泰山既有开阔山势，也保存了寺庙、石刻与登山古道。天街、南天门、碧霞祠和玉皇顶，把登高的壮阔感与历史连成一条线。</p><div class=\"photo-tip\"><span>值得看 / 拍</span><p>天街远山、南天门石阶、摩崖石刻</p></div><details><summary>怎么安排更舒服 <span>＋</span></summary><p>中天门索道往返后仍有步行；两天版山顶少停留，遇停运改市区。</p><p class=\"sight-placement\">适合登山日；不默认看日出</p><a href=\"https://whc.unesco.org/en/list/437/\" target=\"_blank\" rel=\"noopener\">UNESCO 景点介绍 ↗</a><small>图片：同程旅行。为历史实景示意，非本次日期实时照片。</small></details></div></article><article class=\"sight-card\"><figure><img src=\"/images/trips/autumn-meet-2026/reference/daimiao.jpg\" alt=\"岱庙红墙、建筑与金黄银杏的历史秋景\" loading=\"lazy\" width=\"720\" height=\"480\"><figcaption>古建 / 古树 / 碑刻</figcaption></figure><div class=\"sight-copy\"><div class=\"sight-meta\"><span>建议 2–3 小时</span><a href=\"https://taian.iqilu.com/taianminsheng/2025/1121/5869824.shtml\" target=\"_blank\" rel=\"noopener\">图源 ↗</a></div><h3>岱庙</h3><p class=\"sight-subtitle\">一座城里的秋天，藏在深深庭院。</p><p class=\"sight-intro\">岱庙是历代祭祀泰山神的重要场所，宫城式院落里可看天贶殿、古树和碑刻。与山顶相比，这里更适合慢慢走，先读懂泰山，再去登山。</p><div class=\"photo-tip\"><span>值得看 / 拍</span><p>天贶殿建筑、古树与碑林、红墙光影</p></div><details><summary>怎么安排更舒服 <span>＋</span></summary><p>银杏不保证出行日恰好最黄；拍落叶与建筑时也留意文物保护，不攀折古树。</p><p class=\"sight-placement\">首日轻松逛；适合卧铺后休整</p><a href=\"https://tsgw.taian.gov.cn/art/2026/3/23/art_363608_10320988.html\" target=\"_blank\" rel=\"noopener\">泰山管委会介绍 ↗</a><small>图片：齐鲁网 · 2025 年历史实景。为历史实景示意，非本次日期实时照片。</small></details></div></article><article class=\"sight-card\"><figure><img src=\"/images/trips/autumn-meet-2026/reference/wangmuchi.jpg\" alt=\"泰安王母池院落里的池水、石栏和古建\" loading=\"lazy\" width=\"720\" height=\"480\"><figcaption>山脚 / 小院 / 散步</figcaption></figure><div class=\"sight-copy\"><div class=\"sight-meta\"><span>建议 1–1.5 小时</span><a href=\"https://gs.ctrip.com/html5/you/sight/taian746/1374.html\" target=\"_blank\" rel=\"noopener\">图源 ↗</a></div><h3>王母池与红门周边</h3><p class=\"sight-subtitle\">不登山，也能在山脚停一停。</p><p class=\"sight-intro\">王母池位于泰山脚下，院落、池水与古树组成安静的一角。可以结合红门周边短走，看看登山古道的起点，不必再完成一场长距离攀登。</p><div class=\"photo-tip\"><span>值得看 / 拍</span><p>池水倒影、古建屋檐、红门周边街巷</p></div><details><summary>怎么安排更舒服 <span>＋</span></summary><p>红门是徒步登山起点，短逛不等于必须进山；开放范围以现场公告为准。</p><p class=\"sight-placement\">三天版返程日上午；两天版可舍弃</p><a href=\"https://you.ctrip.com/sight/taian746/1374.html\" target=\"_blank\" rel=\"noopener\">景点介绍与开放复核 ↗</a><small>图片：携程攻略。为历史实景示意，非本次日期实时照片。</small></details></div></article></div><div class=\"sight-grid\" data-guide=\"shaoxing\" hidden><article class=\"sight-card\"><figure><img src=\"/images/trips/autumn-meet-2026/reference/shaoxing.jpg\" alt=\"绍兴安昌河道上的乌篷船与沿河老屋\" loading=\"lazy\" width=\"720\" height=\"480\"><figcaption>河埠 / 乌篷船 / 酱味</figcaption></figure><div class=\"sight-copy\"><div class=\"sight-meta\"><span>建议半天至一天</span><a href=\"https://www.ly.com/travels/1043501.html\" target=\"_blank\" rel=\"noopener\">图源 ↗</a></div><h3>安昌古镇</h3><p class=\"sight-subtitle\">沿着一条河，走进绍兴的烟火气。</p><p class=\"sight-intro\">临河老街、石桥与沿河长廊，是安昌最有辨识度的风景。边走边看本地酱味铺子，尝年糕与酱鸭，坐不坐船都能把节奏慢下来。</p><div class=\"photo-tip\"><span>值得看 / 拍</span><p>石桥望河、长廊纵深、商铺酱晒风物</p></div><details><summary>怎么安排更舒服 <span>＋</span></summary><p>晒酱和腊味由季节、天气和商户决定；乌篷船先问清整船价格与人数限制。</p><p class=\"sight-placement\">单独集中安排，少与市区折返</p><a href=\"https://www.ly.com/travels/1043501.html\" target=\"_blank\" rel=\"noopener\">古镇游览参考 ↗</a><small>图片：同程旅行。为历史实景示意，非本次日期实时照片。</small></details></div></article><article class=\"sight-card\"><figure><img src=\"/images/trips/autumn-meet-2026/reference/luxun.jpg\" alt=\"绍兴鲁迅故里百草园的菜畦与庭院实景\" loading=\"lazy\" width=\"720\" height=\"480\"><figcaption>文学 / 故居 / 百草园</figcaption></figure><div class=\"sight-copy\"><div class=\"sight-meta\"><span>建议 2–3 小时</span><a href=\"https://gs.ctrip.com/html5/you/sight/shaoxing18/18187.html\" target=\"_blank\" rel=\"noopener\">图源 ↗</a></div><h3>鲁迅故里</h3><p class=\"sight-subtitle\">把课本里的名字，变成眼前的院落。</p><p class=\"sight-intro\">从百草园到三味书屋，鲁迅笔下的童年场景在老台门与庭院之间串联。比起只在入口拍照，更值得留时间看看故居陈设与生活细节。</p><div class=\"photo-tip\"><span>值得看 / 拍</span><p>百草园菜畦、三味书屋、台门院落</p></div><details><summary>怎么安排更舒服 <span>＋</span></summary><p>免费参观按官方渠道提前预约；景点内拍摄规则、入园时段以现场要求为准。</p><p class=\"sight-placement\">前晚到的首日上午，精神更从容</p><a href=\"https://zjic.zj.gov.cn/zkfw/xcfwybz/202512/t20251219_23865046.shtml\" target=\"_blank\" rel=\"noopener\">浙江官方文化介绍 ↗</a><small>图片：携程攻略。为历史实景示意，非本次日期实时照片。</small></details></div></article><article class=\"sight-card\"><figure><img src=\"/images/trips/autumn-meet-2026/reference/shenyuan.jpg\" alt=\"沈园池塘、石径与临水亭榭实景\" loading=\"lazy\" width=\"720\" height=\"480\"><figcaption>宋韵 / 园林 / 诗词</figcaption></figure><div class=\"sight-copy\"><div class=\"sight-meta\"><span>白天建议 1–1.5 小时</span><a href=\"https://you.ctrip.com/sight/shaoxing18/2204.html\" target=\"_blank\" rel=\"noopener\">图源 ↗</a></div><h3>沈园</h3><p class=\"sight-subtitle\">读一阕词，再看一池水。</p><p class=\"sight-intro\">沈园与陆游、唐琬及《钗头凤》的故事相连。园林里的池水、曲径和亭榭，让这段文学记忆变成一场安静的漫步，适合与老城人文景点顺路组合。</p><div class=\"photo-tip\"><span>值得看 / 拍</span><p>池边亭榭、曲径与倒影、题词景观</p></div><details><summary>怎么安排更舒服 <span>＋</span></summary><p>日场与夜场分开确认。若选沈园之夜，先核实当晚开放和演出，不默认每晚都有。</p><p class=\"sight-placement\">首日下午；夜场可替换自由活动</p><a href=\"https://you.ctrip.com/sight/shaoxing18/2204.html\" target=\"_blank\" rel=\"noopener\">景点介绍与票种复核 ↗</a><small>图片：携程攻略。为历史实景示意，非本次日期实时照片。</small></details></div></article><article class=\"sight-card\"><figure><img src=\"/images/trips/autumn-meet-2026/reference/cangqiao.jpg\" alt=\"雨天仓桥直街的石板路、木制店铺和红灯笼\" loading=\"lazy\" width=\"720\" height=\"480\"><figcaption>台门 / 老街 / 晚餐</figcaption></figure><div class=\"sight-copy\"><div class=\"sight-meta\"><span>建议 1.5–2 小时</span><a href=\"https://you.ctrip.com/sight/shaoxing18/97321.html\" target=\"_blank\" rel=\"noopener\">图源 ↗</a></div><h3>仓桥直街</h3><p class=\"sight-subtitle\">留一顿晚饭的时间，慢慢逛。</p><p class=\"sight-intro\">仓桥直街是街河相依的传统街巷，台门民居、石板路与小店保留着老城的生活尺度。适合住在附近，傍晚沿河散步，再找一家小店吃绍兴菜。</p><div class=\"photo-tip\"><span>值得看 / 拍</span><p>石板街、白墙黛瓦、桥边灯火</p></div><details><summary>怎么安排更舒服 <span>＋</span></summary><p>雨天石板路较滑，穿防滑鞋；不必为了拍照挤进居民院落。</p><p class=\"sight-placement\">住宿周边的晚餐与夜间散步</p><a href=\"https://sxzx.sx.gov.cn/art/2017/3/15/art_1486822_17724918.html\" target=\"_blank\" rel=\"noopener\">绍兴官方历史街区介绍 ↗</a><small>图片：携程攻略。为历史实景示意，非本次日期实时照片。</small></details></div></article><article class=\"sight-card\"><figure><img src=\"/images/trips/autumn-meet-2026/reference/shusheng.jpg\" alt=\"绍兴书圣故里书法墙、人物雕塑与古桥实景\" loading=\"lazy\" width=\"720\" height=\"480\"><figcaption>书法 / 古桥 / 老巷</figcaption></figure><div class=\"sight-copy\"><div class=\"sight-meta\"><span>建议 1.5–2 小时</span><a href=\"https://you.ctrip.com/sight/shaoxing18/97323.html\" target=\"_blank\" rel=\"noopener\">图源 ↗</a></div><h3>书圣故里</h3><p class=\"sight-subtitle\">沿题扇桥，读一座水墨老城。</p><p class=\"sight-intro\">书圣故里的老巷与古桥，把王羲之相关的书法文化融进日常街景。沿题扇桥、墨池周边慢走，不必每处打卡，也能感到绍兴温柔的生活气息。</p><div class=\"photo-tip\"><span>值得看 / 拍</span><p>题扇桥周边、书法墙、临水巷道</p></div><details><summary>怎么安排更舒服 <span>＋</span></summary><p>这里是越城区老城街区；别与嵊州的书圣故里相关景点混淆。街巷散步与单体场馆开放分别确认。</p><p class=\"sight-placement\">三天版安昌回城后；两天不强塞</p><a href=\"https://you.ctrip.com/sight/shaoxing18/97323.html\" target=\"_blank\" rel=\"noopener\">景点介绍与位置复核 ↗</a><small>图片：携程攻略。为历史实景示意，非本次日期实时照片。</small></details></div></article></div><p class=\"sight-bottom\">不需要一次走完所有景点。两天优先核心一两站，三天再加小院与老街，把路上的余量留出来。</p></section>\r\n  <section id=\"planner\" class=\"planner-section\"><div class=\"wrap\">\r\n    <div class=\"section-head\"><div><div class=\"eyebrow\">03 / MAKE IT YOURS</div><h2>把想见面，排进行程。</h2></div><span class=\"small-badge\">上海前晚 ≥19:40 · 北京时间灵活</span></div>\r\n    <div class=\"planner-controls\"><div class=\"control\"><span class=\"control-label\">目的地</span><div class=\"segmented\" aria-label=\"选择目的地\"><button data-dest=\"taian\" aria-pressed=\"true\">泰安</button><button data-dest=\"shaoxing\" aria-pressed=\"false\">绍兴</button></div></div><div class=\"control\"><span class=\"control-label\">玩几天</span><div class=\"segmented\" aria-label=\"选择行程天数\"><button data-days=\"2\" aria-pressed=\"false\">2 天行程</button><button data-days=\"3\" aria-pressed=\"true\">3 天行程</button></div></div><div class=\"control\"><span class=\"control-label\">怎样一起到</span><div class=\"segmented\" aria-label=\"选择汇合方式\"><button data-arrival=\"day\" aria-pressed=\"false\">早出发 · 午前到</button><button data-arrival=\"night\" aria-pressed=\"false\">前晚一起到</button><button data-arrival=\"sleeper\" aria-pressed=\"true\">双卧铺 · 次晨到</button></div></div></div>\r\n    <div class=\"arrival-rule\">汇合规则：前一晚出发，就当晚一起到，或两人都乘卧铺、次晨到；当天早上出发，尽量都在 12:00 前到。上海前一晚不早于 19:40 上车，北京无此约束。</div>\r\n    <div id=\"meeting-summary\" class=\"meeting-summary\" aria-live=\"polite\"></div>\r\n    <div id=\"plan-context\" class=\"plan-context\" aria-live=\"polite\"></div>\r\n    <div class=\"plan-grid\"><div id=\"itinerary\" class=\"itinerary\"></div><aside id=\"plan-sidebar\" class=\"plan-sidebar\"></aside></div>\r\n    <div class=\"plan-actions\"><button id=\"copy-plan\" class=\"btn btn-primary\">复制这份旅行计划 <span>↗</span></button><button id=\"download-plan\" class=\"btn btn-line\">下载行程</button><a href=\"#map\" class=\"text-link\">接着看路线与住宿 ↓</a></div>\r\n  </div></section>\r\n\r\n  <section id=\"map\" class=\"wrap map-section\"><div class=\"section-head\"><div><div class=\"eyebrow\">04 / EVERY STOP, CONNECTED</div><h2>住哪里，怎么走，一眼看清。</h2></div><a href=\"#planner\" class=\"text-link\">切换目的地与天数 ↑</a></div>\r\n    <p id=\"map-context\" class=\"map-intro\" aria-live=\"polite\"></p>\r\n    <div id=\"hotel-options\" class=\"hotel-options\" role=\"group\" aria-label=\"选择住宿参考区\"></div>\r\n    <div id=\"route-tabs\" class=\"route-tabs\" role=\"group\" aria-label=\"筛选每日路线\"></div>\r\n    <div class=\"map-layout\"><div class=\"map-canvas\"><div id=\"trip-map\" aria-label=\"旅行交互地图，可拖动缩放；也可使用下方地点按钮\"></div></div><aside id=\"place-panel\" class=\"map-place\" aria-live=\"polite\"></aside></div>\r\n    <div class=\"map-legend\"><span><i class=\"station-key\"></i>车站</span><span><i class=\"hotel-key\"></i>住宿参考区</span><span><i></i>景点</span><span><i class=\"mount-key\"></i>景区换乘 / 山上</span><span>虚线 = 游览顺序，非道路轨迹</span></div>\r\n    <p id=\"map-status\" class=\"map-status\" role=\"status\">可拖动、点标记查看；用 + / − 缩放。虚线表示游览顺序。</p>\r\n    <div id=\"map-points\" class=\"map-points\" role=\"group\" aria-label=\"选择地图地点\"></div>\r\n    <div id=\"route-legs\" class=\"route-legs\"></div>\r\n    <div class=\"map-fineprint\">道路距离取自2026.11.02保存的 <a href=\"https://routing.openstreetmap.de/about.html\" target=\"_blank\" rel=\"noopener\">OSRM / OpenStreetMap 路由</a>，非直线距离；驾车用时在基础计算上加入候车及路况余量，步行另留少量缓冲，均非实时导航，未含停车、安检与景区排队。地图点位采用区域或入口周边参考，来源见各点详情。泰山观光车与索道独立标注，不能直接打车到山顶；虚线只示意先后顺序。<a href=\"https://tsgw.taian.gov.cn/art/2021/6/8/art_63819_10286536.html\" target=\"_blank\" rel=\"noopener\">泰山交通参考 ↗</a> · <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">© OpenStreetMap contributors</a></div>\r\n  </section>\r\n  <section id=\"budget\" class=\"wrap budget-section\"><div class=\"section-head\"><div><div class=\"eyebrow\">05 / A LITTLE MATH BEFORE WE GO</div><h2>这一趟，带多少预算？</h2></div><span class=\"small-badge\">2位成人 · 房价 / 席别可调整</span></div>\r\n    <p class=\"budget-warning\">车费取近期或历史公开报价，仅用于预留预算，不是实际出发日的实时售价。酒店范围为住宿区预算建议，非指定酒店的房型报价。所有金额可按实际订单修改，价格来源附在下方车次卡中。</p>\r\n    <div class=\"budget-layout\"><fieldset id=\"budget-inputs\" class=\"budget-inputs\"><legend class=\"sr-only\">调整两人行程预算</legend><div id=\"budget-controls\"></div></fieldset><aside id=\"budget-result\" class=\"budget-result\" aria-live=\"polite\" aria-atomic=\"true\"></aside></div>\r\n  </section>\r\n  <section id=\"trains\" class=\"wrap trains-section\"><div class=\"section-head\"><div><div class=\"eyebrow\">06 / TWO CITIES, ONE DESTINATION</div><h2>路上的事，也帮你想好了。</h2></div><a href=\"https://www.12306.cn/index/\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-line\">去铁路 12306 复核 ↗</a></div>\r\n    <div class=\"train-disclaimer\"><span class=\"info-icon\">i</span><p><strong>参考车次，不是目标日已开售车票。</strong>资料检索于 2026.11.02，来源为近期公开时刻表；本页不公开具体出发日期；参考车次须按实际出发日重新查询。开行、时刻、车站、票价与余票请在放票后以 12306 为准。</p></div>\r\n    <div class=\"train-toolbar\"><div class=\"under-tabs\" aria-label=\"往返方向\"><button data-direction=\"outbound\" aria-pressed=\"true\">去程候选</button><button data-direction=\"return\" aria-pressed=\"false\">返程候选</button></div><label class=\"city-filter\">旅客 <select id=\"city-filter\"><option value=\"all\">北京 + 上海</option><option value=\"beijing\">北京出发的人</option><option value=\"shanghai\">上海出发的人</option></select></label></div>\r\n    <p id=\"train-date\" class=\"train-date\"></p><div id=\"train-list\" class=\"train-list\"></div><div id=\"train-footnote\" class=\"train-footnote\"></div>\r\n    <div class=\"release-card\"><div><span class=\"eyebrow\">TICKET NOTES</span><h3>出发日期，自己留一份。</h3><p>具体日期未公开。请根据实际出发日，在铁路 12306 查询预售期、起售时刻及余票。</p></div><a class=\"btn btn-line\" href=\"https://www.12306.cn/index/\" target=\"_blank\" rel=\"noopener\">查看铁路 12306</a></div></section>\r\n  <section id=\"prepare\" class=\"prepare-section\"><div class=\"wrap\"><div class=\"section-head\"><div><div class=\"eyebrow\">07 / A LITTLE PREPARATION</div><h2>行李轻一点，准备多一点。</h2></div><p>勾选会保存在当前浏览器，出发前再看一眼。</p></div><div class=\"prepare-grid\"><div><h3>出发前的小清单 <span id=\"check-progress\">0 / 6</span></h3><div id=\"checklist\"></div></div><div class=\"travel-notes\"><details open><summary>泰山：日出和索道，不能这样组合 <span>＋</span></summary><p>不采用“凌晨 3 点坐索道上山”的原方案。官方旧版冬季指引为中天门索道 7:30–17:00，实际运营以当日公告为准。想看日出可考虑前一天下午登顶并住山上，核实酒店、索道与天气后再改行程；本计划默认白天往返。</p><a href=\"https://tsgw.taian.gov.cn/art/2021/6/8/art_63819_10286536.html\" target=\"_blank\" rel=\"noopener\">查看泰山景区指引 ↗</a></details><details><summary>秋色随天气变化，别把黄金期写死 <span>＋</span></summary><p>岱庙银杏、绍兴红叶与晒酱风物适合作为赏秋期待，出行时是否正盛取决于当年气温、风雨和商户安排。出发前一周再看实拍；当前不提供目标日天气预报。</p></details><details><summary>车站、预约与住宿怎么选 <span>＋</span></summary><p>泰安站与泰山站是两个站；泰安高铁站到岱庙周边建议预留 30–45 分钟接驳，按当日导航调整。泰安住岱庙或红门周边；绍兴住仓桥直街周边，避免安昌与市区反复折返。鲁迅故里免费参观需按官方渠道预约；沈园夜场与日间游览分开核实。</p></details></div></div></div></section>\r\n  <section id=\"sources\" class=\"wrap sources-section\"><details><summary>资料来源与更新说明 <span>查看 ↗</span></summary><div class=\"source-links\"><a href=\"https://www.12306.cn/index/\" target=\"_blank\" rel=\"noopener\">铁路 12306 · 最终购票与时刻复核</a><a href=\"https://www.chifeng.gov.cn/zmhd_01/rdzs/202401/t20240104_2225485.html\" target=\"_blank\" rel=\"noopener\">中国政府网转载 · 15 天预售期与起售提醒</a><a href=\"https://m.ctrip.com/html5/trains/beijing-taishan/\" target=\"_blank\" rel=\"noopener\">携程 · 北京—泰安 / 泰山时刻</a><a href=\"https://m.ctrip.com/html5/trains/shanghaihongqiao-taian2/c1\" target=\"_blank\" rel=\"noopener\">携程 · 上海—泰安 / 泰山参考时刻</a><a href=\"https://trains.ctrip.com/TrainBooking/beijingnan-shaoxingbei\" target=\"_blank\" rel=\"noopener\">携程 · 北京南—绍兴北</a><a href=\"https://trains.ctrip.com/TrainBooking/shanghaihongqiao-shaoxingbei/gaotie\" target=\"_blank\" rel=\"noopener\">携程 · 上海—绍兴北</a><a href=\"https://trains.ctrip.com/TrainBooking/taian2-shanghaihongqiao/\" target=\"_blank\" rel=\"noopener\">携程 · 泰安—上海虹桥</a><a href=\"https://train.qunar.com/train/tickets/taian-to-beijingnan\" target=\"_blank\" rel=\"noopener\">去哪儿 · 泰安—北京南</a><a href=\"https://m.ctrip.com/html5/trains/shaoxingbei-beijing/\" target=\"_blank\" rel=\"noopener\">携程 · 绍兴北—北京南</a><a href=\"https://m.ctrip.com/html5/trains/shaoxingbei-shanghaihongqiao/\" target=\"_blank\" rel=\"noopener\">携程 · 绍兴北—上海</a><a href=\"https://trains.ctrip.com/TrainBooking/beijingnan-hangzhoudong/gaotie\" target=\"_blank\" rel=\"noopener\">携程 · 北京南—杭州东 G835</a><a href=\"https://huoche.qunar.com/train/timetable/G7529\" target=\"_blank\" rel=\"noopener\">去哪儿 · G7529 杭州东接入时刻</a><a href=\"https://www.gaotie.com.cn/checi/D62.html\" target=\"_blank\" rel=\"noopener\">高铁网 · D62 经停车站</a><a href=\"https://tsgw.taian.gov.cn/art/2021/6/8/art_63819_10286536.html\" target=\"_blank\" rel=\"noopener\">泰山景区 · 运营与索道参考指引</a><a href=\"https://sx.bendibao.com/tour/20241112/27983.shtm\" target=\"_blank\" rel=\"noopener\">绍兴本地宝 · 鲁迅故里预约说明</a></div><p>行程时段是规划建议，接驳时间是预留量。照片为目的地实景，并非 2026 年 11 月的实时秋色。景观照片来自同程、携程攻略和齐鲁网，著作权归原作者；每张新增图片附来源链接。网站不实时查询余票、不自动订票。</p><p><a href=\"https://www.ly.com/scenery/BookSceneryTicket_7969.html\" target=\"_blank\" rel=\"noopener\">泰山照片来源 ↗</a> · <a href=\"https://www.ly.com/travels/1043501.html\" target=\"_blank\" rel=\"noopener\">安昌照片来源 ↗</a></p></details></section>\r\n<div id=\"toast\" role=\"status\" class=\"toast\"></div>",
+  "destinations": [
+    {
+      "id": "taian",
+      "name": "泰安",
+      "sidebar": {
+        "title": "上山轻一点",
+        "body": "白天索道往返优先。提前核实大风与检修停运，给下山、取行李和到站留足时间。"
+      },
+      "budgetNote": "泰山门票、观光车与索道分项预留：双人参考共790元，不重复计算岱庙门票。入园顺序与实际票种仍须复核。"
+    },
+    {
+      "id": "shaoxing",
+      "name": "绍兴",
+      "sidebar": {
+        "title": "少跑一点，慢慢逛",
+        "body": "安昌与老城分开安排，减少折返。鲁迅故里提前预约，沈园日场与夜场分别核实。"
+      },
+      "budgetNote": "240元是两人的沈园与古镇体验预留，并非套餐报价。鲁迅故里按官方渠道免费预约，乌篷船、夜演等分别确认。"
+    }
+  ],
+  "sources": {
+    "bjta": "https://m.ctrip.com/html5/trains/beijing-taishan/",
+    "shta": "https://m.ctrip.com/html5/trains/shanghaihongqiao-taian2/c1",
+    "d62": "https://www.gaotie.com.cn/checi/D62.html",
+    "bjhz": "https://trains.ctrip.com/TrainBooking/beijingnan-hangzhoudong/gaotie",
+    "g7529": "https://huoche.qunar.com/train/timetable/G7529",
+    "bjsx": "https://trains.ctrip.com/TrainBooking/beijingnan-shaoxingbei",
+    "shsx": "https://trains.ctrip.com/TrainBooking/shanghaihongqiao-shaoxingbei/gaotie",
+    "tabj": "https://train.qunar.com/train/tickets/taian-to-beijingnan",
+    "tash": "https://trains.ctrip.com/TrainBooking/taian2-shanghaihongqiao/",
+    "sxbj": "https://m.ctrip.com/html5/trains/shaoxingbei-beijing/",
+    "sxsh": "https://m.ctrip.com/html5/trains/shaoxingbei-shanghaihongqiao/"
+  },
+  "trains": [
+    {
+      "dest": "taian",
+      "dir": "outbound",
+      "arrival": "day",
+      "city": "beijing",
+      "no": "G2571",
+      "from": "北京南",
+      "to": "泰安",
+      "dep": "09:14",
+      "arr": "11:20",
+      "duration": "2 小时 6 分",
+      "when": "first",
+      "type": "高铁 · 午前到",
+      "source": "bjta",
+      "note": "与上海 G550 到站仅差 2 分钟，两人都在 12 点前到，不再一人前夜先住。"
+    },
+    {
+      "dest": "taian",
+      "dir": "outbound",
+      "arrival": "day",
+      "city": "shanghai",
+      "no": "G550",
+      "from": "上海虹桥",
+      "to": "泰安",
+      "dep": "07:22",
+      "arr": "11:18",
+      "duration": "3 小时 56 分",
+      "when": "first",
+      "type": "高铁 · 午前到",
+      "source": "shta",
+      "note": "上海 07:22 早班，两分钟后北京一方到站。19:40 限制仅适用于前一天晚间出发。"
+    },
+    {
+      "dest": "taian",
+      "dir": "outbound",
+      "arrival": "sleeper",
+      "city": "beijing",
+      "no": "K1275",
+      "from": "北京丰台",
+      "to": "泰山",
+      "dep": "23:37",
+      "arr": "06:43",
+      "duration": "7 小时 6 分",
+      "when": "eve",
+      "next": true,
+      "sleeper": true,
+      "type": "普速列车 · 需买卧铺",
+      "source": "bjta",
+      "note": "出发站是北京丰台，到的是泰山站。必须核实硬卧 / 软卧席位；硬座不计入双卧铺方案。"
+    },
+    {
+      "dest": "taian",
+      "dir": "outbound",
+      "arrival": "sleeper",
+      "city": "shanghai",
+      "no": "D62",
+      "from": "上海松江",
+      "to": "泰山",
+      "dep": "21:39",
+      "arr": "06:14",
+      "duration": "8 小时 35 分",
+      "when": "eve",
+      "next": true,
+      "sleeper": true,
+      "type": "卧铺动车 · 非高铁",
+      "source": "d62",
+      "note": "21:39 晚于上海的 19:40 限制；选卧铺席位，次晨在泰山站等北京一方约 29 分钟。"
+    },
+    {
+      "dest": "shaoxing",
+      "dir": "outbound",
+      "arrival": "night",
+      "city": "beijing",
+      "no": "G835",
+      "from": "北京南",
+      "to": "杭州东",
+      "dep": "15:11",
+      "arr": "21:05",
+      "duration": "5 小时 54 分",
+      "when": "eve",
+      "leg": 1,
+      "type": "高铁 · 北京第 1 段",
+      "source": "bjhz",
+      "note": "这是中转站，不是最终目的地。杭州东同站预留 42 分钟，接 21:47 的 G7529；需两段票都可买。"
+    },
+    {
+      "dest": "shaoxing",
+      "dir": "outbound",
+      "arrival": "night",
+      "city": "beijing",
+      "no": "G7529",
+      "from": "杭州东",
+      "to": "绍兴北",
+      "dep": "21:47",
+      "arr": "22:06",
+      "duration": "0 小时 19 分",
+      "when": "eve",
+      "leg": 2,
+      "type": "高铁 · 北京第 2 段",
+      "source": "g7529",
+      "note": "接上海一方乘坐的同一趟车，同于 22:06 到绍兴北。换乘以当日检票、站台和开行情况为准。"
+    },
+    {
+      "dest": "shaoxing",
+      "dir": "outbound",
+      "arrival": "night",
+      "city": "shanghai",
+      "no": "G7529",
+      "from": "上海南",
+      "to": "绍兴北",
+      "dep": "20:32",
+      "arr": "22:06",
+      "duration": "1 小时 34 分",
+      "when": "eve",
+      "type": "高铁 · 晚间直达",
+      "source": "shsx",
+      "note": "从上海南出发，符合不早于 19:40 的限制。此车 21:40 到杭州东、21:47 开；北京一方在杭州东接入。"
+    },
+    {
+      "dest": "taian",
+      "dir": "return",
+      "city": "beijing",
+      "no": "G824",
+      "from": "泰安",
+      "to": "北京南",
+      "dep": "15:44",
+      "arr": "17:56",
+      "duration": "2 小时 12 分",
+      "when": "return",
+      "type": "高铁 · 下午返程",
+      "source": "tabj",
+      "note": "同日返程建议；爬山日需保守安排，预留排队与下山接驳时间。"
+    },
+    {
+      "dest": "taian",
+      "dir": "return",
+      "city": "beijing",
+      "no": "G834",
+      "from": "泰安",
+      "to": "北京南",
+      "dep": "17:05",
+      "arr": "19:19",
+      "duration": "2 小时 14 分",
+      "when": "return",
+      "type": "高铁 · 稍晚备选",
+      "source": "tabj",
+      "note": "若想给下山留更多余量，可核实这趟稍晚车次。"
+    },
+    {
+      "dest": "taian",
+      "dir": "return",
+      "city": "shanghai",
+      "no": "G739",
+      "from": "泰安",
+      "to": "上海虹桥",
+      "dep": "16:11",
+      "arr": "19:50",
+      "duration": "3 小时 39 分",
+      "when": "return",
+      "type": "高铁 · 下午返程",
+      "source": "tash",
+      "note": "建议约 14:45 到达泰安站；这只是站内与路程缓冲的规划建议。"
+    },
+    {
+      "dest": "shaoxing",
+      "dir": "return",
+      "city": "beijing",
+      "no": "G822",
+      "from": "绍兴北",
+      "to": "北京南",
+      "dep": "11:02",
+      "arr": "16:50",
+      "duration": "5 小时 48 分",
+      "when": "return",
+      "type": "高铁 · 早回家",
+      "source": "sxbj",
+      "note": "适合三天版；返程日只能安排短时早餐或散步，两天版不建议以此压缩安昌。"
+    },
+    {
+      "dest": "shaoxing",
+      "dir": "return",
+      "city": "beijing",
+      "no": "G872",
+      "from": "绍兴北",
+      "to": "北京南",
+      "dep": "15:23",
+      "arr": "21:52",
+      "duration": "6 小时 29 分",
+      "when": "return",
+      "type": "高铁 · 留住半天",
+      "source": "sxbj",
+      "note": "两天版安昌安排使用此候选；北京到站已晚，需再加回家交通时间。"
+    },
+    {
+      "dest": "shaoxing",
+      "dir": "return",
+      "city": "shanghai",
+      "no": "G7516",
+      "from": "绍兴北",
+      "to": "上海虹桥",
+      "dep": "12:55",
+      "arr": "14:24",
+      "duration": "1 小时 29 分",
+      "when": "return",
+      "type": "高铁 · 中午返程",
+      "source": "sxsh",
+      "note": "适合北京一方选 11:02 返程时使用。"
+    },
+    {
+      "dest": "shaoxing",
+      "dir": "return",
+      "city": "shanghai",
+      "no": "G1674",
+      "from": "绍兴北",
+      "to": "上海虹桥",
+      "dep": "16:14",
+      "arr": "18:00",
+      "duration": "1 小时 46 分",
+      "when": "return",
+      "type": "高铁 · 下午返程",
+      "source": "sxsh",
+      "note": "适合两天版，或陪北京一方乘 15:23 高铁后再返程。"
+    }
+  ],
+  "travelData": {
+    "checked": "2026-11-02",
+    "fares": {
+      "G2571|北京南": {
+        "label": "二等座 ¥231 起",
+        "value": 231,
+        "source": "https://m.ctrip.com/html5/trains/beijing-taishan/"
+      },
+      "G550|上海虹桥": {
+        "label": "二等座 ¥406 起",
+        "value": 406,
+        "source": "https://m.ctrip.com/html5/trains/shanghaihongqiao-taian2/c1",
+        "note": "来源页面为历史日期报价，非11月目标日价格。"
+      },
+      "K1275|北京丰台": {
+        "label": "硬卧约 ¥139–148 · 软卧约 ¥214–223",
+        "value": 148,
+        "source": "https://www.travelchinaguide.com/china-trains/high-speed/beijing-taian.htm",
+        "note": "2026年5月北京—泰山普速席别区间，非目标日逐铺报价。预算硬卧按148、软卧按223计。"
+      },
+      "D62|上海松江": {
+        "label": "二等卧 ¥228 起 · 一等卧 ¥317 起",
+        "value": 228,
+        "source": "https://trains.ctrip.com/TrainBooking/shanghai-taishan/dongche/",
+        "note": "二等座142元起是坐席，不用于双卧铺预算；上下铺可能价差。"
+      },
+      "G835|北京南": {
+        "label": "二等座 ¥644 起",
+        "value": 644,
+        "source": "https://trains.ctrip.com/TrainBooking/beijingnan-hangzhoudong/gaotie"
+      },
+      "G7529|杭州东": {
+        "label": "二等座约 ¥18–20",
+        "value": 20,
+        "source": "https://trains.ctrip.com/TrainBooking/hangzhoudong-shaoxingbei/gaotie/"
+      },
+      "G7529|上海南": {
+        "label": "二等座 ¥91 起",
+        "value": 91,
+        "source": "https://trains.ctrip.com/trainbooking/shanghainan-shaoxingbei/gaotie/"
+      },
+      "G824|泰安": {
+        "label": "二等座 ¥231 起",
+        "value": 231,
+        "source": "https://train.qunar.com/train/tickets/taian-to-beijingnan"
+      },
+      "G834|泰安": {
+        "label": "二等座 ¥222 起",
+        "value": 222,
+        "source": "https://train.qunar.com/train/tickets/taian-to-beijingnan"
+      },
+      "G739|泰安": {
+        "label": "二等座 ¥449 起",
+        "value": 449,
+        "source": "https://trains.ctrip.com/trainbooking/taishan-shanghaihongqiao/gaotie/"
+      },
+      "G822|绍兴北": {
+        "label": "二等座 ¥666 起",
+        "value": 666,
+        "source": "https://m.ctrip.com/html5/trains/shaoxingbei-beijing/"
+      },
+      "G872|绍兴北": {
+        "label": "二等座 ¥646 起",
+        "value": 646,
+        "source": "https://m.ctrip.com/html5/trains/shaoxingbei-beijing/"
+      },
+      "G7516|绍兴北": {
+        "label": "二等座 ¥102 起",
+        "value": 102,
+        "source": "https://m.ctrip.com/html5/trains/shaoxingbei-shanghaihongqiao/"
+      },
+      "G1674|绍兴北": {
+        "label": "二等座 ¥111 起",
+        "value": 111,
+        "source": "https://m.ctrip.com/html5/trains/shaoxingbei-shanghaihongqiao/"
+      }
+    },
+    "hotels": {
+      "taian": [
+        {
+          "id": "stayDai",
+          "name": "岱庙 / 东岳大街周边",
+          "price": 360,
+          "range": [
+            280,
+            450
+          ],
+          "why": "优先推荐：午前汇合或卧铺抵达后，先逛岱庙与老城；上山日打车到天外村。",
+          "example": "仅展示住宿片区与参考预算，具体酒店及门牌未公开。请核实房型、取消规则、寄存与晚到接待。",
+          "source": "https://www.amap.com/search?query=%E5%B2%B1%E5%BA%99%20%2F%20%E4%B8%9C%E5%B2%B3%E5%A4%A7%E8%A1%97%E5%91%A8%E8%BE%B9%20%E9%85%92%E5%BA%97",
+          "pointNote": "地图表示大致住宿片区，不是已订酒店或精确住址。"
+        },
+        {
+          "id": "stayRed",
+          "name": "红门入口周边",
+          "price": 320,
+          "range": [
+            220,
+            420
+          ],
+          "why": "想住得靠近山脚可选，适合晨间散步；走天外村索道路线仍需接驳，勿误以为出门就是索道。",
+          "example": "仅展示住宿片区与参考预算，具体酒店及门牌未公开。请核实房型、取消规则、寄存与晚到接待。",
+          "source": "https://www.amap.com/search?query=%E7%BA%A2%E9%97%A8%E5%85%A5%E5%8F%A3%E5%91%A8%E8%BE%B9%20%E9%85%92%E5%BA%97",
+          "pointNote": "地图表示大致住宿片区，不是已订酒店或精确住址。"
+        }
+      ],
+      "shaoxing": [
+        {
+          "id": "stayCang",
+          "name": "仓桥直街 / 府山周边",
+          "price": 400,
+          "range": [
+            300,
+            550
+          ],
+          "why": "本次优先推荐：两人22:06到站后直接入住，白天把老城人文景点集中逛，安昌单独安排。",
+          "example": "仅展示住宿片区与参考预算，具体酒店及门牌未公开。请核实房型、取消规则、寄存与晚到接待。",
+          "source": "https://www.amap.com/search?query=%E4%BB%93%E6%A1%A5%E7%9B%B4%E8%A1%97%20%2F%20%E5%BA%9C%E5%B1%B1%E5%91%A8%E8%BE%B9%20%E9%85%92%E5%BA%97",
+          "pointNote": "地图表示大致住宿片区，不是已订酒店或精确住址。"
+        },
+        {
+          "id": "stayLu",
+          "name": "鲁迅故里地铁站周边",
+          "price": 340,
+          "range": [
+            240,
+            450
+          ],
+          "why": "适合把鲁迅故里、沈园放在首日，走路串联市区景点；古镇往返仍建议预留完整半天。",
+          "example": "仅展示住宿片区与参考预算，具体酒店及门牌未公开。请核实房型、取消规则、寄存与晚到接待。",
+          "source": "https://www.amap.com/search?query=%E9%B2%81%E8%BF%85%E6%95%85%E9%87%8C%E5%9C%B0%E9%93%81%E7%AB%99%E5%91%A8%E8%BE%B9%20%E9%85%92%E5%BA%97",
+          "pointNote": "地图表示大致住宿片区，不是已订酒店或精确住址。"
+        }
+      ]
+    },
+    "places": {
+      "taian": {
+        "taian": {
+          "name": "泰安站（高铁）",
+          "ll": [
+            36.17206,
+            117.036424
+          ],
+          "kind": "station",
+          "source": "https://www.amap.com/place/B021A0NVZZ",
+          "info": "白天高铁汇合及返程站，和市区泰山站不是同一个站。"
+        },
+        "taishan": {
+          "name": "泰山站（卧铺）",
+          "ll": [
+            36.187142,
+            117.109955
+          ],
+          "kind": "station",
+          "source": "https://ditu.amap.com/place/B021A00A99",
+          "info": "K1275与D62次晨在此汇合；返程高铁请去泰安站。"
+        },
+        "stayDai": {
+          "name": "住宿参考 · 岱庙周边",
+          "ll": [
+            36.19,
+            117.12
+          ],
+          "kind": "hotel",
+          "source": "https://www.amap.com/search?query=%E5%B2%B1%E5%BA%99%20%2F%20%E4%B8%9C%E5%B2%B3%E5%A4%A7%E8%A1%97%E5%91%A8%E8%BE%B9%20%E9%85%92%E5%BA%97",
+          "info": "地图表示大致住宿片区，不是已订酒店或精确住址。"
+        },
+        "stayRed": {
+          "name": "住宿参考 · 红门周边",
+          "ll": [
+            36.21,
+            117.13
+          ],
+          "kind": "hotel",
+          "source": "https://www.amap.com/search?query=%E7%BA%A2%E9%97%A8%E5%85%A5%E5%8F%A3%E5%91%A8%E8%BE%B9%20%E9%85%92%E5%BA%97",
+          "info": "地图表示大致住宿片区，不是已订酒店或精确住址。"
+        },
+        "dai": {
+          "name": "岱庙 · 正阳门",
+          "ll": [
+            36.192641,
+            117.131553
+          ],
+          "kind": "sight",
+          "source": "https://ditu.amap.com/place/B021A01ZVC",
+          "info": "看古建、古树与碑刻，预留2–3小时；购泰山票后先确认岱庙核验办法，避免重复买票。"
+        },
+        "tianwai": {
+          "name": "天外村入口",
+          "ll": [
+            36.2064,
+            117.107648
+          ],
+          "kind": "transfer",
+          "source": "https://ditu.amap.com/place/B021A0OQ2K",
+          "info": "由这里乘景区观光车到中天门，私家车与网约车不能替代景区上山交通。"
+        },
+        "zhong": {
+          "name": "中天门 · 索道下站",
+          "ll": [
+            36.23885,
+            117.113981
+          ],
+          "kind": "mountain",
+          "road": false,
+          "source": "https://www.amap.com/place/B021A0OQ2L",
+          "info": "观光车与索道的换乘点，另计排队和检票。"
+        },
+        "top": {
+          "name": "山顶游览区 · 玉皇顶",
+          "ll": [
+            36.257337,
+            117.109129
+          ],
+          "kind": "mountain",
+          "road": false,
+          "source": "https://ditu.amap.com/place/B021A00CC6",
+          "info": "索道到南天门后还要步行游览天街、碧霞祠和玉皇顶。图中连接仅示意游览顺序。"
+        },
+        "red": {
+          "name": "红门 / 王母池片区",
+          "ll": [
+            36.21074,
+            117.127987
+          ],
+          "kind": "sight",
+          "source": "https://ditu.amap.com/place/B021A00NG3",
+          "info": "这是红门周边片区定位，不是王母池的精确门口。短走预留1–1.5小时；可点导航后搜索具体入口。"
+        }
+      },
+      "shaoxing": {
+        "north": {
+          "name": "绍兴北站",
+          "ll": [
+            30.098661,
+            120.539485
+          ],
+          "kind": "station",
+          "source": "https://ditu.amap.com/place/B023F0PZUW",
+          "info": "前晚22:06同到及返程日返程站，位于老城以北。"
+        },
+        "stayCang": {
+          "name": "住宿参考 · 仓桥直街",
+          "ll": [
+            30,
+            120.58
+          ],
+          "kind": "hotel",
+          "source": "https://www.amap.com/search?query=%E4%BB%93%E6%A1%A5%E7%9B%B4%E8%A1%97%20%2F%20%E5%BA%9C%E5%B1%B1%E5%91%A8%E8%BE%B9%20%E9%85%92%E5%BA%97",
+          "info": "地图表示大致住宿片区，不是已订酒店或精确住址。"
+        },
+        "stayLu": {
+          "name": "住宿参考 · 鲁迅故里站",
+          "ll": [
+            29.99,
+            120.58
+          ],
+          "kind": "hotel",
+          "source": "https://www.amap.com/search?query=%E9%B2%81%E8%BF%85%E6%95%85%E9%87%8C%E5%9C%B0%E9%93%81%E7%AB%99%E5%91%A8%E8%BE%B9%20%E9%85%92%E5%BA%97",
+          "info": "地图表示大致住宿片区，不是已订酒店或精确住址。"
+        },
+        "lu": {
+          "name": "鲁迅故里 · 故居周边",
+          "ll": [
+            29.992073,
+            120.585083
+          ],
+          "kind": "sight",
+          "source": "https://www.amap.com/place/B023F026G2",
+          "info": "需提前预约，百草园、三味书屋等建议安排2–3小时。"
+        },
+        "shen": {
+          "name": "沈园入口周边",
+          "ll": [
+            29.99168,
+            120.590202
+          ],
+          "kind": "sight",
+          "source": "https://www.amap.com/place/BV11084433",
+          "info": "定位参考沈园公交站附近，精确入口以当日导航为准；日游约1–1.5小时。"
+        },
+        "cang": {
+          "name": "仓桥直街 · 南段入口",
+          "ll": [
+            29.99333,
+            120.57743
+          ],
+          "kind": "sight",
+          "source": "https://ditu.amap.com/place/B0H3NS0I5B",
+          "info": "适合傍晚散步和晚餐，与市区酒店可以步行组合。"
+        },
+        "shu": {
+          "name": "书圣故里",
+          "ll": [
+            30.008014,
+            120.58574
+          ],
+          "kind": "sight",
+          "source": "https://www.amap.com/search?query=%E7%BB%8D%E5%85%B4%E4%B9%A6%E5%9C%A3%E6%95%85%E9%87%8C",
+          "info": "题扇桥与墨池周边慢走，3天版可安排在安昌回城后。"
+        },
+        "an": {
+          "name": "安昌古镇",
+          "ll": [
+            30.135906,
+            120.495973
+          ],
+          "kind": "sight",
+          "source": "https://ditu.amap.com/place/B023F00NBB",
+          "info": "集中安排半天至一天，避免古镇与老城来回折返。"
+        }
+      }
+    },
+    "routing": {
+      "checked": "2026-11-02",
+      "provider": "OSRM / OpenStreetMap",
+      "cities": {
+        "taian": {
+          "keys": [
+            "taian",
+            "taishan",
+            "stayDai",
+            "stayRed",
+            "dai",
+            "tianwai",
+            "red"
+          ],
+          "car": {
+            "distances": [
+              [
+                0,
+                9883.7,
+                null,
+                null,
+                12006.4,
+                11263.1,
+                13365.5
+              ],
+              [
+                10076.8,
+                0,
+                null,
+                null,
+                3255.2,
+                2512,
+                4614.4
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                11577.2,
+                3406.8,
+                null,
+                null,
+                0,
+                3971.5,
+                2433.8
+              ],
+              [
+                11656.8,
+                3486.3,
+                null,
+                null,
+                4835.3,
+                0,
+                2659.9
+              ],
+              [
+                13768.3,
+                5597.8,
+                null,
+                null,
+                2436.5,
+                2662.5,
+                0
+              ]
+            ],
+            "durations": [
+              [
+                0,
+                766.8,
+                null,
+                null,
+                739.1,
+                733.2,
+                893
+              ],
+              [
+                621.5,
+                0,
+                null,
+                null,
+                250.9,
+                251.6,
+                404.8
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                616.3,
+                284.6,
+                null,
+                null,
+                0,
+                240,
+                252.4
+              ],
+              [
+                653.3,
+                328.1,
+                null,
+                null,
+                290.2,
+                0,
+                205.4
+              ],
+              [
+                809.7,
+                478,
+                null,
+                null,
+                252.2,
+                210.3,
+                0
+              ]
+            ],
+            "snap": [
+              0.2113924112,
+              65.7390911,
+              48.51811027,
+              41.93515489,
+              114.1309023,
+              52.17398423,
+              41.93515489
+            ]
+          },
+          "foot": {
+            "distances": [
+              [
+                0,
+                9756.4,
+                null,
+                null,
+                12270.1,
+                10254.6,
+                12369.9
+              ],
+              [
+                9756.4,
+                0,
+                null,
+                null,
+                3266.1,
+                2597.7,
+                4057.3
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                12270.1,
+                3266.1,
+                null,
+                null,
+                0,
+                3445.1,
+                2221.9
+              ],
+              [
+                10254.6,
+                2597.7,
+                null,
+                null,
+                3445.1,
+                0,
+                2323.1
+              ],
+              [
+                12369.9,
+                4057.3,
+                null,
+                null,
+                2221.9,
+                2323.1,
+                0
+              ]
+            ],
+            "durations": [
+              [
+                0,
+                7805,
+                null,
+                null,
+                9817.8,
+                8203.5,
+                9899.9
+              ],
+              [
+                7805,
+                0,
+                null,
+                null,
+                2614.9,
+                2082.1,
+                3249.7
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                9817.8,
+                2614.9,
+                null,
+                null,
+                0,
+                2762.1,
+                1781.5
+              ],
+              [
+                8203.5,
+                2082.1,
+                null,
+                null,
+                2762.1,
+                0,
+                1860.5
+              ],
+              [
+                9899.9,
+                3249.7,
+                null,
+                null,
+                1781.5,
+                1860.5,
+                0
+              ]
+            ],
+            "snap": [
+              0.2113924112,
+              65.7390911,
+              56.60498756,
+              2.172394712,
+              1.7093172,
+              7.083488291,
+              2.172394712
+            ]
+          }
+        },
+        "shaoxing": {
+          "keys": [
+            "north",
+            "stayCang",
+            "stayLu",
+            "lu",
+            "shen",
+            "cang",
+            "shu",
+            "an"
+          ],
+          "car": {
+            "distances": [
+              [
+                0,
+                null,
+                null,
+                15934.3,
+                17677.7,
+                17081,
+                14747.2,
+                8926.3
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                14982.9,
+                null,
+                null,
+                0,
+                1178.3,
+                678.7,
+                3419.7,
+                23434.4
+              ],
+              [
+                15688.5,
+                null,
+                null,
+                1179.6,
+                0,
+                2083.8,
+                4125.2,
+                24139.9
+              ],
+              [
+                15032.2,
+                null,
+                null,
+                678.7,
+                2063.2,
+                0,
+                3377.7,
+                23483.7
+              ],
+              [
+                15186.3,
+                null,
+                null,
+                2971.6,
+                2413.8,
+                2888.8,
+                0,
+                23637.8
+              ],
+              [
+                9356,
+                null,
+                null,
+                24653.7,
+                25339.2,
+                24598,
+                23466.5,
+                0
+              ]
+            ],
+            "durations": [
+              [
+                0,
+                null,
+                null,
+                987.7,
+                1019.1,
+                962.5,
+                930.9,
+                703.1
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                929.3,
+                null,
+                null,
+                0,
+                109.1,
+                65.7,
+                329.6,
+                1494
+              ],
+              [
+                927.8,
+                null,
+                null,
+                105.7,
+                0,
+                158.4,
+                328.1,
+                1492.5
+              ],
+              [
+                876.1,
+                null,
+                null,
+                68,
+                155.1,
+                0,
+                323.8,
+                1440.8
+              ],
+              [
+                869.9,
+                null,
+                null,
+                211,
+                171.7,
+                208.7,
+                0,
+                1434.6
+              ],
+              [
+                716.9,
+                null,
+                null,
+                1477.7,
+                1518.8,
+                1461.3,
+                1420.9,
+                0
+              ]
+            ],
+            "snap": [
+              106.4756492,
+              83.38569571,
+              13.1483391,
+              110.153296,
+              0.5542601061,
+              4.656785076,
+              105.491089,
+              40.75700138
+            ]
+          },
+          "foot": {
+            "distances": [
+              [
+                0,
+                null,
+                null,
+                14882.4,
+                15400.8,
+                14380,
+                13509.2,
+                8526.9
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                14882.4,
+                null,
+                null,
+                0,
+                496.4,
+                778.2,
+                2126.6,
+                23004.1
+              ],
+              [
+                15400.8,
+                null,
+                null,
+                496.4,
+                0,
+                1274.6,
+                2381.4,
+                23522.5
+              ],
+              [
+                14380,
+                null,
+                null,
+                778.2,
+                1274.6,
+                0,
+                2436.2,
+                22501.7
+              ],
+              [
+                13509.2,
+                null,
+                null,
+                2126.6,
+                2381.4,
+                2436.2,
+                0,
+                21630.9
+              ],
+              [
+                8526.9,
+                null,
+                null,
+                23004.1,
+                23522.5,
+                22501.7,
+                21630.9,
+                0
+              ]
+            ],
+            "durations": [
+              [
+                0,
+                null,
+                null,
+                11905.6,
+                12320.2,
+                11503.6,
+                10807.2,
+                6821
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                11905.6,
+                null,
+                null,
+                0,
+                397.2,
+                622.5,
+                1701.3,
+                18402.4
+              ],
+              [
+                12320.2,
+                null,
+                null,
+                397.2,
+                0,
+                1019.7,
+                1904.8,
+                18817
+              ],
+              [
+                11503.6,
+                null,
+                null,
+                622.5,
+                1019.7,
+                0,
+                1949.2,
+                18000.4
+              ],
+              [
+                10807.2,
+                null,
+                null,
+                1701.3,
+                1904.8,
+                1949.2,
+                0,
+                17304
+              ],
+              [
+                6821,
+                null,
+                null,
+                18402.4,
+                18817,
+                18000.4,
+                17304,
+                0
+              ]
+            ],
+            "snap": [
+              104.2273757,
+              34.73077425,
+              4.644423211,
+              20.33086674,
+              0.5542601061,
+              3.572607038,
+              14.96638013,
+              11.31373254
+            ]
+          }
+        }
+      },
+      "coordinates": {
+        "taian": {
+          "taian": [
+            36.17189750894681,
+            117.03048712891372
+          ],
+          "taishan": [
+            36.18689589916783,
+            117.10387694695387
+          ],
+          "stayDai": [
+            36.19,
+            117.12
+          ],
+          "stayRed": [
+            36.21,
+            117.12
+          ],
+          "dai": [
+            36.19241277998693,
+            117.12548653591692
+          ],
+          "tianwai": [
+            36.206148021081454,
+            117.10156776369136
+          ],
+          "zhong": [
+            36.23859275500015,
+            117.10789775180042
+          ],
+          "top": [
+            36.25707194637061,
+            117.1030429723408
+          ],
+          "red": [
+            36.2105028894067,
+            117.1219150915831
+          ]
+        },
+        "shaoxing": {
+          "north": [
+            30.101229310869257,
+            120.53530864361298
+          ],
+          "stayCang": [
+            30,
+            120.57
+          ],
+          "stayLu": [
+            29.99,
+            120.58
+          ],
+          "lu": [
+            29.994712203925342,
+            120.58100936975502
+          ],
+          "shen": [
+            29.99432149376266,
+            120.58613240729528
+          ],
+          "cang": [
+            29.995963569441205,
+            120.57334767612906
+          ],
+          "shu": [
+            30.010653382649807,
+            120.58166572320867
+          ],
+          "an": [
+            30.138351059277692,
+            120.49163621312675
+          ]
+        }
+      }
+    }
+  },
+  "cases": {
+    "taian|2|day": {
+      "name": "泰安",
+      "overnight": false,
+      "meeting": {
+        "ok": true,
+        "station": "泰安站 · 首日上午",
+        "beijing": "11:20",
+        "shanghai": "11:18",
+        "gap": 2,
+        "detail": "两人都在 12:00 前到 · 北京 G2571 / 上海 G550"
+      },
+      "arrivalLabel": "早上出发 · 午前一起到",
+      "warning": "两人首日早上出发，在泰安站汇合：上海 11:18 到，北京 11:20 到，相差 2 分钟。都在午前到达；三天版的首日上午仍用于交通，想保留完整上午可选双卧铺。",
+      "days": [
+        {
+          "date": "D1",
+          "weekday": "第 1 天",
+          "title": "午前一起到，午后逛岱庙",
+          "tag": "岱庙 · 老城",
+          "rows": [
+            {
+              "time": "11:20",
+              "title": "泰安站汇合 → 酒店寄存行李",
+              "note": "北京 G2571、上海 G550；两人一起出站，到岱庙周边预留 30–45 分钟。"
+            },
+            {
+              "time": "14:00",
+              "title": "岱庙 · 天贶殿、古树与碑刻",
+              "note": "建议 2–3 小时；银杏是否正黄看当年物候，观赏古建同样值得。"
+            },
+            {
+              "time": "17:00",
+              "title": "鲁菜与老城小巷",
+              "note": "泰山炒鸡、白菜豆腐、煎饼按口味选择；岱宗坊周边随意走走。"
+            },
+            {
+              "time": "19:00",
+              "title": "早点休息，为白天登山留体力",
+              "note": "不把到站当天排成夜爬日，也不以索道作为凌晨看日出的交通。"
+            }
+          ]
+        },
+        {
+          "date": "D2",
+          "weekday": "第 2 天",
+          "title": "登高之后，一起下山返程",
+          "tag": "紧凑 · 控制下山时间",
+          "rows": [
+            {
+              "time": "07:30",
+              "title": "早餐 → 天外村",
+              "note": "先核实当天观光车与索道；大风、检修停运时改市区活动。"
+            },
+            {
+              "time": "08:30",
+              "title": "观光车至中天门 → 索道至南天门",
+              "note": "天外村乘车，中天门换索道；两段交通分别确认。"
+            },
+            {
+              "time": "10:00",
+              "title": "天街 → 碧霞祠 → 玉皇顶",
+              "note": "按体力选路，索道无法免去山顶全部步行。"
+            },
+            {
+              "time": "12:30",
+              "title": "索道下行 → 中天门乘车下山",
+              "note": "两天版争取 13:30 回到天外村；遇排队及时缩短游览或改签返程。"
+            },
+            {
+              "time": "14:00",
+              "title": "取行李 → 泰安站",
+              "note": "建议 14:45 前到站。双卧铺去程到泰山站，返程高铁从泰安站走，别走错。"
+            },
+            {
+              "time": "15:44",
+              "title": "北京 G824；上海 16:11 G739",
+              "note": "参考到站：北京南 17:56，上海虹桥 19:50；北京可另查 17:05 G834。"
+            }
+          ]
+        }
+      ],
+      "routes": {
+        "stayDai": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taian",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayDai",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山与返程",
+            "legs": [
+              {
+                "from": "stayDai",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayRed": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taian",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayRed",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山与返程",
+            "legs": [
+              {
+                "from": "stayRed",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayDai",
+        "rooms": 1,
+        "nightly": 360,
+        "food": 90,
+        "local": 180,
+        "scenic": 790,
+        "beijing": 462,
+        "shanghai": 855,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "taian|2|night": {
+      "name": "泰安",
+      "overnight": false,
+      "meeting": {
+        "ok": false,
+        "reason": "上海前一晚最早 19:40 出发，当前未核到满足同晚抵达泰安的高铁组合。请选择“双卧铺次晨到”，或“早出发午前到”。"
+      },
+      "arrivalLabel": "前一天出发 · 当晚一起到",
+      "warning": "上海前一晚最早 19:40 出发，当前未核到满足同晚抵达泰安的高铁组合。请选择“双卧铺次晨到”，或“早出发午前到”。",
+      "days": [],
+      "routes": {
+        "stayDai": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taian",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayDai",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山与返程",
+            "legs": [
+              {
+                "from": "stayDai",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayRed": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taian",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayRed",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山与返程",
+            "legs": [
+              {
+                "from": "stayRed",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayDai",
+        "rooms": 1,
+        "nightly": 360,
+        "food": 90,
+        "local": 180,
+        "scenic": 790,
+        "beijing": 462,
+        "shanghai": 855,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "taian|2|sleeper": {
+      "name": "泰安",
+      "overnight": true,
+      "meeting": {
+        "ok": true,
+        "station": "泰山站 · 次晨",
+        "beijing": "06:43",
+        "shanghai": "06:14",
+        "gap": 29,
+        "detail": "两人都乘卧铺 · 北京 K1275 / 上海 D62 · 到的是泰山站"
+      },
+      "arrivalLabel": "前一天出发 · 双卧铺次晨到",
+      "warning": "两人都买卧铺，前一晚出发，次晨在泰山站汇合。上海 D62 06:14 到，北京 K1275 06:43 到，等待约 29 分钟。先吃早餐、寄存行李并休息，再安排轻松景点。",
+      "days": [
+        {
+          "date": "启程",
+          "weekday": "前一晚",
+          "title": "都睡在路上，明早见",
+          "tag": "两人均须买到卧铺",
+          "rows": [
+            {
+              "time": "21:39",
+              "title": "上海松江 · D62 → 泰山 次晨 06:14",
+              "note": "选择二等卧 / 一等卧等可售卧铺席别，不以坐席代替。"
+            },
+            {
+              "time": "23:37",
+              "title": "北京丰台 · K1275 → 泰山 次晨 06:43",
+              "note": "选择硬卧或软卧；北京一方可晚些上车，次晨在同一个站碰头。"
+            }
+          ]
+        },
+        {
+          "date": "D1",
+          "weekday": "第 1 天",
+          "title": "早餐碰头，把节奏放慢一点",
+          "tag": "岱庙 · 老城",
+          "rows": [
+            {
+              "time": "06:43",
+              "title": "泰山站汇合 → 早餐、寄存、休息",
+              "note": "早到的上海一方在站外约定位置等候；酒店通常不能保证清晨入住，提前询问早入住或钟点房。"
+            },
+            {
+              "time": "09:30",
+              "title": "岱庙 · 天贶殿、古树与碑刻",
+              "note": "建议 2–3 小时；银杏是否正黄看当年物候，观赏古建同样值得。"
+            },
+            {
+              "time": "12:30",
+              "title": "鲁菜与老城小巷",
+              "note": "泰山炒鸡、白菜豆腐、煎饼按口味选择；岱宗坊周边随意走走。"
+            },
+            {
+              "time": "19:00",
+              "title": "早点休息，为白天登山留体力",
+              "note": "不把到站当天排成夜爬日，也不以索道作为凌晨看日出的交通。"
+            }
+          ]
+        },
+        {
+          "date": "D2",
+          "weekday": "第 2 天",
+          "title": "登高之后，一起下山返程",
+          "tag": "紧凑 · 控制下山时间",
+          "rows": [
+            {
+              "time": "07:30",
+              "title": "早餐 → 天外村",
+              "note": "先核实当天观光车与索道；大风、检修停运时改市区活动。"
+            },
+            {
+              "time": "08:30",
+              "title": "观光车至中天门 → 索道至南天门",
+              "note": "天外村乘车，中天门换索道；两段交通分别确认。"
+            },
+            {
+              "time": "10:00",
+              "title": "天街 → 碧霞祠 → 玉皇顶",
+              "note": "按体力选路，索道无法免去山顶全部步行。"
+            },
+            {
+              "time": "12:30",
+              "title": "索道下行 → 中天门乘车下山",
+              "note": "两天版争取 13:30 回到天外村；遇排队及时缩短游览或改签返程。"
+            },
+            {
+              "time": "14:00",
+              "title": "取行李 → 泰安站",
+              "note": "建议 14:45 前到站。双卧铺去程到泰山站，返程高铁从泰安站走，别走错。"
+            },
+            {
+              "time": "15:44",
+              "title": "北京 G824；上海 16:11 G739",
+              "note": "参考到站：北京南 17:56，上海虹桥 19:50；北京可另查 17:05 G834。"
+            }
+          ]
+        }
+      ],
+      "routes": {
+        "stayDai": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taishan",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayDai",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山与返程",
+            "legs": [
+              {
+                "from": "stayDai",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayRed": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taishan",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayRed",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山与返程",
+            "legs": [
+              {
+                "from": "stayRed",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayDai",
+        "rooms": 1,
+        "nightly": 360,
+        "food": 90,
+        "local": 180,
+        "scenic": 790,
+        "beijing": 379,
+        "shanghai": 677,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "taian|3|day": {
+      "name": "泰安",
+      "overnight": false,
+      "meeting": {
+        "ok": true,
+        "station": "泰安站 · 首日上午",
+        "beijing": "11:20",
+        "shanghai": "11:18",
+        "gap": 2,
+        "detail": "两人都在 12:00 前到 · 北京 G2571 / 上海 G550"
+      },
+      "arrivalLabel": "早上出发 · 午前一起到",
+      "warning": "两人首日早上出发，在泰安站汇合：上海 11:18 到，北京 11:20 到，相差 2 分钟。都在午前到达；三天版的首日上午仍用于交通，想保留完整上午可选双卧铺。",
+      "days": [
+        {
+          "date": "D1",
+          "weekday": "第 1 天",
+          "title": "午前一起到，午后逛岱庙",
+          "tag": "岱庙 · 老城",
+          "rows": [
+            {
+              "time": "11:20",
+              "title": "泰安站汇合 → 酒店寄存行李",
+              "note": "北京 G2571、上海 G550；两人一起出站，到岱庙周边预留 30–45 分钟。"
+            },
+            {
+              "time": "14:00",
+              "title": "岱庙 · 天贶殿、古树与碑刻",
+              "note": "建议 2–3 小时；银杏是否正黄看当年物候，观赏古建同样值得。"
+            },
+            {
+              "time": "17:00",
+              "title": "鲁菜与老城小巷",
+              "note": "泰山炒鸡、白菜豆腐、煎饼按口味选择；岱宗坊周边随意走走。"
+            },
+            {
+              "time": "19:00",
+              "title": "早点休息，为白天登山留体力",
+              "note": "不把到站当天排成夜爬日，也不以索道作为凌晨看日出的交通。"
+            }
+          ]
+        },
+        {
+          "date": "D2",
+          "weekday": "第 2 天",
+          "title": "把一整天，留给泰山",
+          "tag": "山景 · 白天索道往返",
+          "rows": [
+            {
+              "time": "07:30",
+              "title": "早餐 → 天外村",
+              "note": "先核实当天观光车与索道；大风、检修停运时改市区活动。"
+            },
+            {
+              "time": "08:30",
+              "title": "观光车至中天门 → 索道至南天门",
+              "note": "天外村乘车，中天门换索道；两段交通分别确认。"
+            },
+            {
+              "time": "10:00",
+              "title": "天街 → 碧霞祠 → 玉皇顶",
+              "note": "按体力选路，索道无法免去山顶全部步行。"
+            },
+            {
+              "time": "14:00",
+              "title": "索道下行 → 中天门乘车下山",
+              "note": "给下行排队留足余量，傍晚回市区休息。"
+            },
+            {
+              "time": "18:00",
+              "title": "回市区吃晚饭、休息",
+              "note": "不再叠加另一个远处景点。"
+            }
+          ]
+        },
+        {
+          "date": "D3",
+          "weekday": "第 3 天",
+          "title": "看一座小院，再各自归途",
+          "tag": "王母池 · 悠闲返程",
+          "rows": [
+            {
+              "time": "09:00",
+              "title": "王母池 / 红门周边散步",
+              "note": "约 1–1.5 小时，或者酒店休息；不再重登泰山。"
+            },
+            {
+              "time": "12:00",
+              "title": "午餐、取伴手礼",
+              "note": "买少量板栗或煎饼即可，给返程留出余量。"
+            },
+            {
+              "time": "14:00",
+              "title": "取行李 → 泰安站",
+              "note": "建议 14:45 前到站。双卧铺去程到泰山站，返程高铁从泰安站走，别走错。"
+            },
+            {
+              "time": "15:44",
+              "title": "北京 G824；上海 16:11 G739",
+              "note": "参考到站：北京南 17:56，上海虹桥 19:50；北京可另查 17:05 G834。"
+            }
+          ]
+        }
+      ],
+      "routes": {
+        "stayDai": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taian",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayDai",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山日",
+            "legs": [
+              {
+                "from": "stayDai",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 山脚与返程",
+            "legs": [
+              {
+                "from": "stayDai",
+                "to": "red",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "red",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayRed": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taian",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayRed",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山日",
+            "legs": [
+              {
+                "from": "stayRed",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 山脚与返程",
+            "legs": [
+              {
+                "from": "stayRed",
+                "to": "red",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "red",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayDai",
+        "rooms": 1,
+        "nightly": 360,
+        "food": 90,
+        "local": 180,
+        "scenic": 790,
+        "beijing": 462,
+        "shanghai": 855,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "taian|3|night": {
+      "name": "泰安",
+      "overnight": false,
+      "meeting": {
+        "ok": false,
+        "reason": "上海前一晚最早 19:40 出发，当前未核到满足同晚抵达泰安的高铁组合。请选择“双卧铺次晨到”，或“早出发午前到”。"
+      },
+      "arrivalLabel": "前一天出发 · 当晚一起到",
+      "warning": "上海前一晚最早 19:40 出发，当前未核到满足同晚抵达泰安的高铁组合。请选择“双卧铺次晨到”，或“早出发午前到”。",
+      "days": [],
+      "routes": {
+        "stayDai": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taian",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayDai",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山日",
+            "legs": [
+              {
+                "from": "stayDai",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 山脚与返程",
+            "legs": [
+              {
+                "from": "stayDai",
+                "to": "red",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "red",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayRed": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taian",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayRed",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山日",
+            "legs": [
+              {
+                "from": "stayRed",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 山脚与返程",
+            "legs": [
+              {
+                "from": "stayRed",
+                "to": "red",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "red",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayDai",
+        "rooms": 1,
+        "nightly": 360,
+        "food": 90,
+        "local": 180,
+        "scenic": 790,
+        "beijing": 462,
+        "shanghai": 855,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "taian|3|sleeper": {
+      "name": "泰安",
+      "overnight": true,
+      "meeting": {
+        "ok": true,
+        "station": "泰山站 · 次晨",
+        "beijing": "06:43",
+        "shanghai": "06:14",
+        "gap": 29,
+        "detail": "两人都乘卧铺 · 北京 K1275 / 上海 D62 · 到的是泰山站"
+      },
+      "arrivalLabel": "前一天出发 · 双卧铺次晨到",
+      "warning": "两人都买卧铺，前一晚出发，次晨在泰山站汇合。上海 D62 06:14 到，北京 K1275 06:43 到，等待约 29 分钟。先吃早餐、寄存行李并休息，再安排轻松景点。",
+      "days": [
+        {
+          "date": "启程",
+          "weekday": "前一晚",
+          "title": "都睡在路上，明早见",
+          "tag": "两人均须买到卧铺",
+          "rows": [
+            {
+              "time": "21:39",
+              "title": "上海松江 · D62 → 泰山 次晨 06:14",
+              "note": "选择二等卧 / 一等卧等可售卧铺席别，不以坐席代替。"
+            },
+            {
+              "time": "23:37",
+              "title": "北京丰台 · K1275 → 泰山 次晨 06:43",
+              "note": "选择硬卧或软卧；北京一方可晚些上车，次晨在同一个站碰头。"
+            }
+          ]
+        },
+        {
+          "date": "D1",
+          "weekday": "第 1 天",
+          "title": "早餐碰头，把节奏放慢一点",
+          "tag": "岱庙 · 老城",
+          "rows": [
+            {
+              "time": "06:43",
+              "title": "泰山站汇合 → 早餐、寄存、休息",
+              "note": "早到的上海一方在站外约定位置等候；酒店通常不能保证清晨入住，提前询问早入住或钟点房。"
+            },
+            {
+              "time": "09:30",
+              "title": "岱庙 · 天贶殿、古树与碑刻",
+              "note": "建议 2–3 小时；银杏是否正黄看当年物候，观赏古建同样值得。"
+            },
+            {
+              "time": "12:30",
+              "title": "鲁菜与老城小巷",
+              "note": "泰山炒鸡、白菜豆腐、煎饼按口味选择；岱宗坊周边随意走走。"
+            },
+            {
+              "time": "19:00",
+              "title": "早点休息，为白天登山留体力",
+              "note": "不把到站当天排成夜爬日，也不以索道作为凌晨看日出的交通。"
+            }
+          ]
+        },
+        {
+          "date": "D2",
+          "weekday": "第 2 天",
+          "title": "把一整天，留给泰山",
+          "tag": "山景 · 白天索道往返",
+          "rows": [
+            {
+              "time": "07:30",
+              "title": "早餐 → 天外村",
+              "note": "先核实当天观光车与索道；大风、检修停运时改市区活动。"
+            },
+            {
+              "time": "08:30",
+              "title": "观光车至中天门 → 索道至南天门",
+              "note": "天外村乘车，中天门换索道；两段交通分别确认。"
+            },
+            {
+              "time": "10:00",
+              "title": "天街 → 碧霞祠 → 玉皇顶",
+              "note": "按体力选路，索道无法免去山顶全部步行。"
+            },
+            {
+              "time": "14:00",
+              "title": "索道下行 → 中天门乘车下山",
+              "note": "给下行排队留足余量，傍晚回市区休息。"
+            },
+            {
+              "time": "18:00",
+              "title": "回市区吃晚饭、休息",
+              "note": "不再叠加另一个远处景点。"
+            }
+          ]
+        },
+        {
+          "date": "D3",
+          "weekday": "第 3 天",
+          "title": "看一座小院，再各自归途",
+          "tag": "王母池 · 悠闲返程",
+          "rows": [
+            {
+              "time": "09:00",
+              "title": "王母池 / 红门周边散步",
+              "note": "约 1–1.5 小时，或者酒店休息；不再重登泰山。"
+            },
+            {
+              "time": "12:00",
+              "title": "午餐、取伴手礼",
+              "note": "买少量板栗或煎饼即可，给返程留出余量。"
+            },
+            {
+              "time": "14:00",
+              "title": "取行李 → 泰安站",
+              "note": "建议 14:45 前到站。双卧铺去程到泰山站，返程高铁从泰安站走，别走错。"
+            },
+            {
+              "time": "15:44",
+              "title": "北京 G824；上海 16:11 G739",
+              "note": "参考到站：北京南 17:56，上海虹桥 19:50；北京可另查 17:05 G834。"
+            }
+          ]
+        }
+      ],
+      "routes": {
+        "stayDai": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taishan",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayDai",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山日",
+            "legs": [
+              {
+                "from": "stayDai",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 山脚与返程",
+            "legs": [
+              {
+                "from": "stayDai",
+                "to": "red",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "red",
+                "to": "stayDai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayDai",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayRed": [
+          {
+            "id": "first",
+            "label": "首日 · 汇合与岱庙",
+            "legs": [
+              {
+                "from": "taishan",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "dai",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "dai",
+                "to": "stayRed",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "mountain",
+            "label": "第 2 天 · 泰山日",
+            "legs": [
+              {
+                "from": "stayRed",
+                "to": "tianwai",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "tianwai",
+                "to": "zhong",
+                "mode": "bus",
+                "note": "景区观光车约30分钟；另留检票和排队。"
+              },
+              {
+                "from": "zhong",
+                "to": "top",
+                "mode": "cable",
+                "note": "索道到南天门约8–15分钟，之后步行至山顶游览区约40–70分钟；并非索道直达玉皇顶。"
+              },
+              {
+                "from": "top",
+                "to": "zhong",
+                "mode": "cable",
+                "note": "原路索道下行；山顶步行与排队另计。"
+              },
+              {
+                "from": "zhong",
+                "to": "tianwai",
+                "mode": "bus",
+                "note": "景区观光车下行约30分钟；另留候车时间。"
+              },
+              {
+                "from": "tianwai",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 山脚与返程",
+            "legs": [
+              {
+                "from": "stayRed",
+                "to": "red",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "red",
+                "to": "stayRed",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayRed",
+                "to": "taian",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayDai",
+        "rooms": 1,
+        "nightly": 360,
+        "food": 90,
+        "local": 180,
+        "scenic": 790,
+        "beijing": 379,
+        "shanghai": 677,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "shaoxing|2|day": {
+      "name": "绍兴",
+      "overnight": false,
+      "meeting": {
+        "ok": false,
+        "reason": "当前未核到北京早上出发、12:00 前到绍兴的可用组合，不将午后到达标成符合条件。请选择“前晚一起到”。"
+      },
+      "arrivalLabel": "早上出发 · 午前一起到",
+      "warning": "当前未核到北京早上出发、12:00 前到绍兴的可用组合，不将午后到达标成符合条件。请选择“前晚一起到”。",
+      "days": [],
+      "routes": {
+        "stayCang": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayCang",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与返程",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayCang",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayLu": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayLu",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与返程",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayLu",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayCang",
+        "rooms": 1,
+        "nightly": 400,
+        "food": 100,
+        "local": 280,
+        "scenic": 240,
+        "beijing": 1310,
+        "shanghai": 202,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "shaoxing|2|night": {
+      "name": "绍兴",
+      "overnight": false,
+      "meeting": {
+        "ok": true,
+        "station": "绍兴北站 · 前一晚",
+        "beijing": "22:06",
+        "shanghai": "22:06",
+        "gap": 0,
+        "detail": "北京经杭州东接入 G7529 · 两人同一趟车到目的地"
+      },
+      "arrivalLabel": "前一天出发 · 当晚一起到",
+      "warning": "两人前一晚同到绍兴北 22:06。北京 15:11 乘 G835 至杭州东 21:05，同站换乘 21:47 的 G7529，预留 42 分钟；上海 20:32 从上海南直乘 G7529。北京在杭州东接入同一趟车，一起到站入住，需核实两段票及换乘条件。",
+      "days": [
+        {
+          "date": "启程",
+          "weekday": "前一晚",
+          "title": "在同一趟车上，接上这场旅行",
+          "tag": "北京中转 · 上海直达",
+          "rows": [
+            {
+              "time": "15:11",
+              "title": "北京南 G835 → 杭州东 21:05",
+              "note": "北京一方时间灵活，下午先出发。第二段票须同时确认。"
+            },
+            {
+              "time": "20:32",
+              "title": "上海南 G7529 → 绍兴北 22:06",
+              "note": "符合上海不早于 19:40 的限制；该车 21:40 到杭州东、21:47 开。"
+            },
+            {
+              "time": "21:47",
+              "title": "北京在杭州东换乘同一趟 G7529",
+              "note": "42 分钟同站换乘，按当日引导行走；不承诺相邻座位。"
+            },
+            {
+              "time": "22:06",
+              "title": "两人同到绍兴北 → 一起入住",
+              "note": "预订仓桥直街周边可晚到酒店；当晚不再排景点。"
+            }
+          ]
+        },
+        {
+          "date": "D1",
+          "weekday": "第 1 天",
+          "title": "从课本里的绍兴，走进小巷",
+          "tag": "鲁迅故里 · 沈园 · 老街",
+          "rows": [
+            {
+              "time": "09:00",
+              "title": "鲁迅故里 · 百草园、三味书屋",
+              "note": "提前在官方渠道预约合适时段；建议留 2–3 小时。"
+            },
+            {
+              "time": "12:00",
+              "title": "午餐，尝一顿绍兴菜",
+              "note": "绍三鲜、黄酒鸡、茴香豆，沿老城就近吃。"
+            },
+            {
+              "time": "14:00",
+              "title": "沈园 · 庭院与《钗头凤》",
+              "note": "建议 1–1.5 小时；若想夜场，改为单独核实当晚票种，不重复安排日夜两次。"
+            },
+            {
+              "time": "17:00",
+              "title": "仓桥直街 · 沿河散步、晚餐",
+              "note": "看小桥、台门老屋和灯火，把晚上留给吃逛。"
+            }
+          ]
+        },
+        {
+          "date": "D2",
+          "weekday": "第 2 天",
+          "title": "上午逛安昌，下午各自归途",
+          "tag": "北京返程晚 · 留意体力",
+          "rows": [
+            {
+              "time": "08:30",
+              "title": "市区 → 安昌古镇",
+              "note": "预留约 45–60 分钟接驳，少带行李，不与市区反复折返。"
+            },
+            {
+              "time": "09:30",
+              "title": "沿河长廊、石桥与酱晒风物",
+              "note": "晒酱、腊味依商户与季节安排；坐乌篷船前问清整船价格与乘坐规则。"
+            },
+            {
+              "time": "11:30",
+              "title": "古镇午餐，再多走一小段",
+              "note": "酱鸭、年糕、腊味按口味选择。"
+            },
+            {
+              "time": "12:30",
+              "title": "取行李 → 绍兴北站",
+              "note": "建议 14:15 前到站。若选择北京 11:02 早返程，就取消安昌。"
+            },
+            {
+              "time": "15:23",
+              "title": "北京 G872；上海 16:14 G1674",
+              "note": "参考到站：北京南 21:52，上海虹桥 18:00；书圣故里留给下次，不硬塞。"
+            }
+          ]
+        }
+      ],
+      "routes": {
+        "stayCang": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayCang",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与返程",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayCang",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayLu": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayLu",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与返程",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayLu",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayCang",
+        "rooms": 1,
+        "nightly": 400,
+        "food": 100,
+        "local": 280,
+        "scenic": 240,
+        "beijing": 1310,
+        "shanghai": 202,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "shaoxing|2|sleeper": {
+      "name": "绍兴",
+      "overnight": true,
+      "meeting": {
+        "ok": false,
+        "reason": "上海到绍兴距离较短，当前未核到两边都乘卧铺、次晨抵达的合理组合。请选择“前晚一起到”。"
+      },
+      "arrivalLabel": "前一天出发 · 双卧铺次晨到",
+      "warning": "上海到绍兴距离较短，当前未核到两边都乘卧铺、次晨抵达的合理组合。请选择“前晚一起到”。",
+      "days": [],
+      "routes": {
+        "stayCang": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayCang",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与返程",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayCang",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayLu": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayLu",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与返程",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "stayLu",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayCang",
+        "rooms": 1,
+        "nightly": 400,
+        "food": 100,
+        "local": 280,
+        "scenic": 240,
+        "beijing": 1310,
+        "shanghai": 202,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "shaoxing|3|day": {
+      "name": "绍兴",
+      "overnight": false,
+      "meeting": {
+        "ok": false,
+        "reason": "当前未核到北京早上出发、12:00 前到绍兴的可用组合，不将午后到达标成符合条件。请选择“前晚一起到”。"
+      },
+      "arrivalLabel": "早上出发 · 午前一起到",
+      "warning": "当前未核到北京早上出发、12:00 前到绍兴的可用组合，不将午后到达标成符合条件。请选择“前晚一起到”。",
+      "days": [],
+      "routes": {
+        "stayCang": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayCang",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与书圣故里",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "shu",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "shu",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 早返程",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayLu": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayLu",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与书圣故里",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "shu",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "shu",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 早返程",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayCang",
+        "rooms": 1,
+        "nightly": 400,
+        "food": 100,
+        "local": 280,
+        "scenic": 240,
+        "beijing": 1330,
+        "shanghai": 193,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "shaoxing|3|night": {
+      "name": "绍兴",
+      "overnight": false,
+      "meeting": {
+        "ok": true,
+        "station": "绍兴北站 · 前一晚",
+        "beijing": "22:06",
+        "shanghai": "22:06",
+        "gap": 0,
+        "detail": "北京经杭州东接入 G7529 · 两人同一趟车到目的地"
+      },
+      "arrivalLabel": "前一天出发 · 当晚一起到",
+      "warning": "两人前一晚同到绍兴北 22:06。北京 15:11 乘 G835 至杭州东 21:05，同站换乘 21:47 的 G7529，预留 42 分钟；上海 20:32 从上海南直乘 G7529。北京在杭州东接入同一趟车，一起到站入住，需核实两段票及换乘条件。",
+      "days": [
+        {
+          "date": "启程",
+          "weekday": "前一晚",
+          "title": "在同一趟车上，接上这场旅行",
+          "tag": "北京中转 · 上海直达",
+          "rows": [
+            {
+              "time": "15:11",
+              "title": "北京南 G835 → 杭州东 21:05",
+              "note": "北京一方时间灵活，下午先出发。第二段票须同时确认。"
+            },
+            {
+              "time": "20:32",
+              "title": "上海南 G7529 → 绍兴北 22:06",
+              "note": "符合上海不早于 19:40 的限制；该车 21:40 到杭州东、21:47 开。"
+            },
+            {
+              "time": "21:47",
+              "title": "北京在杭州东换乘同一趟 G7529",
+              "note": "42 分钟同站换乘，按当日引导行走；不承诺相邻座位。"
+            },
+            {
+              "time": "22:06",
+              "title": "两人同到绍兴北 → 一起入住",
+              "note": "预订仓桥直街周边可晚到酒店；当晚不再排景点。"
+            }
+          ]
+        },
+        {
+          "date": "D1",
+          "weekday": "第 1 天",
+          "title": "从课本里的绍兴，走进小巷",
+          "tag": "鲁迅故里 · 沈园 · 老街",
+          "rows": [
+            {
+              "time": "09:00",
+              "title": "鲁迅故里 · 百草园、三味书屋",
+              "note": "提前在官方渠道预约合适时段；建议留 2–3 小时。"
+            },
+            {
+              "time": "12:00",
+              "title": "午餐，尝一顿绍兴菜",
+              "note": "绍三鲜、黄酒鸡、茴香豆，沿老城就近吃。"
+            },
+            {
+              "time": "14:00",
+              "title": "沈园 · 庭院与《钗头凤》",
+              "note": "建议 1–1.5 小时；若想夜场，改为单独核实当晚票种，不重复安排日夜两次。"
+            },
+            {
+              "time": "17:00",
+              "title": "仓桥直街 · 沿河散步、晚餐",
+              "note": "看小桥、台门老屋和灯火，把晚上留给吃逛。"
+            }
+          ]
+        },
+        {
+          "date": "D2",
+          "weekday": "第 2 天",
+          "title": "一座古镇，和一段水墨老街",
+          "tag": "安昌 · 书圣故里",
+          "rows": [
+            {
+              "time": "08:30",
+              "title": "市区 → 安昌古镇",
+              "note": "预留约 45–60 分钟接驳，少带行李，不与市区反复折返。"
+            },
+            {
+              "time": "09:30",
+              "title": "沿河长廊、石桥与酱晒风物",
+              "note": "晒酱、腊味依商户与季节安排；坐乌篷船前问清整船价格与乘坐规则。"
+            },
+            {
+              "time": "11:30",
+              "title": "古镇午餐，再多走一小段",
+              "note": "酱鸭、年糕、腊味按口味选择。"
+            },
+            {
+              "time": "14:30",
+              "title": "返回市区 → 书圣故里",
+              "note": "沿题扇桥、墨池周边散步约 1.5–2 小时；累了就改为休息。"
+            },
+            {
+              "time": "18:00",
+              "title": "晚餐、自由活动",
+              "note": "若已预约沈园夜场，可在此晚替换自由活动。"
+            }
+          ]
+        },
+        {
+          "date": "D3",
+          "weekday": "第 3 天",
+          "title": "好好吃早餐，早一点回家",
+          "tag": "短逛 · 返程",
+          "rows": [
+            {
+              "time": "08:00",
+              "title": "酒店附近早餐、散步",
+              "note": "早返程不硬塞预约景点；9:30 左右前往绍兴北站。"
+            },
+            {
+              "time": "11:02",
+              "title": "北京 G822 → 北京南 16:50",
+              "note": "上海可选 12:55 G7516，14:24 到上海虹桥。"
+            },
+            {
+              "time": "可选",
+              "title": "想多逛半天，改下午返程",
+              "note": "北京 G872 15:23 → 21:52；上海 G1674 16:14 → 18:00，记得北京回家还需接驳。"
+            }
+          ]
+        }
+      ],
+      "routes": {
+        "stayCang": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayCang",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与书圣故里",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "shu",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "shu",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 早返程",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayLu": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayLu",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与书圣故里",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "shu",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "shu",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 早返程",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayCang",
+        "rooms": 1,
+        "nightly": 400,
+        "food": 100,
+        "local": 280,
+        "scenic": 240,
+        "beijing": 1330,
+        "shanghai": 193,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    },
+    "shaoxing|3|sleeper": {
+      "name": "绍兴",
+      "overnight": true,
+      "meeting": {
+        "ok": false,
+        "reason": "上海到绍兴距离较短，当前未核到两边都乘卧铺、次晨抵达的合理组合。请选择“前晚一起到”。"
+      },
+      "arrivalLabel": "前一天出发 · 双卧铺次晨到",
+      "warning": "上海到绍兴距离较短，当前未核到两边都乘卧铺、次晨抵达的合理组合。请选择“前晚一起到”。",
+      "days": [],
+      "routes": {
+        "stayCang": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayCang",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与书圣故里",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "shu",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "shu",
+                "to": "stayCang",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 早返程",
+            "legs": [
+              {
+                "from": "stayCang",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ],
+        "stayLu": [
+          {
+            "id": "arrival",
+            "label": "前晚 · 同到入住",
+            "legs": [
+              {
+                "from": "north",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "first",
+            "label": "首日 · 老城散步",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "lu",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "lu",
+                "to": "shen",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "shen",
+                "to": "cang",
+                "mode": "foot",
+                "note": ""
+              },
+              {
+                "from": "cang",
+                "to": "stayLu",
+                "mode": "foot",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "ancient",
+            "label": "第 2 天 · 安昌与书圣故里",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "an",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "an",
+                "to": "shu",
+                "mode": "car",
+                "note": ""
+              },
+              {
+                "from": "shu",
+                "to": "stayLu",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          },
+          {
+            "id": "return",
+            "label": "第 3 天 · 早返程",
+            "legs": [
+              {
+                "from": "stayLu",
+                "to": "north",
+                "mode": "car",
+                "note": ""
+              }
+            ]
+          }
+        ]
+      },
+      "defaults": {
+        "hotel": "stayCang",
+        "rooms": 1,
+        "nightly": 400,
+        "food": 100,
+        "local": 280,
+        "scenic": 240,
+        "beijing": 1330,
+        "shanghai": 193,
+        "reserve": 10,
+        "early": false,
+        "bunkBJ": "hard",
+        "bunkSH": "second"
+      }
+    }
+  },
+  "tasks": [
+    "核实两人往返车次、车站与起售时间",
+    "订可取消酒店，确认晚到与行李寄存",
+    "预约景点，确认索道 / 夜场开放",
+    "带身份证、充电宝与充电线",
+    "带防风保暖层、舒适鞋与雨具",
+    "出发前一周复核天气、秋色与交通"
+  ]
+}

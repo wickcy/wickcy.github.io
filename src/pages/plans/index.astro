@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import TripCard from '../../components/TripCard.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { siteContent } from '../../lib/content';
+const {trips}=await siteContent();
+const plans=trips.filter(t=>t.data.status==='planning');
+---
+<SiteLayout title="旅行计划" active="plans"><div class="wrap"><header class="page-head"><div><p class="eyebrow">把出发，放进日常。</p><h1>想去的地方，<span class="accent">慢慢计划。</span></h1></div><p>在出发前，把路线、喜欢的风景和路上的余量，一点点安排好。计划会随新的想法继续更新。</p></header><p class="status-note">{plans.length} 份规划中的旅行 · 展示目的地与公开安排</p><section class="content-section" aria-label="旅行计划列表">{plans.length?<div class="trip-grid">{plans.map(trip=><TripCard trip={trip}/>)}</div>:<EmptyState title="下一站，还在酝酿。" description="新的旅行想法会在这里慢慢长成计划。"/>}</section></div></SiteLayout>

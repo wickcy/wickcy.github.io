@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+interface Props { title?:string; description?:string; active?:'atlas'|'trips'|'plans'|'photos'; }
+const {title,description='把走过的路、期待的风景和旅途中的照片，慢慢收进旅行记忆。',active='atlas'}=Astro.props;
+const navigation=[['atlas','/','足迹'],['trips','/trips/','旅行'],['plans','/plans/','计划'],['photos','/photos/','相册']];
+const canonical=new URL(Astro.url.pathname,Astro.site);
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#244b3e"/><meta name="description" content={description}/>
+    <title>{title?`${title} · 旅行记忆`:'旅行记忆 · 把旅途留成故事'}</title>
+    <link rel="canonical" href={canonical}/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta property="og:title" content={title?`${title} · 旅行记忆`:'旅行记忆'}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/>
+  </head>
+  <body>
+    <a class="skip" href="#main">跳到主要内容</a>
+    <header class="site-header"><div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="旅行记忆首页"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1"/><path d="m26 12-4 12-8 4 4-12 8-4Z" stroke="currentColor" stroke-width="1.4"/><path d="M20 1v7m0 24v7M1 20h7m24 0h7" stroke="currentColor"/></svg><span>旅行记忆</span></a>
+      <nav class="site-nav" aria-label="主导航">{navigation.map(([key,href,label])=><a href={href} aria-current={active===key?'page':undefined}>{label}</a>)}</nav>
+      <span class="header-caption">Collect moments, slowly.</span>
+    </div></header>
+    <main id="main"><slot/></main>
+    <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-name" href="/">旅行记忆</a><p>把旅途留成故事，把风景留在心里。</p><div class="footer-note"><a href="/plans/">下一次出发</a><a href="/photos/">翻翻相册</a></div></div></footer>
+  </body>
+</html>
