@@ -7,10 +7,6 @@ interface Photo {
   alt: string;
   caption?: string;
   cityId?: string;
-  featured?: boolean;
-  ticketSrc?: string;
-  ticketWidth?: number;
-  ticketHeight?: number;
   width?: number;
   height?: number;
 }
@@ -23,15 +19,14 @@ interface Props {
 
 const {
   photos,
-  title = '留在照片里的时光',
-  description = '几张值得收藏的瞬间，和这一路的更多记忆。',
+  title = '沿途的每一张',
+  description = '点击照片放大，慢慢翻看这一路。',
 } = Astro.props;
-const featured = photos.filter((photo) => photo.featured).slice(0, 3);
 ---
 
 <section class="travel-gallery" data-travel-gallery>
   <header class="gallery-heading">
-    <h2>{title}</h2>
+    <div class="gallery-title"><h2>{title}</h2>{photos.length > 0 && <span>{photos.length} 张照片</span>}</div>
     <p>{photos.length ? description : '照片会在旅途中慢慢积攒，回来后再把记忆放进这里。'}</p>
   </header>
 
@@ -43,29 +38,9 @@ const featured = photos.filter((photo) => photo.featured).slice(0, 3);
     </div>
   ) : (
     <>
-      {featured.length > 0 && (
-        <div class="featured-section">
-          <div class="gallery-subheading"><h3>精选收藏</h3><span>点击查看照片</span></div>
-          <div class="featured-grid" data-count={featured.length}>
-            {featured.map((photo) => (
-              <figure class="featured-photo">
-                <a href={photo.src} data-gallery-index={photos.indexOf(photo)} aria-label={`查看照片：${photo.alt}`}>
-                  <span class="featured-frame" data-photo-frame>
-                    <img src={photo.ticketSrc || photo.thumbnail || photo.src} alt={photo.ticketSrc ? `${photo.alt}，旅行票根` : photo.alt} width={photo.ticketSrc ? photo.ticketWidth : photo.width} height={photo.ticketSrc ? photo.ticketHeight : photo.height} loading="lazy" decoding="async" />
-                    <span class="image-error" hidden>图片暂时无法加载</span>
-                  </span>
-                </a>
-                <figcaption>{photo.caption || photo.alt}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div class="gallery-subheading all-photos-heading"><h3>沿途的每一张</h3><span>{photos.length} 张公开照片</span></div>
-      <div class="photo-grid">
+      <div class="photo-wall">
         {photos.map((photo, index) => (
-          <figure class="photo-card">
+          <figure class="photo-card" style={`--photo-ratio: ${photo.width && photo.height ? `${photo.width} / ${photo.height}` : '3 / 2'}`}>
             <a
               href={photo.src}
               data-gallery-photo
@@ -81,7 +56,7 @@ const featured = photos.filter((photo) => photo.featured).slice(0, 3);
                 <span class="image-error" hidden>照片暂时无法加载</span>
               </span>
             </a>
-            <figcaption>{photo.caption || photo.alt}</figcaption>
+            <figcaption class="photo-caption"><span>{photo.caption || photo.alt}</span></figcaption>
           </figure>
         ))}
       </div>
@@ -113,35 +88,28 @@ const featured = photos.filter((photo) => photo.featured).slice(0, 3);
 
 <style>
   .travel-gallery { padding-block: 12px 48px; }
-  .gallery-heading { margin-bottom: 30px; }
-  .gallery-heading h2 { margin: 0 0 12px; font: 500 clamp(27px, 3vw, 35px)/1.5 var(--serif); }
+  .gallery-heading { margin-bottom: 24px; }
+  .gallery-title { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+  .gallery-title h2 { margin: 0; font: 500 clamp(27px, 3vw, 35px)/1.5 var(--serif); }
+  .gallery-title > span { color: var(--muted); font-size: 12px; white-space: nowrap; }
   .gallery-heading p { margin: 0; max-width: 660px; color: var(--muted); font-size: 14px; line-height: 1.9; }
-  .gallery-subheading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 20px; }
-  .gallery-subheading h3 { margin: 0; font: 500 21px/1.6 var(--serif); }
-  .gallery-subheading > span { color: var(--muted); font-size: 12px; }
-  .featured-section { padding: 26px 0 34px; border-top: 1px solid var(--line); }
-  .featured-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-  .featured-grid[data-count="1"] { grid-template-columns: minmax(0, 420px); }
-  .featured-grid[data-count="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; }
-  figure { margin: 0; min-width: 0; }
-  .featured-photo a, .photo-card a { display: block; border-radius: 3px; }
-  .featured-frame, .photo-frame { position: relative; display: grid; place-items: center; overflow: hidden; background: var(--light); border: 1px solid var(--line); border-radius: 3px; }
-  .featured-frame { aspect-ratio: 3/4; padding: 12px; }
-  .featured-frame img { width: 100%; height: 100%; object-fit: contain; }
-  figcaption { margin-top: 11px; font-size: 12px; line-height: 1.8; color: var(--muted); overflow-wrap: anywhere; }
-  .all-photos-heading { padding-top: 26px; border-top: 1px solid var(--line); }
-  .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 22px; }
-  .photo-frame { aspect-ratio: 3/2; }
-  .photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  .photo-wall { column-count: 3; column-gap: 0; }
+  .photo-card { position: relative; width: 100%; min-width: 0; margin: 0; break-inside: avoid; aspect-ratio: var(--photo-ratio); content-visibility: auto; contain-intrinsic-size: auto none; }
+  .photo-card a { display: block; position: relative; }
+  .photo-frame { position: relative; display: block; overflow: hidden; background: var(--light); aspect-ratio: var(--photo-ratio); }
+  .photo-frame img { width: 100%; height: 100%; object-fit: contain; transition: transform .5s ease; }
   .photo-card a:hover img { transform: scale(1.025); }
-  .image-error { padding: 24px; font-size: 14px; line-height: 1.8; color: var(--muted); text-align: center; }
+  .photo-card a:focus-visible { outline-offset: -4px; z-index: 1; }
+  .photo-caption { position: absolute; inset: auto 0 0; margin: 0; padding: 10px 12px; color: #fff; background: rgb(0 0 0 / 65%); font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; pointer-events: none; }
+  .photo-caption > span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .image-error { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; font-size: 14px; line-height: 1.8; color: var(--muted); text-align: center; }
   [hidden] { display: none !important; }
   .gallery-empty { display: grid; justify-items: center; padding: 56px 24px; border: 1px dashed var(--line); border-radius: 4px; text-align: center; }
   .gallery-empty h3 { margin: 22px 0 8px; font: 500 23px/1.7 var(--serif); }
   .gallery-empty p { margin: 0; font-size: 14px; color: var(--muted); }
   .empty-frame { width: 62px; height: 49px; display: grid; place-items: center; padding: 8px; border: 1px solid #9aa79a; transform: rotate(-4deg); }
   .empty-frame > span { width: 100%; height: 100%; border: 1px solid var(--line); }
-  .photo-viewer { width: min(1100px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); padding: 24px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); color: var(--ink); }
+  .photo-viewer { width: min(1100px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); padding: 24px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); color: var(--ink); overscroll-behavior: contain; }
   .photo-viewer[open] { display: grid; gap: 18px; }
   .photo-viewer::backdrop { background: #14251dd9; }
   .viewer-heading { display: flex; align-items: start; justify-content: space-between; gap: 24px; }
@@ -161,10 +129,8 @@ const featured = photos.filter((photo) => photo.featured).slice(0, 3);
   a:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
   @media (max-width: 760px) {
     .gallery-heading { margin-bottom: 24px; }
-    .gallery-subheading { align-items: start; flex-direction: column; gap: 5px; }
-    .featured-grid, .featured-grid[data-count="2"] { grid-template-columns: minmax(0, 440px); gap: 26px; }
-    .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; }
-    .featured-frame { padding: 8px; }
+    .photo-wall { column-count: 2; }
+    .photo-caption { padding: 7px 9px; font-size: 12px; }
     .photo-viewer { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); padding: 16px; }
     .photo-viewer[open] { gap: 14px; }
     .viewer-heading { gap: 12px; }

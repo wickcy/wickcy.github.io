@@ -1,9 +1,49 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import Gallery from '../../features/gallery/Gallery.astro';
+import EmptyState from '../../components/EmptyState.astro';
 import { siteContent, tripPhotos } from '../../lib/content';
 const {trips}=await siteContent();
-const albums=trips.map(trip=>({trip,photos:tripPhotos(trip.id)})).filter(a=>a.photos.length);
+const albums=trips.map(trip=>{
+  const photos=tripPhotos(trip.id);
+  const tickets=photos.filter(photo=>photo.featured&&photo.ticketSrc).slice(0,3);
+  const fallback=photos.find(photo=>photo.featured&&photo.thumbnail)||photos.find(photo=>photo.thumbnail);
+  const covers=tickets.length
+    ?tickets.map(photo=>({src:photo.ticketSrc,alt:`${photo.alt}，旅行票根`,width:photo.ticketWidth,height:photo.ticketHeight}))
+    :fallback?[{src:fallback.thumbnail,alt:fallback.alt,width:fallback.width,height:fallback.height}]:[];
+  return {trip,photoCount:photos.length,ticketCount:tickets.length,covers};
+}).filter(album=>album.photoCount);
 ---
-<SiteLayout title="旅行相册" active="photos"><div class="wrap"><header class="page-head"><div><p class="eyebrow">有些瞬间，想多看一眼。</p><h1>让照片，<span class="accent">慢慢讲。</span></h1></div><p>几张最喜欢的照片，做成旅行票根。其余的光影与小事，也好好留在相册里。</p></header>{albums.length?albums.map(({trip,photos})=><section class="album-section"><div class="section-head"><h2>{trip.data.title}</h2><a class="section-link" href={`/trips/${trip.id}/photos/`}>打开这本相册</a></div><Gallery photos={photos} title="这段旅途的瞬间"/></section>):<Gallery photos={[]} title="旅行相册"/>}</div></SiteLayout>
-<style>.album-section{margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}</style>
+<SiteLayout title="旅行相册" active="photos">
+  <div class="wrap">
+    <header class="page-head"><div><p class="eyebrow">有些瞬间，想多看一眼。</p><h1>一张票根，<span class="accent">一段旅行。</span></h1></div><p>从票根翻开一段旅途，沿途的照片，都收在各自的相册里。</p></header>
+    {albums.length?<div class="album-grid">{albums.map(({trip,photoCount,ticketCount,covers})=>
+      <a class="album-card" href={`/trips/${trip.id}/photos/`} aria-labelledby={`album-${trip.id}`}>
+        <div class="album-stage">
+          {covers.length?<div class="ticket-stack" data-count={covers.length}>{covers.map(cover=><img src={cover.src} alt={cover.alt} width={cover.width} height={cover.height} loading="lazy" decoding="async"/>)}</div>
+          :<div class="album-placeholder"><span aria-hidden="true">▧</span><p>沿途的记忆，收在这里。</p></div>}
+        </div>
+        <div class="album-copy">
+          <div class="album-meta"><span>{trip.data.season||'旅行记忆'}</span><span>{photoCount} 张照片{ticketCount?` · ${ticketCount} 张票根`:''}</span></div>
+          <h2 id={`album-${trip.id}`}>{trip.data.title}</h2>
+          <p class="album-open">打开这本相册 <span aria-hidden="true">↗</span></p>
+        </div>
+      </a>
+    )}</div>:<EmptyState title="这一页，留给未来的照片。" description="目前还没有公开的旅行相册，等照片与记忆慢慢积攒。" href="/trips/" label="看看旅行记录"/>}
+  </div>
+</SiteLayout>
+<style>
+  .page-head h1{text-wrap:balance}.page-head h1 .accent{display:inline-block}
+  .album-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:12px}
+  .album-card{display:block;min-width:0;border:1px solid var(--line);border-radius:4px;background:var(--white)}
+  .album-stage{display:grid;place-items:center;min-height:320px;padding:30px;background:var(--light);border-bottom:1px solid var(--line)}
+  .ticket-stack{display:grid;width:min(100%,340px);aspect-ratio:3/4;transition:transform .5s ease}
+  .ticket-stack img{grid-area:1/1;width:100%;height:100%;object-fit:contain}
+  .ticket-stack[data-count="2"] img:first-child,.ticket-stack[data-count="3"] img:first-child{transform:rotate(-4deg) translateX(-8px)}
+  .ticket-stack[data-count="2"] img:last-child,.ticket-stack[data-count="3"] img:last-child{transform:rotate(4deg) translateX(8px)}
+  .album-card:hover .ticket-stack{transform:scale(1.025)}
+  .album-copy{padding:24px 26px}.album-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+  .album-copy h2{margin-top:12px;font-size:29px}.album-open{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:15px;margin-top:20px;font-size:14px;color:var(--green)}
+  .album-card:hover .album-open{color:var(--orange)}.album-placeholder{text-align:center;color:var(--muted)}.album-placeholder>span{display:block;font-size:48px;font-weight:300;margin-bottom:15px}.album-placeholder p{font-size:14px}
+  @media(max-width:760px){.album-grid{grid-template-columns:1fr;gap:24px;margin-top:4px}.album-stage{padding:26px;min-height:260px}.ticket-stack{max-width:310px}.album-copy{padding:21px}.album-copy h2{font-size:26px}}
+  @media(prefers-reduced-motion:reduce){.ticket-stack{transition:none}}
+</style>
