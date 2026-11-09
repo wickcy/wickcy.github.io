@@ -1,0 +1,78 @@
+---
+import type { JourneyGuideData } from './itinerary-schema';
+import './journey.css';
+interface Props { guide: JourneyGuideData; tripId: string }
+const { guide, tripId } = Astro.props;
+const section = (name: string) => `${tripId}-${name}`;
+const sourceLink = (id: string) => `#${section(`source-${id}`)}`;
+const sourceTitle = (id: string) => guide.sources.find(source => source.id === id)?.title;
+const serialized = JSON.stringify(guide).replace(/</g, '\\u003c');
+const budgetFields = [
+  { name: 'people', label: '出行人数', unit: '人', min: 1, max: 20, value: 1 },
+  { name: 'travel', label: '全部往返机票 / 车票', unit: '元 / 人', min: 0, max: 100000 },
+  { name: 'lodging', label: '全程住宿合计', unit: '元 / 全员', min: 0, max: 100000 },
+  { name: 'food', label: '每日餐饮预留', unit: '元 / 人 / 天', min: 0, max: 5000 },
+  { name: 'local', label: '当地接送 / 包车合计', unit: '元 / 全员', min: 0, max: 100000 },
+  { name: 'tickets', label: '门票 / 景区交通合计', unit: '元 / 人', min: 0, max: 20000 },
+  { name: 'reserve', label: '机动预留', unit: '%', min: 0, max: 50, value: 15 },
+];
+---
+<div class="journey-guide" data-journey-guide data-trip-id={tripId}>
+  <nav class="wrap journey-nav" aria-label="本次旅行目录">
+    {['交通', '行程', '景点', '住宿', '预算', '准备', '来源'].map((name, i) => <a href={`#${section(['transport','planner','places','stays','budget','prepare','sources'][i])}`}>{name}</a>)}
+  </nav>
+  <section class="wrap journey-opening">
+    <div class="journey-opening-copy"><p class="eyebrow">把北方的冬天，写进新的一年。</p><h2>向北走，<br/>也给旅途留白。</h2><p>{guide.intro}</p><p class="journey-scope">{guide.scope}</p><div class="journey-verdict"><strong>这次怎么选</strong><p>{guide.recommendation}</p></div></div>
+    {guide.photo && <figure class="journey-photo"><img src={guide.photo.src} alt={guide.photo.alt} width={guide.photo.width} height={guide.photo.height} loading="lazy" decoding="async"/><figcaption>{guide.photo.alt}<details><summary>图片来源与许可</summary><a href={guide.photo.sourceUrl} target="_blank" rel="noopener noreferrer">{guide.photo.author}</a> · <a href={guide.photo.licenseUrl} target="_blank" rel="noopener noreferrer">{guide.photo.license}</a> · 已缩放并转为 WebP</details></figcaption></figure>}
+  </section>
+  <section class="wrap journey-section" id={section('transport')} aria-labelledby={section('transport-heading')}>
+    <div class="section-head"><div><p class="eyebrow">先把路上的时间，算清楚。</p><h2 id={section('transport-heading')}>{guide.transportTitle}</h2></div><a class="section-link" href={`#${section('sources')}`}>查看查询入口 ↓</a></div>
+    <p class="journey-note">资料核查 {guide.checkedAt} · 航季时刻与历史资料分开标注，尚未确认具体出发日的可订组合。以下衔接与游览时段是规划建议。</p>
+    <div class="journey-transport-grid">{guide.transport.map(item => <article class="journey-card"><span class="journey-tag">{item.tag}</span><h3>{item.title}</h3><p class="journey-route-title">{item.route}</p><p class="journey-duration">{item.duration}</p><p>{item.description}</p><p class="journey-card-note">{item.note}</p><details class="journey-references"><summary>资料依据</summary>{item.sources.map(id => <a href={sourceLink(id)}>{sourceTitle(id)}</a>)}</details></article>)}</div>
+  </section>
+  <section class="wrap journey-section" id={section('planner')} aria-labelledby={section('planner-heading')}>
+    <div class="section-head"><div><p class="eyebrow">把往返也算进来，再决定停留。</p><h2 id={section('planner-heading')}>{Math.min(...guide.variants.map(v => v.duration))}～{Math.max(...guide.variants.map(v => v.duration))} 天，怎样安排？</h2></div><span class="journey-tag">{guide.scopeLabel}</span></div>
+    <div class="journey-tabs" role="group" aria-label="选择总行程天数">{guide.variants.map(variant => <button type="button" data-variant={variant.id} aria-pressed={variant.id === guide.defaultVariant} aria-controls={section(`variant-${variant.id}`)} disabled><strong>{variant.duration}<small>天</small></strong><span>{variant.badge}</span></button>)}</div>
+    <p class="journey-feedback" data-variant-status role="status"></p>
+    <noscript><p class="journey-note">未启用 JavaScript，以下按顺序展示全部方案。天数切换、预算、复制下载与清单保存需要 JavaScript。</p></noscript>
+    {guide.variants.map(variant => <article id={section(`variant-${variant.id}`)} data-variant-panel={variant.id}>
+      <div class="journey-plan-intro"><div><h3>{variant.name}</h3><p>{variant.summary}</p></div><p class="journey-condition"><strong>方案成立的前提</strong>{variant.condition}</p></div>
+      <div class="journey-route"><h4>路线示意</h4><ol aria-label={`${variant.name}路线顺序`}>{variant.route.map(place => <li>{place}</li>)}</ol><p>仅示意先后顺序，不是道路轨迹或导航；地点查询见下方景点卡片。</p></div>
+      <div class="journey-plan-layout"><ol class="journey-days">{variant.days.map((day, index) => <li><div class="journey-day-number"><b>D{index + 1}</b><span>第 {index + 1} 天</span></div><div class="journey-day-card"><h3>{day.title}</h3><p>{day.summary}</p><ol>{day.stops.map(stop => <li><span>{stop.time}</span><div><h4>{stop.name}</h4><p>{stop.note}</p></div></li>)}</ol></div></li>)}</ol><aside class="journey-plan-aside"><h3>这份方案的小提醒</h3><h4>住宿怎么分</h4><p>{variant.nights}</p><h4>如果衔接有变化</h4><p>{variant.extension}</p><p class="journey-aside-note">返程时间请对照<a href={`#${section('transport')}`}>交通资料</a>。若更换航班，先核对到达日期，再调整每日安排。</p></aside></div>
+    </article>)}
+    <div class="journey-actions"><button type="button" class="btn btn-primary" data-copy-journey disabled>复制当前方案</button><button type="button" class="btn btn-line" data-download-journey disabled>下载行程文本</button><a class="section-link" href={`#${section('places')}`}>看看沿途的景点 ↓</a></div>
+    <p class="journey-feedback" data-export-status role="status"></p>
+    <details class="journey-copy-fallback" hidden><summary>手动复制行程</summary><textarea readonly aria-label="当前行程文本"></textarea></details>
+  </section>
+  <section class="wrap journey-section" id={section('places')} aria-labelledby={section('places-heading')}>
+    <div class="section-head"><div><p class="eyebrow">有些地方值得停，有些可以下次。</p><h2 id={section('places-heading')}>把想看的风景，排个先后。</h2></div><span class="journey-tag">候选景点 · 尚未到访</span></div>
+    <div class="journey-place-grid">{guide.places.map(place => <article class:list={['journey-card', { 'journey-card-wide': place.photo && place.photo.width / place.photo.height > 2 }]}>
+      {place.photo && <figure class="journey-photo"><img src={place.photo.src} alt={place.photo.alt} width={place.photo.width} height={place.photo.height} loading="lazy" decoding="async"/><figcaption>{place.photo.alt}<details><summary>图片来源与许可</summary><a href={place.photo.sourceUrl} target="_blank" rel="noopener noreferrer">{place.photo.author}</a> · <a href={place.photo.licenseUrl} target="_blank" rel="noopener noreferrer">{place.photo.license}</a> · 已缩放并转为 WebP</details></figcaption></figure>}
+      <span class="journey-tag">{place.tag}</span><h3>{place.name}</h3><p>{place.description}</p><p class="journey-card-note"><strong>怎么留时间</strong>{place.time}</p><p><strong>冬季取舍</strong>{place.winter}</p><a class="journey-map-link" href={`https://www.amap.com/search?query=${encodeURIComponent(place.mapQuery)}`} target="_blank" rel="noopener noreferrer">在高德查询地点 ↗</a><details class="journey-references"><summary>资料依据 · {guide.checkedAt}</summary>{place.sources.map(id => <a href={sourceLink(id)}>{sourceTitle(id)}</a>)}</details>
+    </article>)}</div>
+  </section>
+  <section class="wrap journey-section" id={section('stays')} aria-labelledby={section('stays-heading')}>
+    <div class="section-head"><div><p class="eyebrow">住得暖和，才有力气继续看雪。</p><h2 id={section('stays-heading')}>住宿按区域安排。</h2></div></div>
+    <div class="journey-three-grid">{guide.stays.map(stay => <article class="journey-card"><h3>{stay.title}</h3><p>{stay.description}</p></article>)}</div>
+  </section>
+  <section class="wrap journey-section" id={section('budget')} aria-labelledby={section('budget-heading')}>
+    <div class="section-head"><div><p class="eyebrow">拿到报价以后，把花费放在一起。</p><h2 id={section('budget-heading')}>这趟预算，自己算一算。</h2></div></div>
+    <p class="journey-note">机票、房价和冬季用车会随日期变化，先填实际报价，不预设实时价格。住宿与包车填全员总额，机票与门票填每人金额；餐饮保守按总天数计算。更换方案后请重新核对报价。</p>
+    <div class="journey-budget-layout"><form class="journey-budget-form" data-journey-budget><fieldset><legend class="sr-only">旅行预算输入</legend>{budgetFields.map(field => <label><span>{field.label} <small>{field.unit}</small></span><input type="number" name={field.name} value={field.value} min={field.min} max={field.max} step={field.name === 'people' ? '1' : '0.01'} placeholder="填写金额" required inputmode={field.name === 'people' ? 'numeric' : 'decimal'}/></label>)}</fieldset></form><div class="journey-budget-result" role="status" aria-live="polite"><span>当前方案 · <b data-budget-days>{guide.variants.find(v => v.id === guide.defaultVariant)?.duration}</b> 天</span><p data-budget-total>填齐报价后计算</p><p data-budget-person>可填 0 表示该项无需支出。</p><small>只是本页临时估算；不保存到仓库，也不跨设备同步。</small></div></div>
+  </section>
+  <section class="wrap journey-section" id={section('prepare')} aria-labelledby={section('prepare-heading')}>
+    <div class="section-head"><div><p class="eyebrow">先准备好，到了才能慢下来。</p><h2 id={section('prepare-heading')}>冬季出发前。</h2></div></div>
+    <div class="journey-three-grid">{guide.practical.map(item => <article class="journey-card"><h3>{item.title}</h3><p>{item.description}</p><details class="journey-references"><summary>资料依据</summary>{item.sources.map(id => <a href={sourceLink(id)}>{sourceTitle(id)}</a>)}</details></article>)}</div>
+    <div class="journey-checklist"><div><h3>行前清单</h3><p data-checklist-status role="status">清单只保存在本浏览器，按旅行分别记录。</p></div><div>{guide.checklist.map(item => <label><input type="checkbox" data-check-id={item.id}/><span>{item.text}</span></label>)}</div><button type="button" class="btn btn-line" data-reset-checklist disabled>清空本次勾选</button></div>
+  </section>
+  <section class="wrap journey-section journey-sources" id={section('sources')} aria-labelledby={section('sources-heading')}>
+    <div class="section-head"><div><p class="eyebrow">让每一条参考，都有来处。</p><h2 id={section('sources-heading')}>资料与核查记录</h2></div><span class="journey-tag">核查日 {guide.checkedAt}</span></div>
+    <p>路线组合、停留时段与取舍是本计划的安排建议；下列来源支持航线、航季时刻与景点基础资料。价格、开放、天气、道路和具体日期余票仍须临行核实。</p>
+    <ol>{guide.sources.map(source => <li id={section(`source-${source.id}`)}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a><p>{source.note}</p></li>)}</ol>
+  </section>
+  <script type="application/json" data-journey-data set:html={serialized}/>
+</div>
+<script>
+  import { initJourneyGuides } from './journey-client.js';
+  initJourneyGuides();
+</script>

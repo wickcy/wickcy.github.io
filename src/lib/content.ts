@@ -3,6 +3,7 @@ import { z } from 'astro/zod';
 import cityData from '../../content/places/cities.json';
 import { publishedTrips, visitedCities, publicAsset } from './travel-policy.js';
 import { normalizeCityCountry } from './geography.mjs';
+import { itinerarySchema } from '../features/trips/itinerary-schema';
 
 const asset = z.string().refine(publicAsset, '图片地址须为站内绝对路径或 HTTPS');
 const photoSchema = z.object({
@@ -48,18 +49,12 @@ export function tripPhotos(tripId:string) {
 export function tripPlan(tripId:string) {
   const raw=planFiles[`../../content/trips/${tripId}/plans.json`];
   if(!raw)return undefined;
-  const itinerary=z.object({
-    type:z.literal('itinerary'),
-    days:z.array(z.object({title:z.string().min(1),label:z.string().min(1).optional(),summary:z.string().optional(),stops:z.array(z.object({
-      time:z.string().optional(),name:z.string().min(1),note:z.string().optional(),url:z.string().refine(publicAsset).optional(),
-    }))})),budgetNote:z.string().optional(),
-  });
   const comparison=z.object({
     type:z.literal('comparison'),markup:z.string(),title:z.string(),initial:z.object({dest:z.string(),days:z.number(),arrival:z.string()}),
     destinations:z.array(z.object({id:z.string()})),cases:z.record(z.string(),z.unknown()),
     travelData:z.object({hotels:z.record(z.string(),z.unknown()),places:z.record(z.string(),z.unknown())}),
   }).passthrough();
-  const parsed=z.discriminatedUnion('type',[itinerary,comparison]).safeParse(raw);
+  const parsed=z.discriminatedUnion('type',[itinerarySchema,comparison]).safeParse(raw);
   if(!parsed.success)throw new Error(`${tripId} 的 plans.json 格式不正确：${parsed.error.message}`);
   return parsed.data.type==='comparison'?raw:parsed.data;
 }

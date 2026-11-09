@@ -1,12 +1,14 @@
 ---
 import { safeURL } from './plan-model.mjs';
+import JourneyGuide from './JourneyGuide.astro';
+import type { JourneyGuideData } from './itinerary-schema';
 interface Stop { time?: string; name: string; note?: string; url?: string }
 interface Day { title: string; label?: string; summary?: string; stops: Stop[] }
-interface Props { plan: { type: 'itinerary'; days: Day[]; budgetNote?: string }; tripId?: string; completed?: boolean }
+interface Props { plan: { type: 'itinerary'; days: Day[]; budgetNote?: string; guide?: JourneyGuideData }; tripId?: string; completed?: boolean }
 const { plan, tripId = 'trip', completed = false } = Astro.props;
 const headingId = `itinerary-heading-${tripId}`;
 ---
-<section class="wrap simple-itinerary" aria-labelledby={headingId}>
+{plan.guide ? <JourneyGuide guide={plan.guide} tripId={tripId}/> : <section class="wrap simple-itinerary" aria-labelledby={headingId}>
   <div class="section-head"><div><p class="eyebrow">{completed ? '把走过的日子，按顺序收好。' : '把期待，连成一条路线。'}</p><h2 id={headingId}>{completed ? '这一路的记忆' : '一路，慢慢走。'}</h2></div></div>
   {plan.days.length > 0 ? <ol class="itinerary-days">{plan.days.map((day, index) => <li class="itinerary-day">
     <div class:list={['day-number', { 'day-labelled': Boolean(day.label) }]}><b>{day.label || `D${index + 1}`}</b><span>{day.label ? (completed ? '旅行记录' : '行程安排') : `第 ${index + 1} 天`}</span></div>
@@ -18,7 +20,7 @@ const headingId = `itinerary-heading-${tripId}`;
     </article>
   </li>)}</ol> : <p class="itinerary-empty">{completed ? '旅途的细节，留待慢慢补记。' : '路线还在慢慢补充，先把想去的地方记下来。'}</p>}
   {plan.budgetNote && <aside class="itinerary-budget"><h3>{completed ? '旅行花费备注' : '出发前的小算盘'}</h3><p>{plan.budgetNote}</p></aside>}
-</section>
+</section>}
 <style>
   .day-number.day-labelled b{font-size:24px}
   .simple-itinerary{padding-block:40px 64px}.itinerary-days,.itinerary-stops{list-style:none;margin:0;padding:0}.itinerary-day{display:grid;grid-template-columns:76px minmax(0,1fr);gap:24px;padding-bottom:28px}.day-number{position:relative;text-align:center;padding-top:20px}.day-number b{display:block;font:30px/1.4 Georgia,serif;color:var(--green)}.day-number span{font-size:12px;color:var(--muted)}.day-number:after{content:"";position:absolute;width:1px;background:var(--line);left:50%;top:90px;bottom:-10px}.itinerary-day:last-child .day-number:after{display:none}.itinerary-card{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:24px 28px}.itinerary-card>h3{font:500 24px/1.5 var(--serif);margin:0 0 10px}.day-summary{font-size:14px;color:var(--muted);margin:0 0 18px}.itinerary-stops li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:18px;padding:14px 0;border-top:1px solid var(--line)}.stop-time{font-size:12px;color:var(--orange);padding-top:2px}.itinerary-stops h4{font-size:15px;font-weight:600;margin:0 0 5px}.itinerary-stops a{text-decoration:underline;text-underline-offset:4px}.itinerary-stops p{font-size:14px;color:var(--muted);margin:0;line-height:1.85}.stop-link{font-size:12px;color:var(--orange)}.itinerary-budget{background:var(--light);border:1px solid var(--line);border-radius:4px;margin-left:100px;padding:24px 28px}.itinerary-budget h3{font:500 21px/1.5 var(--serif);margin:0 0 8px}.itinerary-budget p,.itinerary-empty{font-size:14px;line-height:1.85;margin:0}.itinerary-empty{padding:28px;border:1px dashed var(--line);color:var(--muted)}
