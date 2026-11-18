@@ -8,7 +8,7 @@ const serialized = JSON.stringify({ ...interactiveData, id: tripId || interactiv
 <link rel="stylesheet" href="/vendor/leaflet.css" />
 <div class="plan-experience" data-plan-experience>
   <Fragment set:html={markup} />
-  <noscript><p class="wrap">请启用 JavaScript 使用行程切换、预算和地图；目的地比较、景点与准备说明仍可直接阅读。</p></noscript>
+  <noscript><p class="wrap">启用 JavaScript 后可以切换行程、调整预算和使用地图。景点和准备说明可以直接阅读。</p></noscript>
   <script type="application/json" data-plan-data set:html={serialized} />
 </div>
 <script is:inline src="/vendor/leaflet.js"></script>

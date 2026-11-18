@@ -11,6 +11,7 @@ export function initPlans() {
 
 function initPlan(root, data) {
   const $ = id => root.querySelector('#' + id), all = selector => root.querySelectorAll(selector);
+  const archive = root.closest('details');
   const state = { ...data.initial }, preferences = {};
   let plan, values, routeKey = 'all', selected, signature = '', map, layers, markers = {}, toastTimer;
   for (const destination of data.destinations) preferences[destination.id] = data.travelData.hotels[destination.id][0].id;
@@ -100,9 +101,12 @@ function initPlan(root, data) {
     $('map-points').innerHTML = ids.map(id => `<button type="button" data-place="${e(id)}" aria-pressed="${id === selected}">${places[id].kind === 'hotel' ? '⌂' : places[id].kind === 'station' ? '▣' : '●'} ${e(places[id].name)}</button>`).join('');
     for (const container of [$('route-legs'), $('map-points')]) container.querySelectorAll('[data-place]').forEach(button => button.addEventListener('click', () => selectPlace(button.dataset.place, true)));
     const L = window.L;
-    if (L) {
+    if (!L) {
+      $('map-status').textContent = '地图组件暂不可用，请使用地点列表与文字路线。';
+    } else if (!archive || archive.open) {
+      const coordinates = data.travelData.routing.coordinates[state.dest];
       if (!map) {
-        map = L.map($('trip-map'), { scrollWheelZoom: false }).setView([36.2, 117.1], 12);
+        map = L.map($('trip-map'), { scrollWheelZoom: false }).setView(coordinates[values.hotel], 12);
         map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
         layers = L.layerGroup().addTo(map);
         const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' });
@@ -111,7 +115,6 @@ function initPlan(root, data) {
         tiles.addTo(map);
       }
       layers.clearLayers(); markers = {};
-      const coordinates = data.travelData.routing.coordinates[state.dest];
       for (const route of active) for (const leg of route.legs) L.polyline([coordinates[leg.from], coordinates[leg.to]], { color: ['bus', 'cable'].includes(leg.mode) ? '#b66843' : '#316755', weight: 3, opacity: .75, dashArray: '6 7' }).addTo(layers);
       ids.forEach((id, index) => {
         const place = places[id];
@@ -119,10 +122,11 @@ function initPlan(root, data) {
       });
       map.invalidateSize();
       if (ids.length) map.fitBounds(L.latLngBounds(ids.map(id => coordinates[id])), { padding: [35, 35], maxZoom: 15 });
-    } else $('map-status').textContent = '地图组件暂不可用，请使用地点列表与文字路线。';
+    }
     selectPlace(ids.includes(selected) ? selected : values.hotel);
   }
 
+  archive?.addEventListener('toggle', () => { if (archive.open) renderRoute(); });
   all('[data-dest],[data-days],[data-arrival],[data-direction]').forEach(button => button.addEventListener('click', () => {
     for (const key of ['dest', 'days', 'arrival', 'direction']) if (button.dataset[key] !== undefined) state[key] = key === 'days' ? Number(button.dataset[key]) : button.dataset[key];
     if (button.dataset.dest) state.arrival = state.dest === 'shaoxing' ? 'night' : state.days === 3 ? 'sleeper' : 'day';
@@ -136,7 +140,7 @@ function initPlan(root, data) {
   }
   $('download-plan').addEventListener('click', () => { download(); notify('公开版行程已下载，含参考车次与来源。'); });
   $('copy-plan').addEventListener('click', async () => { try { await navigator.clipboard.writeText(planText(data, state, values)); notify('已复制公开版行程。'); } catch { download(); notify('浏览器无法复制，已改为下载公开版行程。'); } });
-  const storageKey = `travel-memories:${data.id}:checklist:v1`;
+  const storageKey = `travel-memories:${data.id}:checklist:v${data.checklistVersion ?? 1}`;
   let checked = [];
   try { const stored = JSON.parse(localStorage.getItem(storageKey) || '[]'); if (Array.isArray(stored)) checked = stored.filter(number => Number.isInteger(number) && number >= 0 && number < data.tasks.length); } catch { /* Browser storage is optional. */ }
   $('checklist').innerHTML = data.tasks.map((task, index) => `<label class="check-row"><input type="checkbox" value="${index}" ${checked.includes(index) ? 'checked' : ''}><span>${e(task)}</span></label>`).join('');

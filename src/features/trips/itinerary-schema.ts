@@ -47,5 +47,6 @@ export const guideSchema = z.object({
 });
 export const itinerarySchema = z.object({
   type: z.literal('itinerary'), days: z.array(day), budgetNote: text.optional(), guide: guideSchema.optional(),
+  recorded: z.literal(true).optional(),
 });
 export type JourneyGuideData = z.infer<typeof guideSchema>;

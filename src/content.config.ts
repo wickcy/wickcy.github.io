@@ -15,6 +15,7 @@ const trips = defineCollection({
     published: z.boolean().default(false),
     cityIds: z.array(z.string()).default([]),
     visitedCityIds: z.array(z.string()).default([]),
+    visitedPlaces: z.array(z.string().trim().min(1)).default([]),
     season: z.string().optional(),
     updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     cover: z.string().optional(),
